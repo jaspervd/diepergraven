@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0EDF860E-E006-4D98-890F-1E39F98C601F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DieperGraven</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>496B128F-E4F3-4013-BAFA-741CDEE3DF5F</key>
+		<string>https://github.com/jaspervd/diepergraven.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>project/DieperGraven/DieperGraven.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>496B128F-E4F3-4013-BAFA-741CDEE3DF5F</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jaspervd/diepergraven.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>496B128F-E4F3-4013-BAFA-741CDEE3DF5F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>496B128F-E4F3-4013-BAFA-741CDEE3DF5F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IFF</string>
+		</dict>
+	</array>
+</dict>
+</plist>
