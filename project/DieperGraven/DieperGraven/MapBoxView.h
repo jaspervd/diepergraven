@@ -10,6 +10,7 @@
 #import <RMMapView.h>
 #import <RMMapboxSource.h>
 #import <RMPointAnnotation.h>
+#import <RMUserLocation.h>
 
 @interface MapBoxView : UIView
 
