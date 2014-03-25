@@ -9,10 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "StartView.h"
 #import "TeamFactory.h"
-#import "MapBoxViewController.h"
-#import "StartViewDelegate.h"
+#import "ScreensViewController.h"
 
-@interface StartViewController : UIViewController <StartViewDelegate>
+@interface StartViewController : UIViewController
 @property (strong, nonatomic) StartView *view;
 
 @end

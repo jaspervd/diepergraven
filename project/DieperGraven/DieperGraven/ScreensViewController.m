@@ -1,18 +1,18 @@
 //
-//  MapBoxViewController.m
+//  ScreensViewController.m
 //  DieperGraven
 //
-//  Created by Jasper Van Damme on 25/03/14.
+//  Created by Jasper Van Damme on 26/03/14.
 //  Copyright (c) 2014 Niels Boey & Jasper Van Damme. All rights reserved.
 //
 
-#import "MapBoxViewController.h"
+#import "ScreensViewController.h"
 
-@interface MapBoxViewController ()
+@interface ScreensViewController ()
 
 @end
 
-@implementation MapBoxViewController
+@implementation ScreensViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,9 +23,18 @@
     return self;
 }
 
+- (id)initWithTeam:(Team *)team
+{
+    self = [super initWithNibName:nil bundle:nil];
+    if (self) {
+        self.team = team;
+    }
+    return self;
+}
+
 - (void)loadView {
     CGRect bounds = [UIScreen mainScreen].bounds;
-    self.view = [[MapBoxView alloc] initWithFrame:bounds];
+    self.view = [[ScreensView alloc] initWithFrame:bounds];
 }
 
 - (void)viewDidLoad

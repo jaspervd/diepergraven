@@ -1,14 +1,15 @@
 //
-//  MapBoxViewController.h
+//  ScreensView.h
 //  DieperGraven
 //
-//  Created by Jasper Van Damme on 25/03/14.
+//  Created by Jasper Van Damme on 26/03/14.
 //  Copyright (c) 2014 Niels Boey & Jasper Van Damme. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "MapBoxView.h"
 
-@interface MapBoxViewController : UIViewController
+@interface ScreensView : UIView
+@property (nonatomic, strong) MapBoxView *mapBoxV;
 
 @end

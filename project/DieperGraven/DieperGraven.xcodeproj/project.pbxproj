@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0454EC64D638472E9B81B841 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E187693A8C4CB9A5B1A7CC /* libPods.a */; };
-		A40131A918E21B7000F535A3 /* MapBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131A818E21B7000F535A3 /* MapBoxViewController.m */; };
 		A40131AC18E21BD500F535A3 /* MapBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AB18E21BD500F535A3 /* MapBoxView.m */; };
+		A40131B018E245C700F535A3 /* ScreensViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AF18E245C700F535A3 /* ScreensViewController.m */; };
+		A40131B318E245D800F535A3 /* ScreensView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131B218E245D800F535A3 /* ScreensView.m */; };
 		A41FE85C18E1EAB700DEEB0F /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE85B18E1EAB700DEEB0F /* StartViewController.m */; };
 		A41FE85F18E1EB2E00DEEB0F /* StartView.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE85E18E1EB2E00DEEB0F /* StartView.m */; };
 		A41FE86218E20DAD00DEEB0F /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE86118E20DAD00DEEB0F /* Team.m */; };
@@ -40,11 +41,13 @@
 
 /* Begin PBXFileReference section */
 		A3E187693A8C4CB9A5B1A7CC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A40131A718E21B7000F535A3 /* MapBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapBoxViewController.h; sourceTree = "<group>"; };
-		A40131A818E21B7000F535A3 /* MapBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapBoxViewController.m; sourceTree = "<group>"; };
 		A40131AA18E21BD500F535A3 /* MapBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapBoxView.h; sourceTree = "<group>"; };
 		A40131AB18E21BD500F535A3 /* MapBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapBoxView.m; sourceTree = "<group>"; };
 		A40131AD18E2236400F535A3 /* StartViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartViewDelegate.h; sourceTree = "<group>"; };
+		A40131AE18E245C700F535A3 /* ScreensViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreensViewController.h; sourceTree = "<group>"; };
+		A40131AF18E245C700F535A3 /* ScreensViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreensViewController.m; sourceTree = "<group>"; };
+		A40131B118E245D800F535A3 /* ScreensView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreensView.h; sourceTree = "<group>"; };
+		A40131B218E245D800F535A3 /* ScreensView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreensView.m; sourceTree = "<group>"; };
 		A41FE85A18E1EAB700DEEB0F /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		A41FE85B18E1EAB700DEEB0F /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		A41FE85D18E1EB2E00DEEB0F /* StartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartView.h; sourceTree = "<group>"; };
@@ -144,11 +147,13 @@
 				A41FE86118E20DAD00DEEB0F /* Team.m */,
 				A41FE86318E20E6100DEEB0F /* TeamFactory.h */,
 				A41FE86418E20E6100DEEB0F /* TeamFactory.m */,
-				A40131A718E21B7000F535A3 /* MapBoxViewController.h */,
-				A40131A818E21B7000F535A3 /* MapBoxViewController.m */,
 				A40131AA18E21BD500F535A3 /* MapBoxView.h */,
 				A40131AB18E21BD500F535A3 /* MapBoxView.m */,
 				A40131AD18E2236400F535A3 /* StartViewDelegate.h */,
+				A40131AE18E245C700F535A3 /* ScreensViewController.h */,
+				A40131AF18E245C700F535A3 /* ScreensViewController.m */,
+				A40131B118E245D800F535A3 /* ScreensView.h */,
+				A40131B218E245D800F535A3 /* ScreensView.m */,
 			);
 			path = DieperGraven;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A40131B318E245D800F535A3 /* ScreensView.m in Sources */,
 				A41FE86218E20DAD00DEEB0F /* Team.m in Sources */,
 				A40131AC18E21BD500F535A3 /* MapBoxView.m in Sources */,
 				A41FE86518E20E6100DEEB0F /* TeamFactory.m in Sources */,
@@ -319,7 +325,7 @@
 				A4DB899818E198EC0096B7E3 /* AppDelegate.m in Sources */,
 				A4DB899418E198EC0096B7E3 /* main.m in Sources */,
 				A41FE85F18E1EB2E00DEEB0F /* StartView.m in Sources */,
-				A40131A918E21B7000F535A3 /* MapBoxViewController.m in Sources */,
+				A40131B018E245C700F535A3 /* ScreensViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

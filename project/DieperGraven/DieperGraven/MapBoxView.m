@@ -14,9 +14,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.mapView = [[RMMapView alloc] initWithFrame:frame];
-        
+        RMMapboxSource *source = [[RMMapboxSource alloc] initWithMapID:@"jaspervd.hk9425ca"];
+        self.mapView = [[RMMapView alloc] initWithFrame:frame andTilesource:source centerCoordinate:CLLocationCoordinate2DMake(50.881, 2.885) zoomLevel:14 maxZoomLevel:20 minZoomLevel:14 backgroundImage:nil];
         [self addSubview:self.mapView];
+        
+        RMPointAnnotation *annotation = [[RMPointAnnotation alloc] initWithMapView:self.mapView coordinate:self.mapView.centerCoordinate andTitle:@"IFF"];
+        [self.mapView addAnnotation:annotation];
     }
     return self;
 }

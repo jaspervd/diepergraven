@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <RMMapView.h>
+#import <RMMapboxSource.h>
+#import <RMPointAnnotation.h>
 
 @interface MapBoxView : UIView
 
