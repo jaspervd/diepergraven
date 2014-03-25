@@ -1,0 +1,26 @@
+PODS:
+  - FMDB (2.0):
+    - FMDB/standard
+  - FMDB/common (2.0)
+  - FMDB/standard (2.0):
+    - FMDB/common
+  - GRMustache (6.8.3):
+    - JRSwizzle (~> 1.0)
+  - JRSwizzle (1.0)
+  - MapBox (1.1.0):
+    - FMDB (= 2.0)
+    - GRMustache (= 6.8.3)
+    - SMCalloutView (= 1.1)
+  - SMCalloutView (1.1)
+
+DEPENDENCIES:
+  - MapBox
+
+SPEC CHECKSUMS:
+  FMDB: a1fcc5227e7f38288f1b04b20045b9fdb8c92622
+  GRMustache: 90fc77ae45a5b8b5a4cf13874cae811461a1c930
+  JRSwizzle: 6242ff38485d870fc2636899048ee1ab883ae587
+  MapBox: 9cafea82d4e5caad7d121b50b1a76142695176d3
+  SMCalloutView: 1c7d62044508a8d405c25495c380b17c613f769e
+
+COCOAPODS: 0.29.0

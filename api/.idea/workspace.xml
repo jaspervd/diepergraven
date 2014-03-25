@@ -26,7 +26,7 @@
       <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="3" selection-start="976" selection-end="976" vertical-scroll-proportion="0.6573705" vertical-offset="0" max-vertical-offset="753">
+            <state line="23" column="59" selection-start="643" selection-end="643" vertical-scroll-proportion="0.45816734" vertical-offset="0" max-vertical-offset="753">
               <folding />
             </state>
           </provider>
@@ -157,6 +157,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -264,7 +265,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="3" selection-start="976" selection-end="976" vertical-scroll-proportion="0.6573705" vertical-offset="0" max-vertical-offset="753">
+        <state line="23" column="59" selection-start="643" selection-end="643" vertical-scroll-proportion="0.45816734" vertical-offset="0" max-vertical-offset="753">
           <folding />
         </state>
       </provider>

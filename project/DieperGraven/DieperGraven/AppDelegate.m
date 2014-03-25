@@ -16,6 +16,10 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    //StartViewController *startVC = [[StartViewController alloc] initWithNibName:nil bundle:nil];
+    //self.navController = [[UINavigationController alloc] initWithRootViewController:startVC];
+    self.startVC = [[StartViewController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController = self.startVC;
     return YES;
 }
 

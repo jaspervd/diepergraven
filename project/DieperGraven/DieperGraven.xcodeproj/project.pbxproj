@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0454EC64D638472E9B81B841 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E187693A8C4CB9A5B1A7CC /* libPods.a */; };
+		A40131A918E21B7000F535A3 /* MapBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131A818E21B7000F535A3 /* MapBoxViewController.m */; };
+		A40131AC18E21BD500F535A3 /* MapBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AB18E21BD500F535A3 /* MapBoxView.m */; };
+		A41FE85C18E1EAB700DEEB0F /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE85B18E1EAB700DEEB0F /* StartViewController.m */; };
+		A41FE85F18E1EB2E00DEEB0F /* StartView.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE85E18E1EB2E00DEEB0F /* StartView.m */; };
+		A41FE86218E20DAD00DEEB0F /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE86118E20DAD00DEEB0F /* Team.m */; };
+		A41FE86518E20E6100DEEB0F /* TeamFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE86418E20E6100DEEB0F /* TeamFactory.m */; };
 		A4DB898818E198EC0096B7E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB898718E198EC0096B7E3 /* Foundation.framework */; };
 		A4DB898A18E198EC0096B7E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB898918E198EC0096B7E3 /* CoreGraphics.framework */; };
 		A4DB898C18E198EC0096B7E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB898B18E198EC0096B7E3 /* UIKit.framework */; };
@@ -32,6 +39,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A3E187693A8C4CB9A5B1A7CC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A40131A718E21B7000F535A3 /* MapBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapBoxViewController.h; sourceTree = "<group>"; };
+		A40131A818E21B7000F535A3 /* MapBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapBoxViewController.m; sourceTree = "<group>"; };
+		A40131AA18E21BD500F535A3 /* MapBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapBoxView.h; sourceTree = "<group>"; };
+		A40131AB18E21BD500F535A3 /* MapBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapBoxView.m; sourceTree = "<group>"; };
+		A40131AD18E2236400F535A3 /* StartViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartViewDelegate.h; sourceTree = "<group>"; };
+		A41FE85A18E1EAB700DEEB0F /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		A41FE85B18E1EAB700DEEB0F /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		A41FE85D18E1EB2E00DEEB0F /* StartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartView.h; sourceTree = "<group>"; };
+		A41FE85E18E1EB2E00DEEB0F /* StartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartView.m; sourceTree = "<group>"; };
+		A41FE86018E20DAD00DEEB0F /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
+		A41FE86118E20DAD00DEEB0F /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
+		A41FE86318E20E6100DEEB0F /* TeamFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamFactory.h; sourceTree = "<group>"; };
+		A41FE86418E20E6100DEEB0F /* TeamFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamFactory.m; sourceTree = "<group>"; };
 		A4DB898418E198EC0096B7E3 /* DieperGraven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DieperGraven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DB898718E198EC0096B7E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4DB898918E198EC0096B7E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +69,7 @@
 		A4DB89A818E198ED0096B7E3 /* DieperGravenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DieperGravenTests-Info.plist"; sourceTree = "<group>"; };
 		A4DB89AA18E198ED0096B7E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4DB89AC18E198ED0096B7E3 /* DieperGravenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DieperGravenTests.m; sourceTree = "<group>"; };
+		AF1BAABF9C9B4C82AF90D070 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +80,7 @@
 				A4DB898A18E198EC0096B7E3 /* CoreGraphics.framework in Frameworks */,
 				A4DB898C18E198EC0096B7E3 /* UIKit.framework in Frameworks */,
 				A4DB898818E198EC0096B7E3 /* Foundation.framework in Frameworks */,
+				0454EC64D638472E9B81B841 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +104,7 @@
 				A4DB89A618E198ED0096B7E3 /* DieperGravenTests */,
 				A4DB898618E198EC0096B7E3 /* Frameworks */,
 				A4DB898518E198EC0096B7E3 /* Products */,
+				AF1BAABF9C9B4C82AF90D070 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +124,7 @@
 				A4DB898918E198EC0096B7E3 /* CoreGraphics.framework */,
 				A4DB898B18E198EC0096B7E3 /* UIKit.framework */,
 				A4DB89A018E198ED0096B7E3 /* XCTest.framework */,
+				A3E187693A8C4CB9A5B1A7CC /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,6 +136,19 @@
 				A4DB899718E198EC0096B7E3 /* AppDelegate.m */,
 				A4DB899918E198EC0096B7E3 /* Images.xcassets */,
 				A4DB898E18E198EC0096B7E3 /* Supporting Files */,
+				A41FE85A18E1EAB700DEEB0F /* StartViewController.h */,
+				A41FE85B18E1EAB700DEEB0F /* StartViewController.m */,
+				A41FE85D18E1EB2E00DEEB0F /* StartView.h */,
+				A41FE85E18E1EB2E00DEEB0F /* StartView.m */,
+				A41FE86018E20DAD00DEEB0F /* Team.h */,
+				A41FE86118E20DAD00DEEB0F /* Team.m */,
+				A41FE86318E20E6100DEEB0F /* TeamFactory.h */,
+				A41FE86418E20E6100DEEB0F /* TeamFactory.m */,
+				A40131A718E21B7000F535A3 /* MapBoxViewController.h */,
+				A40131A818E21B7000F535A3 /* MapBoxViewController.m */,
+				A40131AA18E21BD500F535A3 /* MapBoxView.h */,
+				A40131AB18E21BD500F535A3 /* MapBoxView.m */,
+				A40131AD18E2236400F535A3 /* StartViewDelegate.h */,
 			);
 			path = DieperGraven;
 			sourceTree = "<group>";
@@ -151,9 +189,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4DB89B018E198ED0096B7E3 /* Build configuration list for PBXNativeTarget "DieperGraven" */;
 			buildPhases = (
+				2FFBF4E1280C40DF85395477 /* Check Pods Manifest.lock */,
 				A4DB898018E198EC0096B7E3 /* Sources */,
 				A4DB898118E198EC0096B7E3 /* Frameworks */,
 				A4DB898218E198EC0096B7E3 /* Resources */,
+				CE8C4F27E8EC400C93E1EF67 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,13 +274,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2FFBF4E1280C40DF85395477 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CE8C4F27E8EC400C93E1EF67 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A4DB898018E198EC0096B7E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A41FE86218E20DAD00DEEB0F /* Team.m in Sources */,
+				A40131AC18E21BD500F535A3 /* MapBoxView.m in Sources */,
+				A41FE86518E20E6100DEEB0F /* TeamFactory.m in Sources */,
+				A41FE85C18E1EAB700DEEB0F /* StartViewController.m in Sources */,
 				A4DB899818E198EC0096B7E3 /* AppDelegate.m in Sources */,
 				A4DB899418E198EC0096B7E3 /* main.m in Sources */,
+				A41FE85F18E1EB2E00DEEB0F /* StartView.m in Sources */,
+				A40131A918E21B7000F535A3 /* MapBoxViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +435,7 @@
 		};
 		A4DB89B118E198ED0096B7E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF1BAABF9C9B4C82AF90D070 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -369,6 +449,7 @@
 		};
 		A4DB89B218E198ED0096B7E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF1BAABF9C9B4C82AF90D070 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -439,6 +520,7 @@
 				A4DB89B218E198ED0096B7E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4DB89B318E198ED0096B7E3 /* Build configuration list for PBXNativeTarget "DieperGravenTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +529,7 @@
 				A4DB89B518E198ED0096B7E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StartViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+//@property (strong, nonatomic) UINavigationController *navController;
+@property (strong, nonatomic) StartViewController *startVC;
 
 @end
