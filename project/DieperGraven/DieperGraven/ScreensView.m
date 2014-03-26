@@ -17,7 +17,7 @@
         self.leftBarV = [[LeftBarView alloc] initWithFrame:CGRectMake(0, 0, 310, self.frame.size.width)];
         [self addSubview:self.leftBarV];
         
-        CGRect screenFrame = CGRectMake(self.leftBarV.frame.size.width, 0, (self.frame.size.height - 310), self.frame.size.width);
+        CGRect screenFrame = CGRectMake(155, 0, (self.frame.size.height - 310), self.frame.size.width);
         self.mapBoxV = [[MapBoxView alloc] initWithFrame:screenFrame];
         [self addSubview:self.mapBoxV];
     }

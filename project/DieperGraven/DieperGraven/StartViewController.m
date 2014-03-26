@@ -38,7 +38,7 @@
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSArray *loadedData = (NSArray *)responseObject; NSLog(@"[ParkItGoodVC] %@", loadedData);
+        NSArray *loadedData = (NSArray *)responseObject;
         self.scores = [NSMutableArray array];
         for (NSDictionary *dict in loadedData) {
             Team *team = [TeamFactory createTeamFromDictionary:dict];
