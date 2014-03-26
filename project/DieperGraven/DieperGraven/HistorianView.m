@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor greenColor];
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"historicus_bg"]];
     }
     return self;
 }

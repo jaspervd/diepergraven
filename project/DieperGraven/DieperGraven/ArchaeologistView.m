@@ -14,7 +14,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor blackColor];
+
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"archeloog_bg"]];
+        
     }
     return self;
 }
