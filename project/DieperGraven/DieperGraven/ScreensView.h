@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "LeftBarView.h"
-#import "MapBoxView.h"
+#import "GeologistView.h"
 
 @interface ScreensView : UIView
 @property (nonatomic, strong) LeftBarView *leftBarV;
-@property (nonatomic, strong) MapBoxView *mapBoxV;
+@property (nonatomic, strong) GeologistView *geologistV;
 
 @end

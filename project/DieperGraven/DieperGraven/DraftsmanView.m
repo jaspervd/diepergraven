@@ -1,25 +1,20 @@
 //
-//  ScreensView.m
+//  DraftsmanView.m
 //  DieperGraven
 //
 //  Created by Jasper Van Damme on 26/03/14.
 //  Copyright (c) 2014 Niels Boey & Jasper Van Damme. All rights reserved.
 //
 
-#import "ScreensView.h"
+#import "DraftsmanView.h"
 
-@implementation ScreensView
+@implementation DraftsmanView
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.leftBarV = [[LeftBarView alloc] initWithFrame:CGRectMake(0, 0, 310, self.frame.size.width)];
-        [self addSubview:self.leftBarV];
-        
-        CGRect screenFrame = CGRectMake(155, 0, (self.frame.size.height - 310), self.frame.size.width);
-        self.geologistV = [[GeologistView alloc] initWithFrame:screenFrame];
-        [self addSubview:self.geologistV];
+        // Initialization code
     }
     return self;
 }

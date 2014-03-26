@@ -12,7 +12,7 @@
 #import <RMPointAnnotation.h>
 #import <RMUserLocation.h>
 
-@interface MapBoxView : UIView
+@interface GeologistView : UIView
 
 @property (nonatomic, strong) RMMapView *mapView;
 

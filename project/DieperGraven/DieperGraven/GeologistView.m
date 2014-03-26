@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Niels Boey & Jasper Van Damme. All rights reserved.
 //
 
-#import "MapBoxView.h"
+#import "GeologistView.h"
 
-@implementation MapBoxView
+@implementation GeologistView
 
 - (id)initWithFrame:(CGRect)frame
 {

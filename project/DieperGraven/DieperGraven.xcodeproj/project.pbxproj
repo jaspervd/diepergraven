@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0454EC64D638472E9B81B841 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E187693A8C4CB9A5B1A7CC /* libPods.a */; };
-		A40131AC18E21BD500F535A3 /* MapBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AB18E21BD500F535A3 /* MapBoxView.m */; };
+		A40131AC18E21BD500F535A3 /* GeologistView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AB18E21BD500F535A3 /* GeologistView.m */; };
 		A40131B018E245C700F535A3 /* ScreensViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AF18E245C700F535A3 /* ScreensViewController.m */; };
 		A40131B318E245D800F535A3 /* ScreensView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131B218E245D800F535A3 /* ScreensView.m */; };
 		A41FE85C18E1EAB700DEEB0F /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE85B18E1EAB700DEEB0F /* StartViewController.m */; };
@@ -16,6 +16,9 @@
 		A41FE86218E20DAD00DEEB0F /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE86118E20DAD00DEEB0F /* Team.m */; };
 		A41FE86518E20E6100DEEB0F /* TeamFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE86418E20E6100DEEB0F /* TeamFactory.m */; };
 		A45215FB18E2E5EA00FB7144 /* LeftBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A45215FA18E2E5EA00FB7144 /* LeftBarView.m */; };
+		A4BCF04318E308130049C5AF /* ArchaeologistView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BCF04218E308130049C5AF /* ArchaeologistView.m */; };
+		A4BCF04618E308960049C5AF /* DraftsmanView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BCF04518E308960049C5AF /* DraftsmanView.m */; };
+		A4BCF04918E308A70049C5AF /* HistorianView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BCF04818E308A70049C5AF /* HistorianView.m */; };
 		A4DB898818E198EC0096B7E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB898718E198EC0096B7E3 /* Foundation.framework */; };
 		A4DB898A18E198EC0096B7E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB898918E198EC0096B7E3 /* CoreGraphics.framework */; };
 		A4DB898C18E198EC0096B7E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB898B18E198EC0096B7E3 /* UIKit.framework */; };
@@ -42,8 +45,8 @@
 
 /* Begin PBXFileReference section */
 		A3E187693A8C4CB9A5B1A7CC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A40131AA18E21BD500F535A3 /* MapBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapBoxView.h; sourceTree = "<group>"; };
-		A40131AB18E21BD500F535A3 /* MapBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapBoxView.m; sourceTree = "<group>"; };
+		A40131AA18E21BD500F535A3 /* GeologistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeologistView.h; sourceTree = "<group>"; };
+		A40131AB18E21BD500F535A3 /* GeologistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeologistView.m; sourceTree = "<group>"; };
 		A40131AD18E2236400F535A3 /* StartViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartViewDelegate.h; sourceTree = "<group>"; };
 		A40131AE18E245C700F535A3 /* ScreensViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreensViewController.h; sourceTree = "<group>"; };
 		A40131AF18E245C700F535A3 /* ScreensViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreensViewController.m; sourceTree = "<group>"; };
@@ -59,6 +62,12 @@
 		A41FE86418E20E6100DEEB0F /* TeamFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamFactory.m; sourceTree = "<group>"; };
 		A45215F918E2E5EA00FB7144 /* LeftBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftBarView.h; sourceTree = "<group>"; };
 		A45215FA18E2E5EA00FB7144 /* LeftBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftBarView.m; sourceTree = "<group>"; };
+		A4BCF04118E308130049C5AF /* ArchaeologistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchaeologistView.h; sourceTree = "<group>"; };
+		A4BCF04218E308130049C5AF /* ArchaeologistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchaeologistView.m; sourceTree = "<group>"; };
+		A4BCF04418E308960049C5AF /* DraftsmanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraftsmanView.h; sourceTree = "<group>"; };
+		A4BCF04518E308960049C5AF /* DraftsmanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraftsmanView.m; sourceTree = "<group>"; };
+		A4BCF04718E308A70049C5AF /* HistorianView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistorianView.h; sourceTree = "<group>"; };
+		A4BCF04818E308A70049C5AF /* HistorianView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistorianView.m; sourceTree = "<group>"; };
 		A4DB898418E198EC0096B7E3 /* DieperGraven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DieperGraven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DB898718E198EC0096B7E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4DB898918E198EC0096B7E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -150,8 +159,8 @@
 				A41FE86118E20DAD00DEEB0F /* Team.m */,
 				A41FE86318E20E6100DEEB0F /* TeamFactory.h */,
 				A41FE86418E20E6100DEEB0F /* TeamFactory.m */,
-				A40131AA18E21BD500F535A3 /* MapBoxView.h */,
-				A40131AB18E21BD500F535A3 /* MapBoxView.m */,
+				A40131AA18E21BD500F535A3 /* GeologistView.h */,
+				A40131AB18E21BD500F535A3 /* GeologistView.m */,
 				A40131AD18E2236400F535A3 /* StartViewDelegate.h */,
 				A40131AE18E245C700F535A3 /* ScreensViewController.h */,
 				A40131AF18E245C700F535A3 /* ScreensViewController.m */,
@@ -159,6 +168,12 @@
 				A40131B218E245D800F535A3 /* ScreensView.m */,
 				A45215F918E2E5EA00FB7144 /* LeftBarView.h */,
 				A45215FA18E2E5EA00FB7144 /* LeftBarView.m */,
+				A4BCF04118E308130049C5AF /* ArchaeologistView.h */,
+				A4BCF04218E308130049C5AF /* ArchaeologistView.m */,
+				A4BCF04418E308960049C5AF /* DraftsmanView.h */,
+				A4BCF04518E308960049C5AF /* DraftsmanView.m */,
+				A4BCF04718E308A70049C5AF /* HistorianView.h */,
+				A4BCF04818E308A70049C5AF /* HistorianView.m */,
 			);
 			path = DieperGraven;
 			sourceTree = "<group>";
@@ -324,13 +339,16 @@
 			files = (
 				A40131B318E245D800F535A3 /* ScreensView.m in Sources */,
 				A41FE86218E20DAD00DEEB0F /* Team.m in Sources */,
-				A40131AC18E21BD500F535A3 /* MapBoxView.m in Sources */,
+				A40131AC18E21BD500F535A3 /* GeologistView.m in Sources */,
+				A4BCF04918E308A70049C5AF /* HistorianView.m in Sources */,
 				A41FE86518E20E6100DEEB0F /* TeamFactory.m in Sources */,
 				A41FE85C18E1EAB700DEEB0F /* StartViewController.m in Sources */,
 				A4DB899818E198EC0096B7E3 /* AppDelegate.m in Sources */,
 				A4DB899418E198EC0096B7E3 /* main.m in Sources */,
 				A41FE85F18E1EB2E00DEEB0F /* StartView.m in Sources */,
 				A40131B018E245C700F535A3 /* ScreensViewController.m in Sources */,
+				A4BCF04618E308960049C5AF /* DraftsmanView.m in Sources */,
+				A4BCF04318E308130049C5AF /* ArchaeologistView.m in Sources */,
 				A45215FB18E2E5EA00FB7144 /* LeftBarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
