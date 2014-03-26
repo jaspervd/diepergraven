@@ -20,7 +20,7 @@
         
         self.btnArchaeologist = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.btnArchaeologist setTitle:@"Archeoloog" forState:UIControlStateNormal];
-        self.btnArchaeologist.frame = CGRectMake(0, 0, self.frame.size.width, btnSize);
+        self.btnArchaeologist.frame = CGRectMake(0, 208, self.frame.size.width, btnSize);
         [self addSubview:self.btnArchaeologist];
         
         self.btnHistorian = [UIButton buttonWithType:UIButtonTypeCustom];

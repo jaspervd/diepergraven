@@ -12,6 +12,7 @@
 
 @interface ScreensViewController : UIViewController
 
+@property (strong, nonatomic) ScreensView *view;
 @property (nonatomic, strong) Team *team;
 - (id)initWithTeam:(Team *)team;
 

@@ -18,10 +18,33 @@
         [self addSubview:self.leftBarV];
         
         CGRect screenFrame = CGRectMake(155, 0, (self.frame.size.height - 310), self.frame.size.width);
+        self.archaeologistV = [[ArchaeologistView alloc] initWithFrame:screenFrame];
+        self.historianV = [[HistorianView alloc] initWithFrame:screenFrame];
         self.geologistV = [[GeologistView alloc] initWithFrame:screenFrame];
+        self.draftsmanV = [[DraftsmanView alloc] initWithFrame:screenFrame];
         [self addSubview:self.geologistV];
     }
     return self;
+}
+
+- (void)archaeologistTapped:(id)sender {
+    NSLog(@"Arch tapped");
+    [self addSubview:self.archaeologistV];
+}
+
+- (void)historianTapped:(id)sender {
+    NSLog(@"Hist tapped");
+    [self addSubview:self.historianV];
+}
+
+- (void)geologistTapped:(id)sender {
+    NSLog(@"Geo tapped");
+    [self addSubview:self.geologistV];
+}
+
+- (void)draftsmanTapped:(id)sender {
+    NSLog(@"Draft tapped");
+    [self addSubview:self.draftsmanV];
 }
 
 /*
