@@ -14,18 +14,21 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.leftBarV = [[LeftBarView alloc] initWithFrame:CGRectMake(0, 0, 310, self.frame.size.width)];
-        [self addSubview:self.leftBarV];
+        self.backgroundColor = [UIColor redColor];
         
-        CGRect screenFrame = CGRectMake(310, 0, (self.frame.size.height - 310), self.frame.size.width);
+        self.leftBarV = [[LeftBarView alloc] initWithFrame:CGRectMake(0, 0, 158, self.frame.size.width)];
+ 
+        CGRect screenFrame = CGRectMake(158, 0, (self.frame.size.height - 158), self.frame.size.width);
         self.archaeologistV = [[ArchaeologistView alloc] initWithFrame:screenFrame];
         self.historianV = [[HistorianView alloc] initWithFrame:screenFrame];
-        self.geologistV = [[GeologistView alloc] initWithFrame:CGRectMake(155, 0, (self.frame.size.height - 310), self.frame.size.width)];
+        self.geologistV = [[GeologistView alloc] initWithFrame:CGRectMake(79, 0, (self.frame.size.height - 158), self.frame.size.width)];
         self.draftsmanV = [[DraftsmanView alloc] initWithFrame:screenFrame];
         [self addSubview:self.archaeologistV];
         [self addSubview:self.historianV];
         [self addSubview:self.draftsmanV];
         [self addSubview:self.geologistV];
+        
+        [self addSubview:self.leftBarV];
     }
     return self;
 }

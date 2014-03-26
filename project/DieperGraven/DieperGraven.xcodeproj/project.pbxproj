@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012F1AF018E365E400A7DB57 /* EndView.m in Sources */ = {isa = PBXBuildFile; fileRef = 012F1AED18E365E400A7DB57 /* EndView.m */; };
+		012F1AF118E365E400A7DB57 /* EndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012F1AEF18E365E400A7DB57 /* EndViewController.m */; };
 		0454EC64D638472E9B81B841 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E187693A8C4CB9A5B1A7CC /* libPods.a */; };
 		A40131AC18E21BD500F535A3 /* GeologistView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AB18E21BD500F535A3 /* GeologistView.m */; };
 		A40131B018E245C700F535A3 /* ScreensViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AF18E245C700F535A3 /* ScreensViewController.m */; };
@@ -44,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		012F1AEC18E365E400A7DB57 /* EndView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndView.h; sourceTree = "<group>"; };
+		012F1AED18E365E400A7DB57 /* EndView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndView.m; sourceTree = "<group>"; };
+		012F1AEE18E365E400A7DB57 /* EndViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndViewController.h; sourceTree = "<group>"; };
+		012F1AEF18E365E400A7DB57 /* EndViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndViewController.m; sourceTree = "<group>"; };
 		A3E187693A8C4CB9A5B1A7CC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40131AA18E21BD500F535A3 /* GeologistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeologistView.h; sourceTree = "<group>"; };
 		A40131AB18E21BD500F535A3 /* GeologistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeologistView.m; sourceTree = "<group>"; };
@@ -112,6 +118,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012F1AE818E3658E00A7DB57 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				A40131AD18E2236400F535A3 /* StartViewDelegate.h */,
+				A41FE85A18E1EAB700DEEB0F /* StartViewController.h */,
+				A41FE85B18E1EAB700DEEB0F /* StartViewController.m */,
+				A41FE85D18E1EB2E00DEEB0F /* StartView.h */,
+				A41FE85E18E1EB2E00DEEB0F /* StartView.m */,
+			);
+			name = Start;
+			sourceTree = "<group>";
+		};
+		012F1AE918E365A600A7DB57 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				A41FE86018E20DAD00DEEB0F /* Team.h */,
+				A41FE86118E20DAD00DEEB0F /* Team.m */,
+				A41FE86318E20E6100DEEB0F /* TeamFactory.h */,
+				A41FE86418E20E6100DEEB0F /* TeamFactory.m */,
+				A40131AA18E21BD500F535A3 /* GeologistView.h */,
+				A40131AB18E21BD500F535A3 /* GeologistView.m */,
+				A4BCF04118E308130049C5AF /* ArchaeologistView.h */,
+				A4BCF04218E308130049C5AF /* ArchaeologistView.m */,
+				A4BCF04418E308960049C5AF /* DraftsmanView.h */,
+				A4BCF04518E308960049C5AF /* DraftsmanView.m */,
+				A4BCF04718E308A70049C5AF /* HistorianView.h */,
+				A4BCF04818E308A70049C5AF /* HistorianView.m */,
+			);
+			name = Team;
+			sourceTree = "<group>";
+		};
+		012F1AEA18E365C100A7DB57 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A40131AE18E245C700F535A3 /* ScreensViewController.h */,
+				A40131AF18E245C700F535A3 /* ScreensViewController.m */,
+				A40131B118E245D800F535A3 /* ScreensView.h */,
+				A40131B218E245D800F535A3 /* ScreensView.m */,
+				A45215F918E2E5EA00FB7144 /* LeftBarView.h */,
+				A45215FA18E2E5EA00FB7144 /* LeftBarView.m */,
+			);
+			name = Screen;
+			sourceTree = "<group>";
+		};
+		012F1AEB18E365CB00A7DB57 /* End */ = {
+			isa = PBXGroup;
+			children = (
+				012F1AEC18E365E400A7DB57 /* EndView.h */,
+				012F1AED18E365E400A7DB57 /* EndView.m */,
+				012F1AEE18E365E400A7DB57 /* EndViewController.h */,
+				012F1AEF18E365E400A7DB57 /* EndViewController.m */,
+			);
+			name = End;
+			sourceTree = "<group>";
+		};
 		A4DB897B18E198EC0096B7E3 = {
 			isa = PBXGroup;
 			children = (
@@ -149,31 +210,12 @@
 			children = (
 				A4DB899618E198EC0096B7E3 /* AppDelegate.h */,
 				A4DB899718E198EC0096B7E3 /* AppDelegate.m */,
+				012F1AE818E3658E00A7DB57 /* Start */,
+				012F1AE918E365A600A7DB57 /* Team */,
+				012F1AEA18E365C100A7DB57 /* Screen */,
+				012F1AEB18E365CB00A7DB57 /* End */,
 				A4DB899918E198EC0096B7E3 /* Images.xcassets */,
 				A4DB898E18E198EC0096B7E3 /* Supporting Files */,
-				A41FE85A18E1EAB700DEEB0F /* StartViewController.h */,
-				A41FE85B18E1EAB700DEEB0F /* StartViewController.m */,
-				A41FE85D18E1EB2E00DEEB0F /* StartView.h */,
-				A41FE85E18E1EB2E00DEEB0F /* StartView.m */,
-				A41FE86018E20DAD00DEEB0F /* Team.h */,
-				A41FE86118E20DAD00DEEB0F /* Team.m */,
-				A41FE86318E20E6100DEEB0F /* TeamFactory.h */,
-				A41FE86418E20E6100DEEB0F /* TeamFactory.m */,
-				A40131AA18E21BD500F535A3 /* GeologistView.h */,
-				A40131AB18E21BD500F535A3 /* GeologistView.m */,
-				A40131AD18E2236400F535A3 /* StartViewDelegate.h */,
-				A40131AE18E245C700F535A3 /* ScreensViewController.h */,
-				A40131AF18E245C700F535A3 /* ScreensViewController.m */,
-				A40131B118E245D800F535A3 /* ScreensView.h */,
-				A40131B218E245D800F535A3 /* ScreensView.m */,
-				A45215F918E2E5EA00FB7144 /* LeftBarView.h */,
-				A45215FA18E2E5EA00FB7144 /* LeftBarView.m */,
-				A4BCF04118E308130049C5AF /* ArchaeologistView.h */,
-				A4BCF04218E308130049C5AF /* ArchaeologistView.m */,
-				A4BCF04418E308960049C5AF /* DraftsmanView.h */,
-				A4BCF04518E308960049C5AF /* DraftsmanView.m */,
-				A4BCF04718E308A70049C5AF /* HistorianView.h */,
-				A4BCF04818E308A70049C5AF /* HistorianView.m */,
 			);
 			path = DieperGraven;
 			sourceTree = "<group>";
@@ -344,7 +386,9 @@
 				A41FE86518E20E6100DEEB0F /* TeamFactory.m in Sources */,
 				A41FE85C18E1EAB700DEEB0F /* StartViewController.m in Sources */,
 				A4DB899818E198EC0096B7E3 /* AppDelegate.m in Sources */,
+				012F1AF118E365E400A7DB57 /* EndViewController.m in Sources */,
 				A4DB899418E198EC0096B7E3 /* main.m in Sources */,
+				012F1AF018E365E400A7DB57 /* EndView.m in Sources */,
 				A41FE85F18E1EB2E00DEEB0F /* StartView.m in Sources */,
 				A40131B018E245C700F535A3 /* ScreensViewController.m in Sources */,
 				A4BCF04618E308960049C5AF /* DraftsmanView.m in Sources */,

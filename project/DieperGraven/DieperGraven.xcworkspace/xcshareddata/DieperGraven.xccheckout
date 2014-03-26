@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B09CA1B7-F5B5-46B3-9F9A-BD70974DF165</string>
+	<string>AE784A73-7CFF-495C-9F69-9EB6ABF3B3CB</string>
 	<key>IDESourceControlProjectName</key>
 	<string>DieperGraven</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C7925486-1ADD-430E-8B05-18F8FE8AEB06</key>
-		<string>https://github.com/jaspervd/diepergraven.git</string>
+		<key>3F238A69-FFCB-4DF2-B195-846117E69163</key>
+		<string>https://github.com/jaspervd/diepergraven</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>project/DieperGraven/DieperGraven.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C7925486-1ADD-430E-8B05-18F8FE8AEB06</key>
+		<key>3F238A69-FFCB-4DF2-B195-846117E69163</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/jaspervd/diepergraven.git</string>
+	<string>https://github.com/jaspervd/diepergraven</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C7925486-1ADD-430E-8B05-18F8FE8AEB06</string>
+	<string>3F238A69-FFCB-4DF2-B195-846117E69163</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C7925486-1ADD-430E-8B05-18F8FE8AEB06</string>
+			<string>3F238A69-FFCB-4DF2-B195-846117E69163</string>
 			<key>IDESourceControlWCCName</key>
-			<string>IFF</string>
+			<string>diepergraven</string>
 		</dict>
 	</array>
 </dict>

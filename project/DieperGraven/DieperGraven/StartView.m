@@ -14,52 +14,95 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithRed:200/255.0f green: 200/255.0f blue:200/255.0f alpha:1];
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"home_bg"]];
         
-        UIColor *txtColor = [UIColor whiteColor];
+        UIColor *txtColor = [UIColor colorWithRed:255/255.0f green: 255/255.0f blue:255/255.0f alpha:.6];
+        
+        
+        UIImageView *title = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"titel"]];
+        title.frame = CGRectMake(0, 0, title.frame.size.width, title.frame.size.height);
+        title.center = CGPointMake(self.frame.size.height / 2, 104);
+        [self addSubview:title];
+        
+        
+        /* Teamname */
         
         self.txtTeamname = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 600, 44)];
-        self.txtTeamname.center = CGPointMake(self.frame.size.height / 2, 44);
+        self.txtTeamname.center = CGPointMake(self.frame.size.height / 2, title.frame.origin.y + title.frame.size.height + 70);
         self.txtTeamname.placeholder = @"Team naam";
         self.txtTeamname.backgroundColor = txtColor;
+        self.txtTeamname.font = [UIFont fontWithName:@"Avenir Next" size:16];
         [self addSubview:self.txtTeamname];
         
-        self.txtArchaeologist = [[UITextField alloc] initWithFrame:CGRectMake(212, self.txtTeamname.frame.origin.y + self.txtTeamname.frame.size.height + 20, 135, 44)];
+        
+        /* Archaeologist item + text */
+        
+        UIImageView *imgArchaeologist = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"archeoloog"]];
+        imgArchaeologist.frame = CGRectMake(175, 300, imgArchaeologist.frame.size.width, imgArchaeologist.frame.size.height);
+        [self addSubview:imgArchaeologist];
+        
+        self.txtArchaeologist = [[UITextField alloc] initWithFrame:CGRectMake(imgArchaeologist.frame.origin.x, imgArchaeologist.frame.origin.y + imgArchaeologist.frame.size.height + 20 , 135, 30)];
         self.txtArchaeologist.placeholder = @"Archeoloog";
         self.txtArchaeologist.backgroundColor = txtColor;
+        self.txtArchaeologist.font = [UIFont fontWithName:@"Avenir Next" size:16];
         [self addSubview:self.txtArchaeologist];
         
-        self.txtHistorian = [[UITextField alloc] initWithFrame:CGRectMake(self.txtArchaeologist.frame.origin.x + self.txtArchaeologist.frame.size.width + 20, self.txtArchaeologist.frame.origin.y, 135, 44)];
+        /* Historian item + text */
+        
+        UIImageView *imgHistorian = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"historicus"]];
+        imgHistorian.frame = CGRectMake(imgArchaeologist.frame.origin.x + (imgArchaeologist.frame.size.width) + 50, 306, imgHistorian.frame.size.width, imgHistorian.frame.size.height);
+        [self addSubview:imgHistorian];
+        
+        self.txtHistorian = [[UITextField alloc] initWithFrame:CGRectMake(imgHistorian.frame.origin.x, self.txtArchaeologist.frame.origin.y , 135, 30)];
         self.txtHistorian.placeholder = @"Historicus";
         self.txtHistorian.backgroundColor = txtColor;
+        self.txtHistorian.font = [UIFont fontWithName:@"Avenir Next" size:16];
         [self addSubview:self.txtHistorian];
         
-        self.txtGeologist = [[UITextField alloc] initWithFrame:CGRectMake(self.txtHistorian.frame.origin.x + self.txtHistorian.frame.size.width + 20, self.txtArchaeologist.frame.origin.y, 135, 44)];
+        /* Geologist item + text */
+        
+        UIImageView *imgGeologist = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"geoloog"]];
+        imgGeologist.frame = CGRectMake(imgHistorian.frame.origin.x + (imgHistorian.frame.size.width) + 50, 306, imgGeologist.frame.size.width, imgGeologist.frame.size.height);
+        [self addSubview:imgGeologist];
+        
+        self.txtGeologist = [[UITextField alloc] initWithFrame:CGRectMake(imgGeologist.frame.origin.x, self.txtArchaeologist.frame.origin.y , 135, 30)];
         self.txtGeologist.placeholder = @"Geoloog";
         self.txtGeologist.backgroundColor = txtColor;
+        self.txtGeologist.font = [UIFont fontWithName:@"Avenir Next" size:16];
         [self addSubview:self.txtGeologist];
         
-        self.txtDraftsman = [[UITextField alloc] initWithFrame:CGRectMake(self.txtGeologist.frame.origin.x + self.txtGeologist.frame.size.width + 20, self.txtArchaeologist.frame.origin.y, 135, 44)];
+        /* Draftsman item + text */
+        
+        UIImageView *imgDraftsman = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tekenaar"]];
+        imgDraftsman.frame = CGRectMake(imgGeologist.frame.origin.x + (imgGeologist.frame.size.width) + 50, 300, imgDraftsman.frame.size.width, imgDraftsman.frame.size.height);
+        [self addSubview:imgDraftsman];
+        
+        self.txtDraftsman = [[UITextField alloc] initWithFrame:CGRectMake(imgDraftsman.frame.origin.x, self.txtArchaeologist.frame.origin.y , 135, 30)];
         self.txtDraftsman.placeholder = @"Tekenaar";
         self.txtDraftsman.backgroundColor = txtColor;
+        self.txtDraftsman.font = [UIFont fontWithName:@"Avenir Next" size:16];
         [self addSubview:self.txtDraftsman];
         
-        self.btnContinue = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [self.btnContinue setTitle:@"Start wandeling" forState:UIControlStateNormal];
-        self.btnContinue.frame = CGRectMake(0, 0, self.frame.size.width - 30, 44);
-        self.btnContinue.center = CGPointMake(self.frame.size.height / 2, self.txtDraftsman.frame.origin.y + self.txtDraftsman.frame.size.height + 15);
+        
+        /* Continue button */
+        
+        self.btnContinue = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *btnContinueImage = [UIImage imageNamed:@"start_btn"];
+        [self.btnContinue setBackgroundImage:btnContinueImage forState:UIControlStateNormal];
+        self.btnContinue.frame = CGRectMake(0, 0, btnContinueImage.size.width, btnContinueImage.size.height);
+        self.btnContinue.center = CGPointMake(self.frame.size.height / 2, 650);
         [self addSubview:self.btnContinue];
     }
     return self;
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 @end

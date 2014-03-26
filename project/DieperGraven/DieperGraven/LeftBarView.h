@@ -15,4 +15,7 @@
 @property (strong, nonatomic) UIButton *btnGeologist;
 @property (strong, nonatomic) UIButton *btnDraftsman;
 
+@property (strong, nonatomic) UILabel *lblTime;
+@property (strong, nonatomic) UILabel *lblObjects;
+
 @end
