@@ -15,6 +15,28 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor brownColor];
+        
+        int btnSize = 140;
+        
+        self.btnArchaeologist = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.btnArchaeologist setTitle:@"Archeoloog" forState:UIControlStateNormal];
+        self.btnArchaeologist.frame = CGRectMake(0, 0, self.frame.size.width, btnSize);
+        [self addSubview:self.btnArchaeologist];
+        
+        self.btnHistorian = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.btnHistorian setTitle:@"Historicus" forState:UIControlStateNormal];
+        self.btnHistorian.frame = CGRectMake(0, self.btnArchaeologist.frame.origin.y + btnSize, self.frame.size.width, btnSize);
+        [self addSubview:self.btnHistorian];
+        
+        self.btnGeologist = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.btnGeologist setTitle:@"Geoloog" forState:UIControlStateNormal];
+        self.btnGeologist.frame = CGRectMake(0, self.btnHistorian.frame.origin.y + btnSize, self.frame.size.width, btnSize);
+        [self addSubview:self.btnGeologist];
+        
+        self.btnDraftsman = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.btnDraftsman setTitle:@"Tekenaar" forState:UIControlStateNormal];
+        self.btnDraftsman.frame = CGRectMake(0, self.btnGeologist.frame.origin.y + btnSize, self.frame.size.width, btnSize);
+        [self addSubview:self.btnDraftsman];
     }
     return self;
 }

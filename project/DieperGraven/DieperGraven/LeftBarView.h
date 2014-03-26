@@ -10,4 +10,9 @@
 
 @interface LeftBarView : UIView
 
+@property (strong, nonatomic) UIButton *btnArchaeologist;
+@property (strong, nonatomic) UIButton *btnHistorian;
+@property (strong, nonatomic) UIButton *btnGeologist;
+@property (strong, nonatomic) UIButton *btnDraftsman;
+
 @end
