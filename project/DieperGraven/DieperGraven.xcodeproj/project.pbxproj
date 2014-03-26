@@ -15,6 +15,7 @@
 		A41FE85F18E1EB2E00DEEB0F /* StartView.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE85E18E1EB2E00DEEB0F /* StartView.m */; };
 		A41FE86218E20DAD00DEEB0F /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE86118E20DAD00DEEB0F /* Team.m */; };
 		A41FE86518E20E6100DEEB0F /* TeamFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE86418E20E6100DEEB0F /* TeamFactory.m */; };
+		A45215FB18E2E5EA00FB7144 /* LeftBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A45215FA18E2E5EA00FB7144 /* LeftBarView.m */; };
 		A4DB898818E198EC0096B7E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB898718E198EC0096B7E3 /* Foundation.framework */; };
 		A4DB898A18E198EC0096B7E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB898918E198EC0096B7E3 /* CoreGraphics.framework */; };
 		A4DB898C18E198EC0096B7E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB898B18E198EC0096B7E3 /* UIKit.framework */; };
@@ -56,6 +57,8 @@
 		A41FE86118E20DAD00DEEB0F /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
 		A41FE86318E20E6100DEEB0F /* TeamFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamFactory.h; sourceTree = "<group>"; };
 		A41FE86418E20E6100DEEB0F /* TeamFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamFactory.m; sourceTree = "<group>"; };
+		A45215F918E2E5EA00FB7144 /* LeftBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftBarView.h; sourceTree = "<group>"; };
+		A45215FA18E2E5EA00FB7144 /* LeftBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftBarView.m; sourceTree = "<group>"; };
 		A4DB898418E198EC0096B7E3 /* DieperGraven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DieperGraven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DB898718E198EC0096B7E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4DB898918E198EC0096B7E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -154,6 +157,8 @@
 				A40131AF18E245C700F535A3 /* ScreensViewController.m */,
 				A40131B118E245D800F535A3 /* ScreensView.h */,
 				A40131B218E245D800F535A3 /* ScreensView.m */,
+				A45215F918E2E5EA00FB7144 /* LeftBarView.h */,
+				A45215FA18E2E5EA00FB7144 /* LeftBarView.m */,
 			);
 			path = DieperGraven;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				A4DB899418E198EC0096B7E3 /* main.m in Sources */,
 				A41FE85F18E1EB2E00DEEB0F /* StartView.m in Sources */,
 				A40131B018E245C700F535A3 /* ScreensViewController.m in Sources */,
+				A45215FB18E2E5EA00FB7144 /* LeftBarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

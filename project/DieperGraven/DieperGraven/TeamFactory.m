@@ -22,4 +22,12 @@
     return team;
 }
 
++ (Team *)createTeamFromDictionary:(NSDictionary *)dict {
+    Team *team = [[Team alloc] init];
+    team.name = [dict objectForKey:@"team_name"];
+    team.objects = [[dict objectForKey:@"objects"] floatValue];
+    team.time = [dict objectForKey:@"time"];
+    return team;
+}
+
 @end

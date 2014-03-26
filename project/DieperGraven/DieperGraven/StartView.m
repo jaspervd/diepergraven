@@ -18,27 +18,28 @@
         
         UIColor *txtColor = [UIColor whiteColor];
         
-        self.txtTeamname = [[UITextField alloc] initWithFrame:CGRectMake(350, 15, 600, 44)];
+        self.txtTeamname = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 600, 44)];
+        self.txtTeamname.center = CGPointMake(self.frame.size.height / 2, 44);
         self.txtTeamname.placeholder = @"Team naam";
         self.txtTeamname.backgroundColor = txtColor;
         [self addSubview:self.txtTeamname];
         
-        self.txtArchaeologist = [[UITextField alloc] initWithFrame:CGRectMake(245, 50, 100, 44)];
+        self.txtArchaeologist = [[UITextField alloc] initWithFrame:CGRectMake(212, self.txtTeamname.frame.origin.y + self.txtTeamname.frame.size.height + 20, 135, 44)];
         self.txtArchaeologist.placeholder = @"Archeoloog";
         self.txtArchaeologist.backgroundColor = txtColor;
         [self addSubview:self.txtArchaeologist];
         
-        self.txtHistorian = [[UITextField alloc] initWithFrame:CGRectMake(self.txtArchaeologist.frame.origin.x + self.txtArchaeologist.frame.size.width + 15, self.txtArchaeologist.frame.origin.y, 100, 44)];
+        self.txtHistorian = [[UITextField alloc] initWithFrame:CGRectMake(self.txtArchaeologist.frame.origin.x + self.txtArchaeologist.frame.size.width + 20, self.txtArchaeologist.frame.origin.y, 135, 44)];
         self.txtHistorian.placeholder = @"Historicus";
         self.txtHistorian.backgroundColor = txtColor;
         [self addSubview:self.txtHistorian];
         
-        self.txtGeologist = [[UITextField alloc] initWithFrame:CGRectMake(self.txtHistorian.frame.origin.x + self.txtHistorian.frame.size.width + 15, self.txtArchaeologist.frame.origin.y, 100, 44)];
+        self.txtGeologist = [[UITextField alloc] initWithFrame:CGRectMake(self.txtHistorian.frame.origin.x + self.txtHistorian.frame.size.width + 20, self.txtArchaeologist.frame.origin.y, 135, 44)];
         self.txtGeologist.placeholder = @"Geoloog";
         self.txtGeologist.backgroundColor = txtColor;
         [self addSubview:self.txtGeologist];
         
-        self.txtDraftsman = [[UITextField alloc] initWithFrame:CGRectMake(self.txtGeologist.frame.origin.x + self.txtGeologist.frame.size.width + 15, self.txtArchaeologist.frame.origin.y, 100, 44)];
+        self.txtDraftsman = [[UITextField alloc] initWithFrame:CGRectMake(self.txtGeologist.frame.origin.x + self.txtGeologist.frame.size.width + 20, self.txtArchaeologist.frame.origin.y, 135, 44)];
         self.txtDraftsman.placeholder = @"Tekenaar";
         self.txtDraftsman.backgroundColor = txtColor;
         [self addSubview:self.txtDraftsman];
@@ -46,7 +47,7 @@
         self.btnContinue = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [self.btnContinue setTitle:@"Start wandeling" forState:UIControlStateNormal];
         self.btnContinue.frame = CGRectMake(0, 0, self.frame.size.width - 30, 44);
-        self.btnContinue.center = CGPointMake(self.frame.size.width / 2, self.txtDraftsman.center.y + self.txtDraftsman.frame.size.height + 15);
+        self.btnContinue.center = CGPointMake(self.frame.size.height / 2, self.txtDraftsman.frame.origin.y + self.txtDraftsman.frame.size.height + 15);
         [self addSubview:self.btnContinue];
     }
     return self;

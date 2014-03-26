@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AFNetworking.h>
 #import "StartView.h"
 #import "TeamFactory.h"
 #import "ScreensViewController.h"
 
 @interface StartViewController : UIViewController
 @property (strong, nonatomic) StartView *view;
+
+@property (strong, nonatomic) NSMutableArray *scores;
 
 @end

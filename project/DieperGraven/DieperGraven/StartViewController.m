@@ -31,6 +31,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSString *path = @"http://localhost/MAIV/api/scores";
+    NSURL *url = [NSURL URLWithString:path];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *loadedData = (NSArray *)responseObject; NSLog(@"[ParkItGoodVC] %@", loadedData);
+        self.scores = [NSMutableArray array];
+        for (NSDictionary *dict in loadedData) {
+            Team *team = [TeamFactory createTeamFromDictionary:dict];
+            [self.scores addObject:team];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Probleem met DieperGraven API" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Oké" otherButtonTitles:nil];
+        [alertView show];
+    }];
+    [operation start];
+    
     [self.view.btnContinue addTarget:self action:@selector(continueTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
