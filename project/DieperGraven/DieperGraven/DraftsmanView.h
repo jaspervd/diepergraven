@@ -13,5 +13,10 @@
 @property (strong, nonatomic) UILabel *lblInfo;
 @property (strong, nonatomic) UIBezierPath *path;
 @property (strong, nonatomic) UIColor *brush;
+@property (strong, nonatomic) UISlider *sliderStroke;
+@property (strong, nonatomic) UISlider *sliderColor;
+@property (strong, nonatomic) UIView *colorPreview;
+@property (strong, nonatomic) NSMutableArray *arrPaths;
+@property (strong, nonatomic) NSMutableArray *arrBuffer;
 
 @end
