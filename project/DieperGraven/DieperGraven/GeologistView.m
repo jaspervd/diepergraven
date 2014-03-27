@@ -23,11 +23,45 @@
         
         [self addSubview:self.mapView];
         
+        NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"geojson"];
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[[NSData alloc] initWithContentsOfFile:jsonPath] options:0 error:nil];
+        
+        self.points = [[[[json objectForKey:@"features"] objectAtIndex:0] valueForKeyPath:@"geometry.coordinates"] mutableCopy];
+        
+        for (NSUInteger i = 0; i < [self.points count]; i++)
+            [self.points replaceObjectAtIndex:i
+                                   withObject:[[CLLocation alloc] initWithLatitude:[[[self.points objectAtIndex:i] objectAtIndex:1] doubleValue]
+                                                                         longitude:[[[self.points objectAtIndex:i] objectAtIndex:0] doubleValue]]];
+        
+        RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:self.mapView
+                                                              coordinate:self.mapView.centerCoordinate
+                                                                andTitle:@"My Path"];
+        
+        [self.mapView addAnnotation:annotation];
+        [annotation setBoundingBoxFromLocations:self.points];
+        self.mapView.centerCoordinate = CLLocationCoordinate2DMake(45.526795, -122.682953);
+        self.mapView.zoom = 12;
         
         [self staticAnnotations];
         
     }
     return self;
+}
+
+- (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
+{
+    if (annotation.isUserLocationAnnotation)
+        return nil;
+    
+    RMShape *shape = [[RMShape alloc] initWithView:mapView];
+    
+    shape.lineColor = [UIColor purpleColor];
+    shape.lineWidth = 5.0;
+    
+    for (CLLocation *point in self.points)
+        [shape addLineToCoordinate:point.coordinate];
+    
+    return shape;
 }
 
 - (void)staticAnnotations {
