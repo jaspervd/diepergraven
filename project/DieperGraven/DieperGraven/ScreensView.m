@@ -36,6 +36,7 @@
 
 - (void)archaeologistTapped:(id)sender {
     NSLog(@"Arch tapped");
+    
     [self bringSubviewToFront:self.archaeologistV];
 }
 

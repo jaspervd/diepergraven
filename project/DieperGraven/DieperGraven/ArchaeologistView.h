@@ -11,5 +11,8 @@
 @interface ArchaeologistView : UIView
 
 @property (strong, nonatomic) UILabel *lblInfo;
+@property (nonatomic,strong) UIButton *btnObject;
+@property (nonatomic,strong) UIImageView *digField;
+@property CGPoint userPoint;
 
 @end

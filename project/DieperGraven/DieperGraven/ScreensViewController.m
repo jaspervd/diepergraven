@@ -45,6 +45,16 @@
     [self.view.leftBarV.btnHistorian addTarget:self.view action:@selector(historianTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.leftBarV.btnGeologist addTarget:self.view action:@selector(geologistTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.leftBarV.btnDraftsman addTarget:self.view action:@selector(draftsmanTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view.archaeologistV.btnObject addTarget:self action:@selector(objectTapped:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)objectTapped:(id)sender {
+    
+    NSLog(@"OBJECT TAPPED");
+    // send object to historianV
+   // [self.view.archaeologistV.digField removeFromSuperview];
+    [self.view.archaeologistV.btnObject removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning

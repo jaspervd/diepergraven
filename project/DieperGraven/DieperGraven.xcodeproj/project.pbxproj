@@ -139,10 +139,8 @@
 				A41FE86118E20DAD00DEEB0F /* Team.m */,
 				A41FE86318E20E6100DEEB0F /* TeamFactory.h */,
 				A41FE86418E20E6100DEEB0F /* TeamFactory.m */,
-				A40131AA18E21BD500F535A3 /* GeologistView.h */,
-				A40131AB18E21BD500F535A3 /* GeologistView.m */,
-				A4BCF04118E308130049C5AF /* ArchaeologistView.h */,
-				A4BCF04218E308130049C5AF /* ArchaeologistView.m */,
+				01D0E27C18E44F2000C1FC50 /* Geologist */,
+				01D0E28018E44FA600C1FC50 /* Archaeologist */,
 				A4BCF04418E308960049C5AF /* DraftsmanView.h */,
 				A4BCF04518E308960049C5AF /* DraftsmanView.m */,
 				A4BCF04718E308A70049C5AF /* HistorianView.h */,
@@ -173,6 +171,24 @@
 				012F1AEF18E365E400A7DB57 /* EndViewController.m */,
 			);
 			name = End;
+			sourceTree = "<group>";
+		};
+		01D0E27C18E44F2000C1FC50 /* Geologist */ = {
+			isa = PBXGroup;
+			children = (
+				A40131AA18E21BD500F535A3 /* GeologistView.h */,
+				A40131AB18E21BD500F535A3 /* GeologistView.m */,
+			);
+			name = Geologist;
+			sourceTree = "<group>";
+		};
+		01D0E28018E44FA600C1FC50 /* Archaeologist */ = {
+			isa = PBXGroup;
+			children = (
+				A4BCF04118E308130049C5AF /* ArchaeologistView.h */,
+				A4BCF04218E308130049C5AF /* ArchaeologistView.m */,
+			);
+			name = Archaeologist;
 			sourceTree = "<group>";
 		};
 		A4DB897B18E198EC0096B7E3 = {
