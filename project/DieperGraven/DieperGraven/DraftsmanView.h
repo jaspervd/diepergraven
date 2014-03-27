@@ -14,4 +14,6 @@
 @property (strong, nonatomic) UIBezierPath *path;
 @property (strong, nonatomic) UIColor *brush;
 
+@property (strong, nonatomic) UIButton *saveBtn;
+
 @end

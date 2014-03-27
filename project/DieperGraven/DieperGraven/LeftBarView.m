@@ -32,11 +32,12 @@
         self.lblTime.center = CGPointMake(self.frame.size.width / 2, 80);
         [self addSubview:self.lblTime];
         
+        NSString *objectsTxt = [NSString stringWithFormat:@"%d objecten", self.objects];
         self.lblObjects = [[UILabel alloc] initWithFrame:infoRect];
         self.lblObjects.textAlignment = NSTextAlignmentCenter;
         self.lblObjects.textColor = lblColor;
         self.lblObjects.font = [UIFont fontWithName:@"DINCondensed-Bold" size:30];
-        self.lblObjects.text = [NSString stringWithFormat:@"0 objecten"];
+        self.lblObjects.text = objectsTxt;
         self.lblObjects.center = CGPointMake(self.frame.size.width / 2, 120);
         [self addSubview:self.lblObjects];
         

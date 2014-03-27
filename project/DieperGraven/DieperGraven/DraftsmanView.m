@@ -30,7 +30,15 @@
         self.path.lineCapStyle = kCGLineCapRound;
         self.path.miterLimit = 0;
         self.path.lineWidth = 10;
-        self.brush = [UIColor redColor];
+        self.brush = [UIColor colorWithRed:0.89 green:0.42 blue:0.16 alpha:1];
+        
+        
+        self.saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *saveBtnImage = [UIImage imageNamed:@"save_btn"];
+        [self.saveBtn setBackgroundImage:saveBtnImage forState:UIControlStateNormal];
+        self.saveBtn.frame = CGRectMake(0, 0, saveBtnImage.size.width, saveBtnImage.size.height);
+        self.saveBtn.center = CGPointMake( self.frame.size.width - 50, self.frame.size.height - 50);
+        [self addSubview:self.saveBtn];
         
         
         
@@ -46,7 +54,8 @@
     [self.brush setStroke];
     [self.path strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
     // Drawing code
-    //[myPath stroke];
+    //[myPath stroke];    
+
 }
 
 #pragma mark - Touch Methods
