@@ -31,6 +31,13 @@
         self.sliderStroke.maximumValue = 50;
         [self addSubview:self.sliderStroke];
         
+        self.saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *saveBtnImage = [UIImage imageNamed:@"save_btn"];
+        [self.saveBtn setBackgroundImage:saveBtnImage forState:UIControlStateNormal];
+        self.saveBtn.frame = CGRectMake(0, 0, saveBtnImage.size.width, saveBtnImage.size.height);
+        self.saveBtn.center = CGPointMake( self.frame.size.width - 50, self.frame.size.height - 50);
+        [self addSubview:self.saveBtn];
+        
         self.sliderColor = [[UISlider alloc] initWithFrame:CGRectMake(self.frame.size.width - 300, self.frame.size.height - 50, 250, 30)];
         self.sliderColor.minimumValue = 0;
         self.sliderColor.maximumValue = 255;
@@ -40,7 +47,6 @@
         self.colorPreview = [[UIView alloc] initWithFrame:CGRectMake(self.sliderColor.frame.origin.x + self.sliderColor.frame.size.width + 10, self.sliderColor.frame.origin.y + 7, 16, 16)];
         self.colorPreview.backgroundColor = [UIColor colorWithHue:self.sliderColor.value/255 saturation:.7 brightness:1 alpha:.7];
         [self addSubview:self.colorPreview];
-        
 
         self.arrPaths = [[NSMutableArray alloc] init];
         self.arrBuffer = [[NSMutableArray alloc] init];
@@ -86,7 +92,8 @@
         [path strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
     }
     // Drawing code
-    //[myPath stroke];
+    //[myPath stroke];    
+
 }
 
 #pragma mark - Touch Methods

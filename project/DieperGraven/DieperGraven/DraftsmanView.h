@@ -19,4 +19,6 @@
 @property (strong, nonatomic) NSMutableArray *arrPaths;
 @property (strong, nonatomic) NSMutableArray *arrBuffer;
 
+@property (strong, nonatomic) UIButton *saveBtn;
+
 @end

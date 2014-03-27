@@ -18,4 +18,6 @@
 @property (strong, nonatomic) UILabel *lblTime;
 @property (strong, nonatomic) UILabel *lblObjects;
 
+@property int objects;
+
 @end

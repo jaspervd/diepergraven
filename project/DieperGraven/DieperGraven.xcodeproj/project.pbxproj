@@ -143,8 +143,7 @@
 				A41FE86418E20E6100DEEB0F /* TeamFactory.m */,
 				01D0E27C18E44F2000C1FC50 /* Geologist */,
 				01D0E28018E44FA600C1FC50 /* Archaeologist */,
-				A4BCF04418E308960049C5AF /* DraftsmanView.h */,
-				A4BCF04518E308960049C5AF /* DraftsmanView.m */,
+				0150EF0218E47F170003FEAF /* Draftsman */,
 				A4BCF04718E308A70049C5AF /* HistorianView.h */,
 				A4BCF04818E308A70049C5AF /* HistorianView.m */,
 			);
@@ -173,6 +172,15 @@
 				012F1AEF18E365E400A7DB57 /* EndViewController.m */,
 			);
 			name = End;
+			sourceTree = "<group>";
+		};
+		0150EF0218E47F170003FEAF /* Draftsman */ = {
+			isa = PBXGroup;
+			children = (
+				A4BCF04418E308960049C5AF /* DraftsmanView.h */,
+				A4BCF04518E308960049C5AF /* DraftsmanView.m */,
+			);
+			name = Draftsman;
 			sourceTree = "<group>";
 		};
 		01D0E27C18E44F2000C1FC50 /* Geologist */ = {

@@ -47,6 +47,7 @@
     [self.view.leftBarV.btnDraftsman addTarget:self.view action:@selector(draftsmanTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view.archaeologistV.btnObject addTarget:self action:@selector(objectTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view.draftsmanV.saveBtn addTarget:self action:@selector(saveImage:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)objectTapped:(id)sender {
@@ -54,8 +55,45 @@
     NSLog(@"OBJECT TAPPED");
     // send object to historianV
    // [self.view.archaeologistV.digField removeFromSuperview];
-    [self.view.archaeologistV.btnObject removeFromSuperview];
+    self.view.leftBarV.objects ++;
+    
+    if( self.view.leftBarV.objects == 1){
+        NSString *objectsTxt = [NSString stringWithFormat:@"%d object", self.view.leftBarV.objects];
+        self.view.leftBarV.lblObjects.text = objectsTxt;
+    }else {
+        NSString *objectsTxt = [NSString stringWithFormat:@"%d objecten", self.view.leftBarV.objects];
+        self.view.leftBarV.lblObjects.text = objectsTxt;
+    }
+
+    
+    //[self.view.archaeologistV.btnObject removeFromSuperview];
 }
+
+- (void)saveImage:(id)sender {
+    
+    UIGraphicsBeginImageContext(self.view.draftsmanV.bounds.size);
+    [self.view.draftsmanV.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didExportWithError:contextInfo:), nil);
+}
+
+- (void)image:(UIImage *)image didExportWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    NSString *message = @"Je tekening werd opgeslaan in de Foto's app!";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+    
+    if (error) {
+        message = [NSString stringWithFormat:@"De tekening kon niet worden opgeslaan.\n%@", [error localizedDescription]];
+        [alert setMessage:message];
+        [alert setCancelButtonIndex:[alert addButtonWithTitle:@"Oké"]];
+    } else {
+        [alert setCancelButtonIndex:[alert addButtonWithTitle:@"Verder"]];
+    }
+    
+    [alert show];
+    alert = nil;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
