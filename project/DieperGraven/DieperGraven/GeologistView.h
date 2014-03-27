@@ -15,7 +15,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <RMShape.h>
 
-@interface GeologistView : UIView <CLLocationManagerDelegate>
+@interface GeologistView : UIView <CLLocationManagerDelegate, RMMapViewDelegate>
 
 @property (nonatomic, strong) RMMapView *mapView;
 @property (nonatomic,strong) CLLocationManager *locationManager;
