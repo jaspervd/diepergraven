@@ -11,6 +11,8 @@
 		012F1AF118E365E400A7DB57 /* EndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012F1AEF18E365E400A7DB57 /* EndViewController.m */; };
 		012F1AFD18E3A0EC00A7DB57 /* monuments.json in Resources */ = {isa = PBXBuildFile; fileRef = 012F1AFC18E3A0EC00A7DB57 /* monuments.json */; };
 		01E12E0718E4A218008BCB97 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E12E0618E4A218008BCB97 /* CanvasView.m */; };
+		01E12E0A18E4C3F1008BCB97 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E12E0818E4C3F1008BCB97 /* people.json */; };
+		01E12E0B18E4C3F1008BCB97 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E12E0918E4C3F1008BCB97 /* images.json */; };
 		0454EC64D638472E9B81B841 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E187693A8C4CB9A5B1A7CC /* libPods.a */; };
 		A40131AC18E21BD500F535A3 /* GeologistView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AB18E21BD500F535A3 /* GeologistView.m */; };
 		A40131B018E245C700F535A3 /* ScreensViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AF18E245C700F535A3 /* ScreensViewController.m */; };
@@ -56,6 +58,8 @@
 		012F1AFC18E3A0EC00A7DB57 /* monuments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = monuments.json; sourceTree = "<group>"; };
 		01E12E0518E4A218008BCB97 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
 		01E12E0618E4A218008BCB97 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
+		01E12E0818E4C3F1008BCB97 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
+		01E12E0918E4C3F1008BCB97 /* images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
 		A3E187693A8C4CB9A5B1A7CC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40131AA18E21BD500F535A3 /* GeologistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeologistView.h; sourceTree = "<group>"; };
 		A40131AB18E21BD500F535A3 /* GeologistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeologistView.m; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				012F1AFC18E3A0EC00A7DB57 /* monuments.json */,
+				01E12E0818E4C3F1008BCB97 /* people.json */,
+				01E12E0918E4C3F1008BCB97 /* images.json */,
 				A4DB898F18E198EC0096B7E3 /* DieperGraven-Info.plist */,
 				A4DB899018E198EC0096B7E3 /* InfoPlist.strings */,
 				A4DB899318E198EC0096B7E3 /* main.m */,
@@ -362,9 +368,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4DB899218E198EC0096B7E3 /* InfoPlist.strings in Resources */,
+				01E12E0A18E4C3F1008BCB97 /* people.json in Resources */,
 				A4DB899A18E198EC0096B7E3 /* Images.xcassets in Resources */,
 				012F1AFD18E3A0EC00A7DB57 /* monuments.json in Resources */,
 				A4B007A618E45478008CE99D /* route.geojson in Resources */,
+				01E12E0B18E4C3F1008BCB97 /* images.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
