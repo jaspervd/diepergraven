@@ -14,16 +14,15 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
-        
         RMMapboxSource *source = [[RMMapboxSource alloc] initWithMapID:@"jaspervd.hk9425ca"];
-        self.mapView = [[RMMapView alloc] initWithFrame:frame andTilesource:source centerCoordinate:CLLocationCoordinate2DMake(50.881, 2.885) zoomLevel:14 maxZoomLevel:20 minZoomLevel:14 backgroundImage:nil];
+        self.mapView = [[RMMapView alloc] initWithFrame:frame andTilesource:source centerCoordinate:CLLocationCoordinate2DMake(50.881, 2.885) zoomLevel:12 maxZoomLevel:17 minZoomLevel:10 backgroundImage:nil];
         self.mapView.showsUserLocation = YES;
         self.mapView.userTrackingMode = RMUserTrackingModeFollow;
         
+        //self.mapView.delegate = self;
         [self addSubview:self.mapView];
         
-        NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"geojson"];
+        /*NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"geojson"];
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[[NSData alloc] initWithContentsOfFile:jsonPath] options:0 error:nil];
         
         self.points = [[[[json objectForKey:@"features"] objectAtIndex:0] valueForKeyPath:@"geometry.coordinates"] mutableCopy];
@@ -32,10 +31,10 @@
             [self.points replaceObjectAtIndex:i withObject:[[CLLocation alloc] initWithLatitude:[[[self.points objectAtIndex:i] objectAtIndex:1] doubleValue] longitude:[[[self.points objectAtIndex:i] objectAtIndex:0] doubleValue]]];
         }
         
-        RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:self.mapView coordinate:self.mapView.centerCoordinate andTitle:@"Route"];
+        RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:self.mapView coordinate:self.mapView.centerCoordinate andTitle:@"Pad"];
         
         [self.mapView addAnnotation:annotation];
-        [annotation setBoundingBoxFromLocations:self.points];
+        [annotation setBoundingBoxFromLocations:self.points];*/
         
         [self staticAnnotations];
         

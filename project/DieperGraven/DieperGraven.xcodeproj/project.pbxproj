@@ -19,7 +19,7 @@
 		A41FE86218E20DAD00DEEB0F /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE86118E20DAD00DEEB0F /* Team.m */; };
 		A41FE86518E20E6100DEEB0F /* TeamFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A41FE86418E20E6100DEEB0F /* TeamFactory.m */; };
 		A45215FB18E2E5EA00FB7144 /* LeftBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A45215FA18E2E5EA00FB7144 /* LeftBarView.m */; };
-		A4B007A418E44DEA008CE99D /* route.geojson in Resources */ = {isa = PBXBuildFile; fileRef = A4B007A318E44DEA008CE99D /* route.geojson */; };
+		A4B007A618E45478008CE99D /* route.geojson in Resources */ = {isa = PBXBuildFile; fileRef = A4B007A518E45478008CE99D /* route.geojson */; };
 		A4BCF04318E308130049C5AF /* ArchaeologistView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BCF04218E308130049C5AF /* ArchaeologistView.m */; };
 		A4BCF04618E308960049C5AF /* DraftsmanView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BCF04518E308960049C5AF /* DraftsmanView.m */; };
 		A4BCF04918E308A70049C5AF /* HistorianView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BCF04818E308A70049C5AF /* HistorianView.m */; };
@@ -71,7 +71,7 @@
 		A41FE86418E20E6100DEEB0F /* TeamFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamFactory.m; sourceTree = "<group>"; };
 		A45215F918E2E5EA00FB7144 /* LeftBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftBarView.h; sourceTree = "<group>"; };
 		A45215FA18E2E5EA00FB7144 /* LeftBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftBarView.m; sourceTree = "<group>"; };
-		A4B007A318E44DEA008CE99D /* route.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = route.geojson; sourceTree = "<group>"; };
+		A4B007A518E45478008CE99D /* route.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = route.geojson; sourceTree = "<group>"; };
 		A4BCF04118E308130049C5AF /* ArchaeologistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchaeologistView.h; sourceTree = "<group>"; };
 		A4BCF04218E308130049C5AF /* ArchaeologistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchaeologistView.m; sourceTree = "<group>"; };
 		A4BCF04418E308960049C5AF /* DraftsmanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraftsmanView.h; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 		A4DB898D18E198EC0096B7E3 /* DieperGraven */ = {
 			isa = PBXGroup;
 			children = (
-				A4B007A318E44DEA008CE99D /* route.geojson */,
+				A4B007A518E45478008CE99D /* route.geojson */,
 				A4DB899618E198EC0096B7E3 /* AppDelegate.h */,
 				A4DB899718E198EC0096B7E3 /* AppDelegate.m */,
 				012F1AE818E3658E00A7DB57 /* Start */,
@@ -335,7 +335,7 @@
 				A4DB899218E198EC0096B7E3 /* InfoPlist.strings in Resources */,
 				A4DB899A18E198EC0096B7E3 /* Images.xcassets in Resources */,
 				012F1AFD18E3A0EC00A7DB57 /* monuments.json in Resources */,
-				A4B007A418E44DEA008CE99D /* route.geojson in Resources */,
+				A4B007A618E45478008CE99D /* route.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
