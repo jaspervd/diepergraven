@@ -25,17 +25,50 @@
         self.lblInfo.textAlignment = NSTextAlignmentCenter;
         self.lblInfo.font = [UIFont fontWithName:@"Avenir Next" size:18];
         [self addSubview:self.lblInfo];
+        
+        self.path = [[UIBezierPath alloc]init];
+        self.path.lineCapStyle = kCGLineCapRound;
+        self.path.miterLimit = 0;
+        self.path.lineWidth = 10;
+        self.brush = [UIColor redColor];
+        
+        
+        
     }
     return self;
 }
 
-/*
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
+    [self.brush setStroke];
+    [self.path strokeWithBlendMode:kCGBlendModeNormal alpha:1.0];
     // Drawing code
+    //[myPath stroke];
 }
-*/
+
+#pragma mark - Touch Methods
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *mytouch=[[touches allObjects] objectAtIndex:0];
+    [self.path moveToPoint:[mytouch locationInView:self]];
+    
+}
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+    UITouch *mytouch=[[touches allObjects] objectAtIndex:0];
+    [self.path addLineToPoint:[mytouch locationInView:self]];
+    [self setNeedsDisplay];
+    
+}
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+    
+    
+}
 
 @end

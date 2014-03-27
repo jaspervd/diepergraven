@@ -11,5 +11,7 @@
 @interface DraftsmanView : UIView
 
 @property (strong, nonatomic) UILabel *lblInfo;
+@property (strong, nonatomic) UIBezierPath *path;
+@property (strong, nonatomic) UIColor *brush;
 
 @end
