@@ -13,10 +13,12 @@
 #import <RMPointAnnotation.h>
 #import <RMUserLocation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <RMShape.h>
 
 @interface GeologistView : UIView <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) RMMapView *mapView;
 @property (nonatomic,strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) NSMutableArray *points;
 
 @end
