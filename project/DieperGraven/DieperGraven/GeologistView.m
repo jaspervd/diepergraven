@@ -28,19 +28,14 @@
         
         self.points = [[[[json objectForKey:@"features"] objectAtIndex:0] valueForKeyPath:@"geometry.coordinates"] mutableCopy];
         
-        for (NSUInteger i = 0; i < [self.points count]; i++)
-            [self.points replaceObjectAtIndex:i
-                                   withObject:[[CLLocation alloc] initWithLatitude:[[[self.points objectAtIndex:i] objectAtIndex:1] doubleValue]
-                                                                         longitude:[[[self.points objectAtIndex:i] objectAtIndex:0] doubleValue]]];
+        for (NSUInteger i = 0; i < [self.points count]; i++) {
+            [self.points replaceObjectAtIndex:i withObject:[[CLLocation alloc] initWithLatitude:[[[self.points objectAtIndex:i] objectAtIndex:1] doubleValue] longitude:[[[self.points objectAtIndex:i] objectAtIndex:0] doubleValue]]];
+        }
         
-        RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:self.mapView
-                                                              coordinate:self.mapView.centerCoordinate
-                                                                andTitle:@"My Path"];
+        RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:self.mapView coordinate:self.mapView.centerCoordinate andTitle:@"Route"];
         
         [self.mapView addAnnotation:annotation];
         [annotation setBoundingBoxFromLocations:self.points];
-        self.mapView.centerCoordinate = CLLocationCoordinate2DMake(45.526795, -122.682953);
-        self.mapView.zoom = 12;
         
         [self staticAnnotations];
         
