@@ -10,11 +10,16 @@
 
 @interface StartView : UIView
 
+@property (strong, nonatomic) UILabel *lblArchaeologist;
+@property (strong, nonatomic) UILabel *lblHistorian;
+@property (strong, nonatomic) UILabel *lblGeologist;
+@property (strong, nonatomic) UILabel *lblDraftsman;
+
 @property (strong, nonatomic) UITextField *txtTeamname;
-@property (strong, nonatomic) UITextField *txtArchaeologist;
+/*@property (strong, nonatomic) UITextField *txtArchaeologist;
 @property (strong, nonatomic) UITextField *txtHistorian;
 @property (strong, nonatomic) UITextField *txtGeologist;
-@property (strong, nonatomic) UITextField *txtDraftsman;
+@property (strong, nonatomic) UITextField *txtDraftsman;*/
 @property (strong, nonatomic) UIButton *btnContinue;
 
 @end

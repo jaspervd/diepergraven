@@ -54,13 +54,18 @@
 }
 
 - (void)continueTapped:(id)sender {
-    if(self.view.txtTeamname.text.length > 0 && self.view.txtArchaeologist.text.length > 0 && self.view.txtHistorian.text.length > 0 && self.view.txtGeologist.text.length > 0 && self.view.txtDraftsman.text.length > 0) {
-        Team *team = [TeamFactory createTeamWithName:self.view.txtTeamname.text Archaeologist:self.view.txtArchaeologist.text Historian:self.view.txtHistorian.text Geologist:self.view.txtGeologist.text Draftsman:self.view.txtDraftsman.text Objects:0 andTime:nil];
+   /* if(self.view.txtTeamname.text.length > 0 && self.view.txtArchaeologist.text.length > 0 && self.view.txtHistorian.text.length > 0 && self.view.txtGeologist.text.length > 0 && self.view.txtDraftsman.text.length > 0) {
+        Team *team = [TeamFactory createTeamWithName:self.view.txtTeamname.text Archaeologist:self.view.txtArchaeologist.text Historian:self.view.txtHistorian.text Geologist:self.view.txtGeologist.text Draftsman:self.view.txtDraftsman.text Objects:0 andTime:nil]; */
+        
+        
+    if(self.view.txtTeamname.text.length > 0) {
+        
+        Team *team = [TeamFactory createTeamName:self.view.txtTeamname.text Objects:0 andTime:nil];
         
         ScreensViewController *screensVC = [[ScreensViewController alloc] initWithTeam:team];
         [self presentViewController:screensVC animated:NO completion:^{}];
     } else {
-        UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:@"Fout" message:@"Gelieve alle velden in te vullen." delegate:self cancelButtonTitle:@"Oké" otherButtonTitles:nil];
+        UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:@"Fout" message:@"Gelieve je team naam in te vullen." delegate:self cancelButtonTitle:@"Oké" otherButtonTitles:nil];
         [alertV show];
     }
     //[self.delegate mapBoxVC:self didSaveTeam:team];

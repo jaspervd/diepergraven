@@ -10,4 +10,6 @@
 
 @interface HistorianView : UIView
 
+@property (strong, nonatomic) UILabel *lblInfo;
+
 @end

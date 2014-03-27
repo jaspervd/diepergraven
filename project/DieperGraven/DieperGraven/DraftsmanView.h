@@ -10,4 +10,6 @@
 
 @interface DraftsmanView : UIView
 
+@property (strong, nonatomic) UILabel *lblInfo;
+
 @end

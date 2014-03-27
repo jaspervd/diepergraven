@@ -10,4 +10,6 @@
 
 @interface ArchaeologistView : UIView
 
+@property (strong, nonatomic) UILabel *lblInfo;
+
 @end

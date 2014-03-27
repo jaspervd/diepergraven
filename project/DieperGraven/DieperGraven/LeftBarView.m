@@ -28,7 +28,7 @@
         self.lblTime.textAlignment = NSTextAlignmentCenter;
         self.lblTime.textColor = lblColor;
         self.lblTime.font = lblFont;
-        self.lblTime.text = [NSString stringWithFormat:@"00:00"];
+        self.lblTime.text = [NSString stringWithFormat:@"00:00:00"];
         self.lblTime.center = CGPointMake(self.frame.size.width / 2, 80);
         [self addSubview:self.lblTime];
         

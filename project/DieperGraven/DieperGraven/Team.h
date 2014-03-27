@@ -11,10 +11,10 @@
 @interface Team : NSObject
 
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *archaeologist;
+/*@property (strong, nonatomic) NSString *archaeologist;
 @property (strong, nonatomic) NSString *historian;
 @property (strong, nonatomic) NSString *geologist;
-@property (strong, nonatomic) NSString *draftsman;
+@property (strong, nonatomic) NSString *draftsman;*/
 @property (nonatomic) int objects;
 @property (strong, nonatomic) NSString *time;
 
