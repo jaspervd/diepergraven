@@ -22,18 +22,19 @@
         error = nil;
         NSDictionary *imagesJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
 
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        self.locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+        
         self.locationManager.delegate = self;
-        [self.locationManager startUpdatingLocation];
+        [self.locationManager startMonitoringSignificantLocationChanges];
         for(NSDictionary *dict in peopleJson) {
             CLCircularRegion *region = [self dictionaryToRegion:dict andType:@"person"];
-            NSLog(@"%@", region);
             [self.geofences addObject:region];
             [self.locationManager startMonitoringForRegion:region];
         }
         
         for(NSDictionary *dict in imagesJson) {
             CLCircularRegion *region = [self dictionaryToRegion:dict andType:@"image"];
-            NSLog(@"%@", region);
             [self.geofences addObject:region];
             [self.locationManager startMonitoringForRegion:region];
         }
@@ -90,6 +91,10 @@
         UIGraphicsEndImageContext();
     }
     return self;
+}
+
+- (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error {
+    NSLog(@"ERROR: %@ for region: %@", error, region);
 }
 
 - (CLCircularRegion*)dictionaryToRegion:(NSDictionary*)dictionary andType:(NSString *)type {
