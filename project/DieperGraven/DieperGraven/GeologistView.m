@@ -15,12 +15,15 @@
     self = [super initWithFrame:frame];
     if (self) {
         RMMapboxSource *source = [[RMMapboxSource alloc] initWithMapID:@"jaspervd.hk9425ca"];
-        self.mapView = [[RMMapView alloc] initWithFrame:frame andTilesource:source centerCoordinate:CLLocationCoordinate2DMake(50.881, 2.885) zoomLevel:12 maxZoomLevel:17 minZoomLevel:10 backgroundImage:nil];
+        self.mapView = [[RMMapView alloc] initWithFrame:frame andTilesource:source centerCoordinate:CLLocationCoordinate2DMake(50.881, 2.885) zoomLevel:10 maxZoomLevel:17 minZoomLevel:10 backgroundImage:nil];
         self.mapView.showsUserLocation = YES;
         self.mapView.userTrackingMode = RMUserTrackingModeFollow;
         
         //self.mapView.delegate = self;
         [self addSubview:self.mapView];
+        self.mapView.zoom = 15;
+        self.mapView.minZoom = 15;
+        self.mapView.maxZoom = 17;
         
         /*NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"geojson"];
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[[NSData alloc] initWithContentsOfFile:jsonPath] options:0 error:nil];
