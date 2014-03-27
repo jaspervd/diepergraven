@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <RMMapView.h>
 #import <RMMapboxSource.h>
+#import <RMMarker.h>
 #import <RMPointAnnotation.h>
 #import <RMUserLocation.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface GeologistView : UIView
+@interface GeologistView : UIView <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) RMMapView *mapView;
+@property (nonatomic,strong) CLLocationManager *locationManager;
 
 @end

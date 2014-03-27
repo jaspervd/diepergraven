@@ -17,6 +17,7 @@
         self.backgroundColor = [UIColor redColor];
         
         self.leftBarV = [[LeftBarView alloc] initWithFrame:CGRectMake(0, 0, 158, self.frame.size.width)];
+        [self addSubview:self.leftBarV];
  
         CGRect screenFrame = CGRectMake(158, 0, (self.frame.size.height - 158), self.frame.size.width);
         self.archaeologistV = [[ArchaeologistView alloc] initWithFrame:screenFrame];
@@ -28,7 +29,7 @@
         [self addSubview:self.draftsmanV];
         [self addSubview:self.geologistV];
         
-        [self addSubview:self.leftBarV];
+        
     }
     return self;
 }

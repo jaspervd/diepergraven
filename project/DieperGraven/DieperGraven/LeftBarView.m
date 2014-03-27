@@ -76,7 +76,7 @@
     static NSDateFormatter *dateFormatter;
     if (!dateFormatter) {
         dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.dateFormat = @"h:mm:ss";  // very simple format  "8:47:22 AM"
+        dateFormatter.dateFormat = @"HH:mm:ss";  // very simple format  "8:47:22 AM"
     }
     self.lblTime.text = [dateFormatter stringFromDate:now];
 }

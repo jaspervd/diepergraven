@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		012F1AF018E365E400A7DB57 /* EndView.m in Sources */ = {isa = PBXBuildFile; fileRef = 012F1AED18E365E400A7DB57 /* EndView.m */; };
 		012F1AF118E365E400A7DB57 /* EndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012F1AEF18E365E400A7DB57 /* EndViewController.m */; };
+		012F1AFD18E3A0EC00A7DB57 /* monuments.json in Resources */ = {isa = PBXBuildFile; fileRef = 012F1AFC18E3A0EC00A7DB57 /* monuments.json */; };
 		0454EC64D638472E9B81B841 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E187693A8C4CB9A5B1A7CC /* libPods.a */; };
 		A40131AC18E21BD500F535A3 /* GeologistView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AB18E21BD500F535A3 /* GeologistView.m */; };
 		A40131B018E245C700F535A3 /* ScreensViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AF18E245C700F535A3 /* ScreensViewController.m */; };
@@ -50,6 +51,7 @@
 		012F1AED18E365E400A7DB57 /* EndView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndView.m; sourceTree = "<group>"; };
 		012F1AEE18E365E400A7DB57 /* EndViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndViewController.h; sourceTree = "<group>"; };
 		012F1AEF18E365E400A7DB57 /* EndViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndViewController.m; sourceTree = "<group>"; };
+		012F1AFC18E3A0EC00A7DB57 /* monuments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = monuments.json; sourceTree = "<group>"; };
 		A3E187693A8C4CB9A5B1A7CC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40131AA18E21BD500F535A3 /* GeologistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeologistView.h; sourceTree = "<group>"; };
 		A40131AB18E21BD500F535A3 /* GeologistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeologistView.m; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		A4DB898E18E198EC0096B7E3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				012F1AFC18E3A0EC00A7DB57 /* monuments.json */,
 				A4DB898F18E198EC0096B7E3 /* DieperGraven-Info.plist */,
 				A4DB899018E198EC0096B7E3 /* InfoPlist.strings */,
 				A4DB899318E198EC0096B7E3 /* main.m */,
@@ -328,6 +331,7 @@
 			files = (
 				A4DB899218E198EC0096B7E3 /* InfoPlist.strings in Resources */,
 				A4DB899A18E198EC0096B7E3 /* Images.xcassets in Resources */,
+				012F1AFD18E3A0EC00A7DB57 /* monuments.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
