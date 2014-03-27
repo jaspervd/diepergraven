@@ -14,6 +14,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"monuments" ofType:@"json"];
+        NSError *error = nil;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[[NSData alloc] initWithContentsOfFile:path] options:0 error:&error];
         
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"archeoloog_bg"]];
         
@@ -60,10 +63,77 @@
         self.digField.image = UIGraphicsGetImageFromCurrentImageContext();
         
         UIGraphicsEndImageContext();
-
-        
     }
     return self;
+}
+
+- (void)addCurrentLocation:(id)sender {
+    // Update Helper
+    _didStartMonitoringRegion = NO;
+    
+    // Start Updating Location
+    [self.locationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    if (locations && [locations count] && !_didStartMonitoringRegion) {
+        // Update Helper
+        _didStartMonitoringRegion = YES;
+        
+        // Fetch Current Location
+        CLLocation *location = [locations objectAtIndex:0];
+        
+        // Initialize Region to Monitor
+        CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:[location coordinate] radius:250.0 identifier:[[NSUUID UUID] UUIDString]];
+        
+        // Start Monitoring Region
+        [self.locationManager startMonitoringForRegion:region];
+        [self.locationManager stopUpdatingLocation];
+        
+        [self.geofences addObject:region];
+    }
+}
+
+- (CLCircularRegion*)dictionaryToRegion:(NSDictionary*)dictionary {
+    NSString *title = [dictionary valueForKey:@"title"];
+    
+    CLLocationDegrees latitude = [[dictionary valueForKey:@"latitude"] doubleValue];
+    CLLocationDegrees longitude =[[dictionary valueForKey:@"longitude"] doubleValue];
+    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
+    
+    CLLocationDistance regionRadius = [[dictionary valueForKey:@"radius"] doubleValue];
+    
+    return [[CLCircularRegion alloc] initWithCenter:centerCoordinate radius:regionRadius identifier:title];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLCircularRegion *)region {
+    [self showRegionAlert:@"Entering Region" forRegion:region.identifier];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLCircularRegion *)region {
+    [self showRegionAlert:@"Exiting Region" forRegion:region.identifier];
+}
+
+-(void)showRegionAlert:(NSString *)message forRegion:(NSString *)region {
+    UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:region message:message delegate:self cancelButtonTitle:@"Oké" otherButtonTitles:nil];
+    [alertV show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLCircularRegion *)region {
+    NSLog(@"Started monitoring %@ region", region.identifier);
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    // Initialize Location Manager
+    self.locationManager = [[CLLocationManager alloc] init];
+    
+    // Configure Location Manager
+    [self.locationManager setDelegate:self];
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+    
+    self.geofences = [NSMutableArray arrayWithArray:[[self.locationManager monitoredRegions] allObjects]];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

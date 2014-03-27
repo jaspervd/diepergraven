@@ -14,15 +14,6 @@
 
 @implementation ScreensViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (id)initWithTeam:(Team *)team
 {
     self = [super initWithNibName:nil bundle:nil];
@@ -51,7 +42,6 @@
 }
 
 - (void)objectTapped:(id)sender {
-    
     NSLog(@"OBJECT TAPPED");
     // send object to historianV
    // [self.view.archaeologistV.digField removeFromSuperview];
