@@ -2,6 +2,7 @@
 .idea/
 project/DieperGraven/DieperGravenTests/
 project/DieperGraven/Pods/
+project/DieperGraven/DieperGraven.xcworkspace/xcshareddata/DieperGraven.xccheckout
 build/
 *.pbxuser
 !default.pbxuser
