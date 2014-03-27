@@ -14,9 +14,12 @@
 @property (strong, nonatomic) UIButton *btnHistorian;
 @property (strong, nonatomic) UIButton *btnGeologist;
 @property (strong, nonatomic) UIButton *btnDraftsman;
+@property (strong, nonatomic) UIButton *btnStop;
 
 @property (strong, nonatomic) UILabel *lblTime;
 @property (strong, nonatomic) UILabel *lblObjects;
+
+@property (strong, nonatomic) NSDate *startDate;
 
 @property int objects;
 
