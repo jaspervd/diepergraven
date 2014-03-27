@@ -10,10 +10,13 @@
 
 @implementation CanvasView
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame color:(float)color andSize:(float)size
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
+        self.brushColor = color;
+        self.brushSize = size;
         
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tekenaar_bg"]];
     
@@ -43,13 +46,12 @@
 {
     
     self.path = [[UIBezierPath alloc] init];
-   // self.path.lineWidth = self.draftsV.sliderStroke.value;
-    self.path.lineWidth = 10;
     self.path.lineCapStyle = kCGLineCapRound;
+    self.path.lineWidth = self.brushSize;
     self.path.miterLimit = 0;
     
-  //  self.brush = [UIColor colorWithHue:self.draftsV.sliderColor.value/255 saturation:.7 brightness:1 alpha:.7];
-    self.brush = [UIColor redColor];
+    self.brush = [UIColor colorWithHue:self.brushColor/255 saturation:.7 brightness:1 alpha:.7];
+ 
     
     UITouch *mytouch=[[touches allObjects] objectAtIndex:0];
     [self.path moveToPoint:[mytouch locationInView:self]];

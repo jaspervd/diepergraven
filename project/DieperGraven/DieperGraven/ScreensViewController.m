@@ -71,8 +71,8 @@
 
 - (void)saveImage:(id)sender {
     
-    UIGraphicsBeginImageContext(self.view.draftsmanV.bounds.size);
-    [self.view.draftsmanV.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIGraphicsBeginImageContext(self.view.draftsmanV.canvas.bounds.size);
+    [self.view.draftsmanV.canvas.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didExportWithError:contextInfo:), nil);

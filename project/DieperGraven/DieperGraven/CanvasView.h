@@ -13,7 +13,12 @@
 @property (strong, nonatomic) UIBezierPath *path;
 @property (strong, nonatomic) UIColor *brush;
 
+- (id)initWithFrame:(CGRect)frame color:(float)color andSize:(float)size;
+
 @property (strong, nonatomic) NSMutableArray *arrPaths;
 @property (strong, nonatomic) NSMutableArray *arrBuffer;
+
+@property float brushColor;
+@property float brushSize;
 
 @end
