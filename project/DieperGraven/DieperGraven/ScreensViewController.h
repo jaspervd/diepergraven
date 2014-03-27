@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Team.h"
 #import "ScreensView.h"
+#import "EndViewController.h"
 
 @interface ScreensViewController : UIViewController
 

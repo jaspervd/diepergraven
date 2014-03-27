@@ -18,6 +18,7 @@
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sidebar_bg"]];
         
         NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
+        self.startDate = [NSDate date];
         
         CGRect infoRect = CGRectMake(0, 0, self.frame.size.width, 40);
         
@@ -29,7 +30,7 @@
         self.lblTime.textColor = lblColor;
         self.lblTime.font = lblFont;
         self.lblTime.text = [NSString stringWithFormat:@"00:00:00"];
-        self.lblTime.center = CGPointMake(self.frame.size.width / 2, 80);
+        self.lblTime.center = CGPointMake(self.frame.size.width / 2, 60);
         [self addSubview:self.lblTime];
         
         NSString *objectsTxt = [NSString stringWithFormat:@"%d objecten", self.objects];
@@ -38,35 +39,43 @@
         self.lblObjects.textColor = lblColor;
         self.lblObjects.font = [UIFont fontWithName:@"DINCondensed-Bold" size:30];
         self.lblObjects.text = objectsTxt;
-        self.lblObjects.center = CGPointMake(self.frame.size.width / 2, 120);
+        self.lblObjects.center = CGPointMake(self.frame.size.width / 2, 100);
         [self addSubview:self.lblObjects];
         
         UIImage *btnArchaeologistImage = [UIImage imageNamed:@"archeoloog_btn"];
         self.btnArchaeologist = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.btnArchaeologist setBackgroundImage:btnArchaeologistImage forState:UIControlStateNormal];
-        self.btnArchaeologist.frame = CGRectMake(0, 178, btnArchaeologistImage.size.width, btnArchaeologistImage.size.height);
+        self.btnArchaeologist.frame = CGRectMake(0, 134, btnArchaeologistImage.size.width, btnArchaeologistImage.size.height);
         [self addSubview:self.btnArchaeologist];
         
         
         UIImage *btnHistorianImage = [UIImage imageNamed:@"historicus_btn"];
         self.btnHistorian = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.btnHistorian setBackgroundImage:btnHistorianImage forState:UIControlStateNormal];
-        self.btnHistorian.frame = CGRectMake(0, 323, btnHistorianImage.size.width, btnHistorianImage.size.height);
+        self.btnHistorian.frame = CGRectMake(0, 279, btnHistorianImage.size.width, btnHistorianImage.size.height);
         [self addSubview:self.btnHistorian];
         
         
         UIImage *btnGeologistImage = [UIImage imageNamed:@"geoloog_btn"];
         self.btnGeologist = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.btnGeologist setBackgroundImage:btnGeologistImage forState:UIControlStateNormal];
-        self.btnGeologist.frame = CGRectMake(0, 478, btnGeologistImage.size.width, btnGeologistImage.size.height);
+        self.btnGeologist.frame = CGRectMake(0, 434, btnGeologistImage.size.width, btnGeologistImage.size.height);
         [self addSubview:self.btnGeologist];
         
         
         UIImage *btnDraftsmanImage = [UIImage imageNamed:@"tekenaar_btn"];
         self.btnDraftsman = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.btnDraftsman setBackgroundImage:btnDraftsmanImage forState:UIControlStateNormal];
-        self.btnDraftsman.frame = CGRectMake(0, 625, btnDraftsmanImage.size.width, btnDraftsmanImage.size.height);
+        self.btnDraftsman.frame = CGRectMake(0, 581, btnDraftsmanImage.size.width, btnDraftsmanImage.size.height);
         [self addSubview:self.btnDraftsman];
+        
+        
+        UIImage *btnStopImage = [UIImage imageNamed:@"stop_btn"];
+        self.btnStop = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.btnStop setBackgroundImage:btnStopImage forState:UIControlStateNormal];
+        self.btnStop.frame = CGRectMake(0, self.frame.size.height-btnStopImage.size.height, btnStopImage.size.width, btnStopImage.size.height);
+        [self addSubview:self.btnStop];
+
     }
     return self;
 }
@@ -77,7 +86,7 @@
     static NSDateFormatter *dateFormatter;
     if (!dateFormatter) {
         dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.dateFormat = @"HH:mm:ss";  // very simple format  "8:47:22 AM"
+        dateFormatter.dateFormat = @"HH:mm:ss";
     }
     self.lblTime.text = [dateFormatter stringFromDate:now];
 }

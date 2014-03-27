@@ -39,6 +39,23 @@
     
     [self.view.archaeologistV.btnObject addTarget:self action:@selector(objectTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.draftsmanV.saveBtn addTarget:self action:@selector(saveImage:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view.leftBarV.btnStop addTarget:self action:@selector(stopWalk:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)stopWalk:(id)sender {
+    
+    NSDate *endDate = [NSDate date];
+    
+     /*NSLog(@"%@ start datum ",self.view.leftBarV.startDate);
+     NSLog(@"%@ eind datum ",endDate);*/
+
+    NSTimeInterval timeInterval = [endDate timeIntervalSinceDate:self.view.leftBarV.startDate];
+    NSDate *time = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    
+    
+    EndViewController *endVC = [[EndViewController alloc] initWithTeam:self.team time:(time) andScore:self.view.leftBarV.objects];
+    [self presentViewController:endVC animated:NO completion:^{}];
+    
 }
 
 - (void)objectTapped:(id)sender {
