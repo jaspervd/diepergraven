@@ -1,94 +1,92 @@
-[{
-
-    "image": {
+[
+    {
         "description": "Britse panoramafoto met op de voorgrond Turco Farm. De Duitse frontlijn bevindt zich bovenaan de heuvelrug.",
         "latitude": "50.879152",
         "longitude": "2.896920",
-        "number": 1,
+        "identifier": 1,
         "path": "01"
     },
-    "image": {
+    {
         "description": "Duitse gesneuvelden in hun loopgraaf op de Pilkem Ridge. Foto genomen tijdens de Derde Slag bij Ieper.",
         "latitude": "50.890957",
         "longitude": "2.880634",
-        "number": 2,
+        "identifier": 2,
         "path": "02"
     },
-    "image": {
+    {
         "description": "Duitse gesneuvelden in hun loopgraaf op de Pilkem Ridge. Foto genomen tijdens de Derde Slag bij Ieper.",
         "latitude": "50.890693",
         "longitude": "2.881836",
-        "number": 3,
+        "identifier": 3,
         "path": "03"
     },
-     "image": {
+     {
         "description": "Oprukkende Britse soldaten tijdens de Derde Salg bij Ieper, omgeving Pilkem Ridge.",
         "latitude": "50.886550",
         "longitude": "2.893658",
-        "number": 4,
+        "identifier": 4,
         "path": "04"
     },
-     "image": {
+     {
         "description": "Schets van Mouse Trap Farm, aan Duitse zijde bekend als “Château Wieltje”.",
         "latitude": "50.879399",
         "longitude": "2.919703",
-        "number": 5,
+        "identifier": 5,
         "path": "05"
     },
-     "image": {
+     {
         "description": "Schets van Mouse Trap Farm, aan Duitse zijde bekend als “Château Wieltje”.",
         "latitude": "50.878935",
         "longitude": "2.919751",
-        "number": 6,
+        "identifier": 6,
         "path": "06"
     },
-     "image": {
+     {
         "description": "Zicht vanuit de loopgraven op de Pilkemse heuvelrug richting Ieper.",
         "latitude": "50.882184",
         "longitude": "2.906651",
-        "number": 7 
+        "identifier": 7 
     },
-     "image": {
+     {
         "description": "Zicht vanuit de loopgraven op de Pilkemse heuvelrug richting Wieltje.",
         "latitude": "50.879575",
         "longitude": "2.914156",
-        "number": 8,
+        "identifier": 8,
         "path": "08" 
     },
-     "image": {
+     {
         "description": "Zicht vanuit de loopgraven op de Pilkemse heuvelrug richting Wieltje.",
         "latitude": "50.879199",
         "longitude": "2.914542",
-        "number": 9,
+        "identifier": 9,
         "path": "09"
     },
-     "image": {
+     {
         "description": "Loopgraaf op de Pilkemse heuvelrug.",
         "latitude": "50.886117",
         "longitude": "2.894463",
-        "number": 10,
+        "identifier": 10,
         "path": "10"
     },
-     "image": {
+     {
         "description": "Zicht op Ieper vanuit de Duitse loopgraven nabij Hörnchen (Britse loopgraaf nabij Morteldje Cabaret)",
         "latitude": "50.882428",
         "longitude": "2.901222",
-        "number": 11,
+        "identifier": 11,
         "path": "11"
     },
-    "image": {
+    {
         "description": "Pilkem, ruïnes van “Engländerhof”, hoeve Klokhof, bij de Britten staat deze hoeve bekend als Turco Farm",
         "location": "50.881765",
         "latitude": "2.897424",
-        "number": 12,
+        "identifier": 12,
         "path": "12"
     },
-    "image": {
+    {
         "description": "Grondopname van de vernielde Duitse loopgraven achter het kanaal, 5 augustus 1917.",
         "latitude": "50.887933",
         "longitude": "2.873901",
-        "number": 13,
+        "identifier": 13,
         "path": "13"
     }
-
-}]  
+]

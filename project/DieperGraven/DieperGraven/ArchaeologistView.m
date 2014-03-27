@@ -14,9 +14,34 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"monuments" ofType:@"json"];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"people" ofType:@"json"];
         NSError *error = nil;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[[NSData alloc] initWithContentsOfFile:path] options:0 error:&error];
+        NSDictionary *peopleJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+        
+        path = [[NSBundle mainBundle] pathForResource:@"images" ofType:@"json"];
+        error = nil;
+        NSDictionary *imagesJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+
+        self.locationManager.delegate = self;
+        [self.locationManager startUpdatingLocation];
+        for(NSDictionary *dict in peopleJson) {
+            CLCircularRegion *region = [self dictionaryToRegion:dict andType:@"person"];
+            NSLog(@"%@", region);
+            [self.geofences addObject:region];
+            [self.locationManager startMonitoringForRegion:region];
+        }
+        
+        for(NSDictionary *dict in imagesJson) {
+            CLCircularRegion *region = [self dictionaryToRegion:dict andType:@"image"];
+            NSLog(@"%@", region);
+            [self.geofences addObject:region];
+            [self.locationManager startMonitoringForRegion:region];
+        }
+        
+        NSSet *setOfRegions = [self.locationManager monitoredRegions];
+        for (CLCircularRegion *region in setOfRegions) {
+            NSLog (@"region info: %@", region);
+        }
         
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"archeoloog_bg"]];
         
@@ -36,7 +61,7 @@
        
         /* Info Label */
         
-        UIColor *txtColor = [UIColor colorWithRed:255/255.0f green: 255/255.0f blue:255/255.0f alpha:.4];
+        UIColor *txtColor = [UIColor colorWithRed:1.0f green: 1.0f blue:1.0f alpha:.4];
         
         self.lblInfo = [[UILabel alloc] initWithFrame:CGRectMake((self.frame.size.width / 2) - 125, self.frame.size.height - 50, 250, 30)];
         self.lblInfo.text = @"Graaf de objecten op";
@@ -67,50 +92,23 @@
     return self;
 }
 
-- (void)addCurrentLocation:(id)sender {
-    // Update Helper
-    _didStartMonitoringRegion = NO;
-    
-    // Start Updating Location
-    [self.locationManager startUpdatingLocation];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    if (locations && [locations count] && !_didStartMonitoringRegion) {
-        // Update Helper
-        _didStartMonitoringRegion = YES;
-        
-        // Fetch Current Location
-        CLLocation *location = [locations objectAtIndex:0];
-        
-        // Initialize Region to Monitor
-        CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:[location coordinate] radius:250.0 identifier:[[NSUUID UUID] UUIDString]];
-        
-        // Start Monitoring Region
-        [self.locationManager startMonitoringForRegion:region];
-        [self.locationManager stopUpdatingLocation];
-        
-        [self.geofences addObject:region];
-    }
-}
-
-- (CLCircularRegion*)dictionaryToRegion:(NSDictionary*)dictionary {
-    NSString *title = [dictionary valueForKey:@"title"];
+- (CLCircularRegion*)dictionaryToRegion:(NSDictionary*)dictionary andType:(NSString *)type {
+    int identifier = [[dictionary valueForKey:@"identifier"] floatValue];
     
     CLLocationDegrees latitude = [[dictionary valueForKey:@"latitude"] doubleValue];
     CLLocationDegrees longitude =[[dictionary valueForKey:@"longitude"] doubleValue];
     CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
     
-    CLLocationDistance regionRadius = [[dictionary valueForKey:@"radius"] doubleValue];
-    
-    return [[CLCircularRegion alloc] initWithCenter:centerCoordinate radius:regionRadius identifier:title];
+    return [[CLCircularRegion alloc] initWithCenter:centerCoordinate radius:50.f identifier:[NSString stringWithFormat:@"%@%i", type, identifier]];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLCircularRegion *)region {
+    NSLog(@"enter hell");
     [self showRegionAlert:@"Entering Region" forRegion:region.identifier];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLCircularRegion *)region {
+    NSLog(@"exit hell");
     [self showRegionAlert:@"Exiting Region" forRegion:region.identifier];
 }
 
