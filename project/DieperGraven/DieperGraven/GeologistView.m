@@ -16,14 +16,11 @@
     if (self) {
         RMMapboxSource *source = [[RMMapboxSource alloc] initWithMapID:@"jaspervd.hk9425ca"];
         self.mapView = [[RMMapView alloc] initWithFrame:frame andTilesource:source centerCoordinate:CLLocationCoordinate2DMake(50.881, 2.885) zoomLevel:5 maxZoomLevel:17 minZoomLevel:5 backgroundImage:nil];
+        [self addSubview:self.mapView];
+        
         self.mapView.showsUserLocation = YES;
         self.mapView.userTrackingMode = RMUserTrackingModeFollow;
-        
-        //self.mapView.delegate = self;
-        [self addSubview:self.mapView];
-   /*     self.mapView.zoom = 3;
-        self.mapView.minZoom = 15;
-        self.mapView.maxZoom = 17;*/
+ 
         
         /*NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"route" ofType:@"geojson"];
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[[NSData alloc] initWithContentsOfFile:jsonPath] options:0 error:nil];
@@ -59,6 +56,10 @@
         [shape addLineToCoordinate:point.coordinate];
     
     return shape;
+}
+
+- (void)mapView:(RMMapView *)mapView didUpdateUserLocation:(RMUserLocation *)userLocation {
+        [mapView setCenterCoordinate:mapView.userLocation.location.coordinate animated:YES];
 }
 
 - (void)staticAnnotations {

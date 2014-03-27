@@ -7,18 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CanvasView.h"
 
 @interface DraftsmanView : UIView
 
 @property (strong, nonatomic) UILabel *lblInfo;
-@property (strong, nonatomic) UIBezierPath *path;
-@property (strong, nonatomic) UIColor *brush;
+
 @property (strong, nonatomic) UISlider *sliderStroke;
 @property (strong, nonatomic) UISlider *sliderColor;
 @property (strong, nonatomic) UIView *colorPreview;
-@property (strong, nonatomic) NSMutableArray *arrPaths;
-@property (strong, nonatomic) NSMutableArray *arrBuffer;
 
+@property (strong, nonatomic) CanvasView *canvas;
 @property (strong, nonatomic) UIButton *saveBtn;
 
 @end
