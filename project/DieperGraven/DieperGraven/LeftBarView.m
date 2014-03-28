@@ -55,6 +55,18 @@
         self.btnHistorian.frame = CGRectMake(0, 279, btnHistorianImage.size.width, btnHistorianImage.size.height);
         [self addSubview:self.btnHistorian];
         
+        self.documentCount = 3;
+        
+        self.documentCountTxt = [NSString stringWithFormat:@"%i", self.documentCount];
+        self.lblDocumentCount = [[UILabel alloc] initWithFrame:CGRectMake(128, self.btnHistorian.frame.origin.y+2, 30, 30)];
+        self.lblDocumentCount.textAlignment = NSTextAlignmentCenter;
+        self.lblDocumentCount.backgroundColor = [UIColor colorWithRed:255 green:255 blue:255 alpha:.6];
+        self.lblDocumentCount.textColor = lblColor;
+        self.lblDocumentCount.font = [UIFont fontWithName:@"Avenir Next" size:16];
+        self.lblDocumentCount.text = self.documentCountTxt;
+        self.lblDocumentCount.layer.cornerRadius = 25;
+        [self addSubview:self.lblDocumentCount];
+        
         
         UIImage *btnGeologistImage = [UIImage imageNamed:@"geoloog_btn"];
         self.btnGeologist = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -78,6 +90,15 @@
 
     }
     return self;
+}
+
+- (void)updateDocumentCount:(int)documentCount {
+    
+    self.documentCount = documentCount;
+
+    NSString *count = [NSString stringWithFormat:@"%i", self.documentCount];
+    self.lblDocumentCount.text = count;
+    [self.lblDocumentCount setNeedsDisplay];
 }
 
 - (void)timerTick:(NSTimer *)timer {
