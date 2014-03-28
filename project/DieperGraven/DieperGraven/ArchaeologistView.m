@@ -22,7 +22,6 @@
         
         /* Object button */
         
-        [self addObject];
         [self addSubview:self.digField];
        
         
@@ -58,7 +57,7 @@
     return self;
 }
 
--(void)addObject {
+-(void)addObject:(NSDictionary *)dict {
     self.btnObject = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *btnObjectImage = [UIImage imageNamed:@"brief_btn"];
     [self.btnObject setBackgroundImage:btnObjectImage forState:UIControlStateNormal];
@@ -72,8 +71,6 @@
     
     self.btnObject.center = CGPointMake(xPos, yPos);
     [self addSubview:self.btnObject];
-    
-    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

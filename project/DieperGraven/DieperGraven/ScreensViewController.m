@@ -20,6 +20,7 @@
     if (self) {
         self.team = team;
         self.objectsArray = [[NSMutableArray alloc] init];
+        self.arrPossibleObjects = [[NSMutableArray alloc] init];
         
         self.geofences = [[NSMutableArray alloc] init];
         NSString *path = [[NSBundle mainBundle] pathForResource:@"people" ofType:@"json"];
@@ -40,12 +41,16 @@
             CLCircularRegion *region = [self dictionaryToRegion:dict andType:@"person"];
             [self.geofences addObject:region];
             [self.locationManager startMonitoringForRegion:region];
+            [dict setValue:[NSString stringWithFormat:@"person%@", [dict objectForKey:@"identifier"]] forKey:@"identifier"];
+            [self.arrPossibleObjects addObject:dict];
         }
         
         for(NSDictionary *dict in imagesJson) {
             CLCircularRegion *region = [self dictionaryToRegion:dict andType:@"image"];
             [self.geofences addObject:region];
             [self.locationManager startMonitoringForRegion:region];
+            [dict setValue:[NSString stringWithFormat:@"image%@", [dict objectForKey:@"identifier"]] forKey:@"identifier"];
+            [self.arrPossibleObjects addObject:dict];
         }
     }
     return self;
@@ -59,8 +64,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
     
     [self.view.leftBarV.btnArchaeologist addTarget:self.view action:@selector(archaeologistTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.leftBarV.btnHistorian addTarget:self.view action:@selector(historianTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -90,6 +93,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
     NSLog(@"Entering: %@", region.identifier);
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
@@ -118,6 +122,8 @@
    // [self.view.archaeologistV.digField removeFromSuperview];
     self.view.leftBarV.objects ++;
     
+    NSLog(@"%@", sender);
+    
     NSString *objectsTxt;
     if( self.view.leftBarV.objects == 1){
         objectsTxt = [NSString stringWithFormat:@"%d object", self.view.leftBarV.objects];
@@ -130,7 +136,6 @@
     NSLog(@"%@", self.objectsArray);
 
     [self.view.archaeologistV.btnObject removeFromSuperview];
-    [self.view.archaeologistV addObject];
 }
 
 - (void)saveImage:(id)sender {

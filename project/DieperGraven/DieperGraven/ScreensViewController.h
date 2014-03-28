@@ -21,5 +21,6 @@
 @property (nonatomic,strong) NSMutableArray *objectsArray;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSMutableArray *geofences;
+@property (strong, nonatomic) NSMutableArray *arrPossibleObjects;
 
 @end

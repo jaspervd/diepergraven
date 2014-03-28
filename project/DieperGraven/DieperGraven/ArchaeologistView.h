@@ -15,6 +15,6 @@
 @property (nonatomic,strong) UIImageView *digField;
 @property CGPoint userPoint;
 
--(void)addObject;
+-(void)addObject:(NSDictionary *)dict;
 
 @end
