@@ -10,9 +10,10 @@
 #import "Team.h"
 #import "ScreensView.h"
 #import "EndViewController.h"
+#import "ObjectViewProtocol.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface ScreensViewController : UIViewController <CLLocationManagerDelegate>
+@interface ScreensViewController : UIViewController <CLLocationManagerDelegate, ObjectViewProtocol>
 
 @property (strong, nonatomic) ScreensView *view;
 @property (nonatomic, strong) Team *team;

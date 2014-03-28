@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ObjectViewProtocol.h"
 
 @interface ObjectView : UIView
+
+@property (weak, nonatomic)id delegate;
 
 @property (strong, nonatomic) NSString *identifier;
 @property (strong, nonatomic) UIButton *btnObject;

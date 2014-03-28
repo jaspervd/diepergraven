@@ -96,8 +96,7 @@
     NSLog(@"Entering: %@", region.identifier);
     [self.view.archaeologistV addObject:region.identifier];
     NSLog(@"%@", [self.view.archaeologistV.arrObjectsToShow lastObject]);
-    //[self.view.archaeologistV.arrObjectsToShow lastObject].delegate = self;
-   // [[self.view.archaeologistV.arrObjectsToShow lastObject] addTarget:self action:@selector(objectTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view.archaeologistV.objectV.btnObject addTarget:self action:@selector(didPressObject:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.archaeologistV bringSubviewToFront:self.view.archaeologistV.digField];
     [self.view.archaeologistV bringSubviewToFront:self.view.archaeologistV.lblInfo];
 }
@@ -129,11 +128,11 @@
     [self.view.draftsmanV.canvas erase];
 }
 
-- (void)objectTapped:(id)sender {
-    NSLog(@"OBJECT TAPPED");
+- (void)didPressObject:(id)sender {
+    NSLog(@"Pressed object in VC!!!!");
     // send object to historianV
    // [self.view.archaeologistV.digField removeFromSuperview];
-    self.view.leftBarV.objects ++;
+    /*self.view.leftBarV.objects ++;
     
     NSLog(@"%@", sender);
     
@@ -151,9 +150,9 @@
     [self.arrPossibleObjects removeObject:sender];
     
     /*[self.objectsArray addObject:@"object"];
-    NSLog(@"%@", self.objectsArray);*/
+    NSLog(@"%@", self.objectsArray);*//*
 
-    [self.view.archaeologistV.objectV removeFromSuperview];
+    [self.view.archaeologistV.objectV removeFromSuperview];*/
 }
 
 - (void)saveImage:(id)sender {
