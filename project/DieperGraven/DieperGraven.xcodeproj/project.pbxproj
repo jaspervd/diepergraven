@@ -13,6 +13,7 @@
 		01E12E0718E4A218008BCB97 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E12E0618E4A218008BCB97 /* CanvasView.m */; };
 		01E12E0A18E4C3F1008BCB97 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E12E0818E4C3F1008BCB97 /* people.json */; };
 		01E12E0B18E4C3F1008BCB97 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E12E0918E4C3F1008BCB97 /* images.json */; };
+		01E12E0D18E5159C008BCB97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E12E0C18E5159C008BCB97 /* Images.xcassets */; };
 		0454EC64D638472E9B81B841 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E187693A8C4CB9A5B1A7CC /* libPods.a */; };
 		A40131AC18E21BD500F535A3 /* GeologistView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AB18E21BD500F535A3 /* GeologistView.m */; };
 		A40131B018E245C700F535A3 /* ScreensViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40131AF18E245C700F535A3 /* ScreensViewController.m */; };
@@ -32,7 +33,6 @@
 		A4DB899218E198EC0096B7E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4DB899018E198EC0096B7E3 /* InfoPlist.strings */; };
 		A4DB899418E198EC0096B7E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB899318E198EC0096B7E3 /* main.m */; };
 		A4DB899818E198EC0096B7E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB899718E198EC0096B7E3 /* AppDelegate.m */; };
-		A4DB899A18E198EC0096B7E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DB899918E198EC0096B7E3 /* Images.xcassets */; };
 		A4DB89A118E198ED0096B7E3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB89A018E198ED0096B7E3 /* XCTest.framework */; };
 		A4DB89A218E198ED0096B7E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB898718E198EC0096B7E3 /* Foundation.framework */; };
 		A4DB89A318E198ED0096B7E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DB898B18E198EC0096B7E3 /* UIKit.framework */; };
@@ -60,6 +60,7 @@
 		01E12E0618E4A218008BCB97 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
 		01E12E0818E4C3F1008BCB97 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
 		01E12E0918E4C3F1008BCB97 /* images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
+		01E12E0C18E5159C008BCB97 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		A3E187693A8C4CB9A5B1A7CC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40131AA18E21BD500F535A3 /* GeologistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeologistView.h; sourceTree = "<group>"; };
 		A40131AB18E21BD500F535A3 /* GeologistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeologistView.m; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		A4DB899518E198EC0096B7E3 /* DieperGraven-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DieperGraven-Prefix.pch"; sourceTree = "<group>"; };
 		A4DB899618E198EC0096B7E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4DB899718E198EC0096B7E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A4DB899918E198EC0096B7E3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A4DB899F18E198EC0096B7E3 /* DieperGravenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DieperGravenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DB89A018E198ED0096B7E3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A4DB89A818E198ED0096B7E3 /* DieperGravenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DieperGravenTests-Info.plist"; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 				012F1AE918E365A600A7DB57 /* Team */,
 				012F1AEA18E365C100A7DB57 /* Screen */,
 				012F1AEB18E365CB00A7DB57 /* End */,
-				A4DB899918E198EC0096B7E3 /* Images.xcassets */,
+				01E12E0C18E5159C008BCB97 /* Images.xcassets */,
 				A4DB898E18E198EC0096B7E3 /* Supporting Files */,
 			);
 			path = DieperGraven;
@@ -369,8 +369,8 @@
 			files = (
 				A4DB899218E198EC0096B7E3 /* InfoPlist.strings in Resources */,
 				01E12E0A18E4C3F1008BCB97 /* people.json in Resources */,
-				A4DB899A18E198EC0096B7E3 /* Images.xcassets in Resources */,
 				012F1AFD18E3A0EC00A7DB57 /* monuments.json in Resources */,
+				01E12E0D18E5159C008BCB97 /* Images.xcassets in Resources */,
 				A4B007A618E45478008CE99D /* route.geojson in Resources */,
 				01E12E0B18E4C3F1008BCB97 /* images.json in Resources */,
 			);

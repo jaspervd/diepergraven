@@ -39,6 +39,7 @@
     
     [self.view.archaeologistV.btnObject addTarget:self action:@selector(objectTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.draftsmanV.saveBtn addTarget:self action:@selector(saveImage:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view.draftsmanV.clearBtn addTarget:self action:@selector(clearImage:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.leftBarV.btnStop addTarget:self action:@selector(stopWalk:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -58,6 +59,10 @@
     
 }
 
+- (void)clearImage:(id)sender {
+    [self.view.draftsmanV.canvas erase];
+}
+
 - (void)objectTapped:(id)sender {
     NSLog(@"OBJECT TAPPED");
     // send object to historianV
@@ -72,7 +77,6 @@
         self.view.leftBarV.lblObjects.text = objectsTxt;
     }
 
-    
     //[self.view.archaeologistV.btnObject removeFromSuperview];
 }
 
@@ -83,6 +87,8 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didExportWithError:contextInfo:), nil);
+    
+    
 }
 
 - (void)image:(UIImage *)image didExportWithError:(NSError *)error contextInfo:(void *)contextInfo {

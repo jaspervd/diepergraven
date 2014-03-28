@@ -24,6 +24,8 @@
         self.lblInfo.textAlignment = NSTextAlignmentCenter;
         self.lblInfo.font = [UIFont fontWithName:@"Avenir Next" size:18];
         [self addSubview:self.lblInfo];
+        
+        
     }
     return self;
 }

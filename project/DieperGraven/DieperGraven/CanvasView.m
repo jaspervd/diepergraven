@@ -69,5 +69,14 @@
     [self setNeedsDisplay];
 }
 
+- (void)erase {
+    NSLog(@"ERASE");
+    
+    
+    self.path   = [UIBezierPath bezierPath];
+    self.path = nil;
+    
+    [self setNeedsDisplay];
+}
 
 @end

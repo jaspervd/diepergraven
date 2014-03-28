@@ -14,6 +14,7 @@
 @property (strong, nonatomic) UIColor *brush;
 
 - (id)initWithFrame:(CGRect)frame color:(float)color andSize:(float)size;
+- (void)erase;
 
 @property (strong, nonatomic) NSMutableArray *arrPaths;
 @property (strong, nonatomic) NSMutableArray *arrBuffer;

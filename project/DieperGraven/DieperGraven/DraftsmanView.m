@@ -44,6 +44,12 @@
         [self.saveBtn setBackgroundImage:saveBtnImage forState:UIControlStateNormal];
         self.saveBtn.frame = CGRectMake(0, 0, saveBtnImage.size.width, saveBtnImage.size.height);
         self.saveBtn.center = CGPointMake( self.frame.size.width - 40, 50);
+        
+        self.clearBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *clearBtnImage = [UIImage imageNamed:@"clear_btn"];
+        [self.clearBtn setBackgroundImage:clearBtnImage forState:UIControlStateNormal];
+        self.clearBtn.frame = CGRectMake(0, 0, clearBtnImage.size.width, clearBtnImage.size.height);
+        self.clearBtn.center = CGPointMake( self.frame.size.width - 40, self.saveBtn.frame.size.height + self.saveBtn.frame.origin.y + 30);
 
         self.sliderColor = [[UISlider alloc] initWithFrame:CGRectMake(self.frame.size.width - 300, self.frame.size.height - 50, 250, 30)];
         self.sliderColor.minimumValue = 0;
@@ -71,6 +77,7 @@
         [self addSubview:lblSize];
         [self addSubview:self.sliderStroke];
         [self addSubview:self.saveBtn];
+        [self addSubview:self.clearBtn];
         [self addSubview:lblColor];
         [self addSubview:self.sliderColor];
         [self addSubview:self.colorPreview];

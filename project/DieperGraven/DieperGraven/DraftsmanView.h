@@ -19,5 +19,6 @@
 
 @property (strong, nonatomic) CanvasView *canvas;
 @property (strong, nonatomic) UIButton *saveBtn;
+@property (strong, nonatomic) UIButton *clearBtn;
 
 @end
