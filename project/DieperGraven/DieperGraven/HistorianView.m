@@ -49,9 +49,11 @@
             
             // TODO: make imageview height same as content height
             CGRect viewFrame = CGRectMake((self.frame.size.width / 2) - ((self.frame.size.width - 200) / 2), yPos, self.frame.size.width - 200, self.frame.size.height - 120);
-                         
+            
+            
             self.view = [[DocumentView alloc] initWithFrame:viewFrame title:title image:image andStory:story];
             [scrollView addSubview:self.view];
+            
             
             yPos = CGRectGetMaxY(self.view.frame) + padding;
         }

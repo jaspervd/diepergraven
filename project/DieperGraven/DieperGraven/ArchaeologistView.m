@@ -40,21 +40,6 @@
         
         [self resetDigField:self.digField];
         
-      /*  [self.digField.image drawInRect:self.digField.bounds];
-        
-        CGSize size;
-        size.height = self.digField.bounds.size.height;
-        size.width = self.digField.bounds.size.width;
-        
-        UIGraphicsBeginImageContext(size);
-        
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextSetRGBFillColor(context, 0.35, 0.24, 0.11, 1.0);
-        CGContextFillRect(context, self.digField.bounds);
-        
-        self.digField.image = UIGraphicsGetImageFromCurrentImageContext();
-        
-        UIGraphicsEndImageContext();*/
     }
     return self;
 }

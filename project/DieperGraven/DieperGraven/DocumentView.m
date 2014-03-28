@@ -30,7 +30,7 @@
 
 - (void)createDocumentView {
     
-    self.lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,10, self.frame.size.width, 30)];
+    self.lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,40, self.frame.size.width, 30)];
     self.lblTitle.text = self.title;
     self.lblTitle.textColor = [UIColor blackColor];
     self.lblTitle.textAlignment = NSTextAlignmentCenter;
@@ -48,7 +48,8 @@
     if(self.image != nil){
         self.imageFrame = [[UIImageView alloc] initWithImage:self.image];
         // TODO: don't stretch image size
-        self.imageFrame.frame = CGRectMake(10,80, self.frame.size.width - 20, self.image.size.height/2);
+        self.imageFrame.frame = CGRectMake(10,self.lblStory.frame.origin.y + self.lblStory.frame.size.height + 20, self.frame.size.width - 20, 400);
+        self.imageFrame.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:self.imageFrame];
     }
 
