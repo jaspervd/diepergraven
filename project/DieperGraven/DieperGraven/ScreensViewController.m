@@ -19,6 +19,7 @@
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         self.team = team;
+        self.objectsArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -72,8 +73,12 @@
         NSString *objectsTxt = [NSString stringWithFormat:@"%d objecten", self.view.leftBarV.objects];
         self.view.leftBarV.lblObjects.text = objectsTxt;
     }
+    
+    [self.objectsArray addObject:@"object"];
+    NSLog(@"%@", self.objectsArray);
 
-    //[self.view.archaeologistV.btnObject removeFromSuperview];
+    [self.view.archaeologistV.btnObject removeFromSuperview];
+    [self.view.archaeologistV addObject];
 }
 
 - (void)saveImage:(id)sender {
@@ -83,8 +88,7 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didExportWithError:contextInfo:), nil);
-    
-    
+ 
 }
 
 - (void)image:(UIImage *)image didExportWithError:(NSError *)error contextInfo:(void *)contextInfo {

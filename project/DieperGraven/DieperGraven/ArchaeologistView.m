@@ -46,17 +46,13 @@
         self.digField = [[UIImageView alloc] initWithFrame:self.bounds];
         self.digField.backgroundColor = [UIColor clearColor];
         
+        
         /* Object button */
         
-        self.btnObject = [UIButton buttonWithType:UIButtonTypeCustom];
-        UIImage *btnObjectImage = [UIImage imageNamed:@"brief_btn"];
-        [self.btnObject setBackgroundImage:btnObjectImage forState:UIControlStateNormal];
-        self.btnObject.frame = CGRectMake(0, 0, btnObjectImage.size.width, btnObjectImage.size.height);
-        self.btnObject.center = CGPointMake(self.frame.size.width / 2, 100);
-        [self addSubview:self.btnObject];
-        
+        [self addObject];
         [self addSubview:self.digField];
        
+        
         /* Info Label */
         
         UIColor *txtColor = [UIColor colorWithRed:1.0f green: 1.0f blue:1.0f alpha:.4];
@@ -68,7 +64,6 @@
         self.lblInfo.font = [UIFont fontWithName:@"Avenir Next" size:18];
         [self addSubview:self.lblInfo];
     
-        
         /* drawing code */
         
         [self.digField.image drawInRect:self.digField.bounds];
@@ -88,6 +83,24 @@
         UIGraphicsEndImageContext();
     }
     return self;
+}
+
+-(void)addObject {
+    self.btnObject = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *btnObjectImage = [UIImage imageNamed:@"brief_btn"];
+    [self.btnObject setBackgroundImage:btnObjectImage forState:UIControlStateNormal];
+    self.btnObject.frame = CGRectMake(0, 0, btnObjectImage.size.width, btnObjectImage.size.height);
+    
+    // float xPos = (float)rand() / (self.frame.size.width - (self.btnObject.frame.size.width / 2));
+    // float yPos = (float)rand() / (self.frame.size.height - (self.btnObject.frame.size.height / 2));
+    
+    int xPos = 40 + arc4random() %(800+1-40);
+    int yPos = 40 + arc4random() %(400+1-40);
+    
+    self.btnObject.center = CGPointMake(xPos, yPos);
+    [self addSubview:self.btnObject];
+    
+    
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {

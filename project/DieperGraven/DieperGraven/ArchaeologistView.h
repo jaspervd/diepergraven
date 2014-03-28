@@ -21,4 +21,6 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSMutableArray *geofences;
 
+-(void)addObject;
+
 @end

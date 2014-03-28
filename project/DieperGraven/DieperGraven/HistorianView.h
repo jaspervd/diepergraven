@@ -12,4 +12,8 @@
 
 @property (strong, nonatomic) UILabel *lblInfo;
 
+@property (nonatomic,strong) UILabel *lblName;
+@property (nonatomic, strong) UILabel *lblLife;
+@property (nonatomic,strong) UILabel *lblStory;
+
 @end

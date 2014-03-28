@@ -17,4 +17,6 @@
 @property (nonatomic, strong) Team *team;
 - (id)initWithTeam:(Team *)team;
 
+@property (nonatomic,strong) NSMutableArray *objectsArray;
+
 @end
