@@ -36,6 +36,7 @@
 
 - (void)archaeologistTapped:(id)sender {
     NSLog(@"Arch tapped");
+    [self.archaeologistV resetDigField:self.archaeologistV.digField];
     [self bringSubviewToFront:self.archaeologistV];
 }
 
