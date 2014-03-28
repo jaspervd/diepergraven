@@ -5,28 +5,18 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-<<<<<<< HEAD
-	<string>3899ADF4-AEA3-43C8-8E6E-1117EC2CE9B2</string>
-=======
-	<string>EF30AF1A-996E-4FE7-B75B-5080C0F5C106</string>
->>>>>>> ac3c72f732a1b894e12273414af94540356e587e
+	<string>E3CBAD42-4F0F-4F06-93D2-768CE79AD82D</string>
 	<key>IDESourceControlProjectName</key>
 	<string>DieperGraven</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-<<<<<<< HEAD
 		<key>FEB1B314-4CF7-4B5C-AE55-B027D8C6BB03</key>
 		<string>https://github.com/jaspervd/diepergraven/</string>
-=======
-		<key>62E86AE4-C652-442D-B14D-4D9E03715670</key>
-		<string>https://github.com/jaspervd/diepergraven.git</string>
->>>>>>> ac3c72f732a1b894e12273414af94540356e587e
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>project/DieperGraven/DieperGraven.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-<<<<<<< HEAD
 		<key>FEB1B314-4CF7-4B5C-AE55-B027D8C6BB03</key>
 		<string>../../..</string>
 	</dict>
@@ -36,28 +26,13 @@
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
 	<string>FEB1B314-4CF7-4B5C-AE55-B027D8C6BB03</string>
-=======
-		<key>62E86AE4-C652-442D-B14D-4D9E03715670</key>
-		<string>../../..</string>
-	</dict>
-	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/jaspervd/diepergraven.git</string>
-	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
-	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>62E86AE4-C652-442D-B14D-4D9E03715670</string>
->>>>>>> ac3c72f732a1b894e12273414af94540356e587e
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-<<<<<<< HEAD
 			<string>FEB1B314-4CF7-4B5C-AE55-B027D8C6BB03</string>
-=======
-			<string>62E86AE4-C652-442D-B14D-4D9E03715670</string>
->>>>>>> ac3c72f732a1b894e12273414af94540356e587e
 			<key>IDESourceControlWCCName</key>
 			<string>diepergraven</string>
 		</dict>
