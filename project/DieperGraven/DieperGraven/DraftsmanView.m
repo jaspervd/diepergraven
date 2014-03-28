@@ -48,6 +48,12 @@
         [self.clearBtn setBackgroundImage:clearBtnImage forState:UIControlStateNormal];
         self.clearBtn.frame = CGRectMake(0, 0, clearBtnImage.size.width, clearBtnImage.size.height);
         self.clearBtn.center = CGPointMake( self.frame.size.width - 40, self.saveBtn.frame.size.height + self.saveBtn.frame.origin.y + 30);
+        
+        self.undoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *undoBtnImage = [UIImage imageNamed:@"clear_btn"];
+        [self.undoBtn setBackgroundImage:undoBtnImage forState:UIControlStateNormal];
+        self.undoBtn.frame = CGRectMake(0, 0, undoBtnImage.size.width, undoBtnImage.size.height);
+        self.undoBtn.center = CGPointMake( self.frame.size.width - 40, self.clearBtn.frame.size.height + self.clearBtn.frame.origin.y + 30);
 
         self.sliderColor = [[UISlider alloc] initWithFrame:CGRectMake(self.frame.size.width - 300, self.frame.size.height - 50, 250, 30)];
         self.sliderColor.minimumValue = 0;
@@ -76,6 +82,7 @@
         [self addSubview:self.sliderStroke];
         [self addSubview:self.saveBtn];
         [self addSubview:self.clearBtn];
+        [self addSubview:self.undoBtn];
         [self addSubview:lblColor];
         [self addSubview:self.sliderColor];
         [self addSubview:self.colorPreview];
@@ -93,29 +100,11 @@
     self.canvas.brushSize = self.sliderStroke.value;
 }
 
-/*
- -(void)undoBtnClicked
- {
- if([self.arrPaths count] > 0){
- UIBezierPath *path = [self.arrPaths lastObject];
- [self.arrBuffer addObject:path];
- [self.arrPaths removeLastObject];
- [self setNeedsDisplay];
- }
- }
- 
- -(void)redoBtnClicked
- {
- if([self.arrBuffer count] > 0){
- UIBezierPath *path = [self.arrBuffer lastObject];
- [self.arrPaths addObject:path];
- [self.arrBuffer removeLastObject];
- [self setNeedsDisplay];
- }
- }
- 
- */
-
-
+- (void)undoAction {
+    if([self.canvas.arrPaths count] > 0) {
+        [self.canvas.arrPaths removeLastObject];
+        [self.canvas setNeedsDisplay];
+    }
+}
 
 @end

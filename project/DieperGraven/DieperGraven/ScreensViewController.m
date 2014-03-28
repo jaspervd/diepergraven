@@ -41,6 +41,7 @@
     [self.view.archaeologistV.btnObject addTarget:self action:@selector(objectTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.draftsmanV.saveBtn addTarget:self action:@selector(saveImage:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.draftsmanV.clearBtn addTarget:self action:@selector(clearImage:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view.draftsmanV.undoBtn addTarget:self action:@selector(undoAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.leftBarV.btnStop addTarget:self action:@selector(stopWalk:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -89,6 +90,10 @@
     UIGraphicsEndImageContext();
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didExportWithError:contextInfo:), nil);
  
+}
+
+- (void)undoAction:(id)sender {
+    [self.view.draftsmanV undoAction];
 }
 
 - (void)image:(UIImage *)image didExportWithError:(NSError *)error contextInfo:(void *)contextInfo {

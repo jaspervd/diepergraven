@@ -20,5 +20,8 @@
 @property (strong, nonatomic) CanvasView *canvas;
 @property (strong, nonatomic) UIButton *saveBtn;
 @property (strong, nonatomic) UIButton *clearBtn;
+@property (strong, nonatomic) UIButton *undoBtn;
+
+- (void)undoAction;
 
 @end

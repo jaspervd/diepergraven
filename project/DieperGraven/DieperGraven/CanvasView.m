@@ -21,8 +21,6 @@
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tekenaar_bg"]];
     
         self.arrPaths = [[NSMutableArray alloc] init];
-        self.arrBuffer = [[NSMutableArray alloc] init];
-        
     }
     return self;
 }
@@ -69,11 +67,7 @@
 }
 
 - (void)erase {
-    NSLog(@"ERASE");
-    
     [self.arrPaths removeAllObjects];
-    [self.arrBuffer removeAllObjects];
-    
     [self setNeedsDisplay];
 }
 

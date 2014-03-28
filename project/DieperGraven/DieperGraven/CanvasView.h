@@ -17,7 +17,6 @@
 - (void)erase;
 
 @property (strong, nonatomic) NSMutableArray *arrPaths;
-@property (strong, nonatomic) NSMutableArray *arrBuffer;
 
 @property float brushColor;
 @property float brushSize;
