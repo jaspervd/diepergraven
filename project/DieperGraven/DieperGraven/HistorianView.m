@@ -53,8 +53,7 @@
             
             self.view = [[DocumentView alloc] initWithFrame:viewFrame title:title image:image andStory:story];
             [scrollView addSubview:self.view];
-            
-            
+
             yPos = CGRectGetMaxY(self.view.frame) + padding;
         }
         

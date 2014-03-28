@@ -52,7 +52,7 @@
     // float yPos = (float)rand() / (self.frame.size.height - (self.btnObject.frame.size.height / 2));
     
     int xPos = 40 + arc4random() %(800+1-40);
-    int yPos = 40 + arc4random() %(400+1-40);
+    int yPos = 40 + arc4random() %(600+1-40);
     
     self.objectV.center = CGPointMake(xPos, yPos);
     [self addSubview:self.objectV];

@@ -24,6 +24,12 @@
         
         [self createDocumentView];
         
+        if(self.imageFrame == nil){
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.lblStory.frame.size.height + self.lblStory.frame.origin.y + 40 );
+        }else {
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.imageFrame.frame.size.height + self.imageFrame.frame.origin.y + 40 );
+        }
+
     }
     return self;
 }
@@ -38,21 +44,24 @@
     [self addSubview:self.lblTitle];
     
     // TODO: make label height size of text
+    CGRect labelFrame = CGRectMake(0, self.lblTitle.frame.origin.y + 35, self.frame.size.width, 20);
+    
     self.lblStory = [[UILabel alloc] initWithFrame:CGRectMake(0, self.lblTitle.frame.origin.y + 35, self.frame.size.width, 20)];
     self.lblStory.text = self.story;
     self.lblStory.textColor = [UIColor blackColor];
     self.lblStory.textAlignment = NSTextAlignmentCenter;
     self.lblStory.font = [UIFont fontWithName:@"Avenir Next" size:16];
+    [self.lblStory sizeToFit];
+    labelFrame.size.width = self.frame.size.width;
+    self.lblStory.frame = labelFrame;
     [self addSubview:self.lblStory];
     
     if(self.image != nil){
         self.imageFrame = [[UIImageView alloc] initWithImage:self.image];
-        // TODO: don't stretch image size
-        self.imageFrame.frame = CGRectMake(10,self.lblStory.frame.origin.y + self.lblStory.frame.size.height + 20, self.frame.size.width - 20, 400);
+        self.imageFrame.frame = CGRectMake(20, self.lblStory.frame.origin.y + self.lblStory.frame.size.height + 20, self.frame.size.width - 30, 400);
         self.imageFrame.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:self.imageFrame];
     }
-
     
 }
 
