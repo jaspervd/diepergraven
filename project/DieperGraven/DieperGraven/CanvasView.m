@@ -30,7 +30,6 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    //[self.brush setStroke];
     for (NSMutableDictionary *dic in self.arrPaths) {
         UIBezierPath *path = [dic valueForKey:@"path"];
         [[dic valueForKey:@"color"] setStroke];
@@ -72,9 +71,8 @@
 - (void)erase {
     NSLog(@"ERASE");
     
-    
-    self.path   = [UIBezierPath bezierPath];
-    self.path = nil;
+    [self.arrPaths removeAllObjects];
+    [self.arrBuffer removeAllObjects];
     
     [self setNeedsDisplay];
 }
