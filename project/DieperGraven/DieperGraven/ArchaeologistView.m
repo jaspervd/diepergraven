@@ -14,6 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.geofences = [[NSMutableArray alloc] init];
         NSString *path = [[NSBundle mainBundle] pathForResource:@"people" ofType:@"json"];
         NSError *error = nil;
         NSDictionary *peopleJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
@@ -21,12 +22,14 @@
         path = [[NSBundle mainBundle] pathForResource:@"images" ofType:@"json"];
         error = nil;
         NSDictionary *imagesJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
-
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-        self.locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
         
         self.locationManager.delegate = self;
+        [self.locationManager setDistanceFilter:kCLLocationAccuracyNearestTenMeters];
+        [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
         [self.locationManager startMonitoringSignificantLocationChanges];
+        [self.locationManager startUpdatingLocation];
+        [self.locationManager startUpdatingHeading];
+        
         for(NSDictionary *dict in peopleJson) {
             CLCircularRegion *region = [self dictionaryToRegion:dict andType:@"person"];
             [self.geofences addObject:region];
@@ -39,7 +42,9 @@
             [self.locationManager startMonitoringForRegion:region];
         }
         
-        NSSet *setOfRegions = [self.locationManager monitoredRegions];
+        self.locationManager.delegate = self;
+        
+        NSArray *setOfRegions = [[self.locationManager monitoredRegions] allObjects];
         for (CLCircularRegion *region in setOfRegions) {
             NSLog (@"region info: %@", region);
         }
@@ -107,12 +112,12 @@
     return [[CLCircularRegion alloc] initWithCenter:centerCoordinate radius:50.f identifier:[NSString stringWithFormat:@"%@%i", type, identifier]];
 }
 
-- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLCircularRegion *)region {
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
     NSLog(@"enter hell");
     [self showRegionAlert:@"Entering Region" forRegion:region.identifier];
 }
 
-- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLCircularRegion *)region {
+- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
     NSLog(@"exit hell");
     [self showRegionAlert:@"Exiting Region" forRegion:region.identifier];
 }
@@ -122,7 +127,11 @@
     [alertV show];
 }
 
-- (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLCircularRegion *)region {
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    NSLog(@"did update: %@", locations);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
     NSLog(@"Started monitoring %@ region", region.identifier);
 }
 

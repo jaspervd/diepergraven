@@ -9,9 +9,9 @@ class ScoresDAO {
     }
 
     public function getScore($id) {
-        $sql = "SELECT * FROM `scores` WHERE `id` = :id";
+        $sql = 'SELECT * FROM `scores` WHERE `id` = :id';
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(":id", $id);
+        $stmt->bindValue(':id', $id);
         if ($stmt->execute()) {
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
@@ -19,7 +19,7 @@ class ScoresDAO {
     }
 
     public function getScores() {
-        $sql = "SELECT * FROM `scores`";
+        $sql = 'SELECT * FROM `scores`';
         $stmt = $this->pdo->prepare($sql);
         if ($stmt->execute()) {
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -28,8 +28,11 @@ class ScoresDAO {
     }
 
     public function insertScore($name, $objects, $time) {
-        $sql = "INSERT INTO `questions` (`team_name`, `objects`, `time`) VALUES (:name, :objects, :time)";
+        $sql = 'INSERT INTO `scores` (`team_name`, `objects`, `time`) VALUES (:name, :objects, :time)';
         $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':name', $name);
+        $stmt->bindValue(':objects', $objects);
+        $stmt->bindValue(':time', $time);
         if ($stmt->execute()) {
             return $this->getScoreById($this->pdo->lastInsertId());
         }
