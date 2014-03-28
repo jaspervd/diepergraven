@@ -11,6 +11,10 @@
 #import "Document.h"
 #import "DocumentFactory.h"
 
+#import "PhotoView.h"
+#import "Photo.h"
+#import "PhotoFactory.h"
+
 @interface HistorianView : UIView
 
 @property (strong, nonatomic) UILabel *lblInfo;
@@ -19,6 +23,7 @@
 @property (nonatomic, strong) UILabel *lblLife;
 @property (nonatomic,strong) UILabel *lblStory;
 
-@property (nonatomic,strong) DocumentView *view;
+@property (nonatomic,strong) DocumentView *documentV;
+@property (nonatomic,strong) PhotoView *photoV;
 
 @end

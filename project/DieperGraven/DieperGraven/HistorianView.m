@@ -51,10 +51,10 @@
   
             CGRect viewFrame = CGRectMake((self.frame.size.width / 2) - ((self.frame.size.width - 200) / 2), yPos, self.frame.size.width - 200, self.frame.size.height - 120);
             
-            self.view = [[DocumentView alloc] initWithFrame:viewFrame title:title image:image lifespan:lifespan andStory:story];
-            [scrollView addSubview:self.view];
+            self.documentV = [[DocumentView alloc] initWithFrame:viewFrame title:title image:image lifespan:lifespan andStory:story];
+            [scrollView addSubview:self.documentV];
             
-            yPos = CGRectGetMaxY(self.view.frame) + padding;
+            yPos = CGRectGetMaxY(self.documentV.frame) + padding;
         }
         
         path = [[NSBundle mainBundle] pathForResource:@"images" ofType:@"json"];
@@ -62,24 +62,19 @@
         NSDictionary *imagesJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
         
         
-        
-        NSLog(@"JSON ALLES, TEST TEST TEST: %@",imagesJson);
-        
         for (NSDictionary *dictionary in imagesJson){
-            Document *document = [DocumentFactory createDocumentPersonFromDictionary:dictionary];
             
-            UIImage *image = [UIImage imageNamed: document.path];
-            NSString *title = [NSString stringWithFormat:@"%@", document.title];
-            NSString *story = [NSString stringWithFormat:@"%@", document.story];
-            NSString *lifespan = [NSString stringWithFormat:@"%@", document.lifespan];
+            Photo *photo = [PhotoFactory createPhotoFromDictionary:dictionary];
             
-            
+            UIImage *image = [UIImage imageNamed: photo.path];
+            NSString *description = [NSString  stringWithFormat:@"%@",photo.description];
+
             CGRect viewFrame = CGRectMake((self.frame.size.width / 2) - ((self.frame.size.width - 200) / 2), yPos, self.frame.size.width - 200, self.frame.size.height - 120);
             
-            self.view = [[DocumentView alloc] initWithFrame:viewFrame title:title image:image lifespan:lifespan andStory:story];
-            [scrollView addSubview:self.view];
+            self.photoV = [[PhotoView alloc] initWithFrame:viewFrame description:description andImage:image];
+            [scrollView addSubview:self.photoV];
             
-            yPos = CGRectGetMaxY(self.view.frame) + padding;
+            yPos = CGRectGetMaxY(self.photoV.frame) + padding;
 
         }
         
