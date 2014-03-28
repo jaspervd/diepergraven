@@ -20,6 +20,33 @@
     if (self) {
         self.team = team;
         self.objectsArray = [[NSMutableArray alloc] init];
+        
+        self.geofences = [[NSMutableArray alloc] init];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"people" ofType:@"json"];
+        NSError *error = nil;
+        NSDictionary *peopleJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+        
+        path = [[NSBundle mainBundle] pathForResource:@"images" ofType:@"json"];
+        error = nil;
+        NSDictionary *imagesJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+        
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        self.locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        [self.locationManager startUpdatingLocation];
+        
+        for(NSDictionary *dict in peopleJson) {
+            CLCircularRegion *region = [self dictionaryToRegion:dict andType:@"person"];
+            [self.geofences addObject:region];
+            [self.locationManager startMonitoringForRegion:region];
+        }
+        
+        for(NSDictionary *dict in imagesJson) {
+            CLCircularRegion *region = [self dictionaryToRegion:dict andType:@"image"];
+            [self.geofences addObject:region];
+            [self.locationManager startMonitoringForRegion:region];
+        }
     }
     return self;
 }
@@ -33,6 +60,8 @@
 {
     [super viewDidLoad];
     
+    
+    
     [self.view.leftBarV.btnArchaeologist addTarget:self.view action:@selector(archaeologistTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.leftBarV.btnHistorian addTarget:self.view action:@selector(historianTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.leftBarV.btnGeologist addTarget:self.view action:@selector(geologistTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -43,6 +72,28 @@
     [self.view.draftsmanV.clearBtn addTarget:self action:@selector(clearImage:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.draftsmanV.undoBtn addTarget:self action:@selector(undoAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.leftBarV.btnStop addTarget:self action:@selector(stopWalk:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    NSLog(@"hey i moved %@", [locations lastObject]);
+}
+
+- (CLCircularRegion*)dictionaryToRegion:(NSDictionary*)dictionary andType:(NSString *)type {
+    int identifier = [[dictionary valueForKey:@"identifier"] floatValue];
+    
+    CLLocationDegrees latitude = [[dictionary valueForKey:@"latitude"] doubleValue];
+    CLLocationDegrees longitude =[[dictionary valueForKey:@"longitude"] doubleValue];
+    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
+    
+    return [[CLCircularRegion alloc] initWithCenter:centerCoordinate radius:5.f identifier:[NSString stringWithFormat:@"%@%i", type, identifier]];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+    NSLog(@"Entering: %@", region.identifier);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
+    NSLog(@"Leaving: %@", region.identifier);
 }
 
 - (void)stopWalk:(id)sender {
@@ -67,13 +118,13 @@
    // [self.view.archaeologistV.digField removeFromSuperview];
     self.view.leftBarV.objects ++;
     
+    NSString *objectsTxt;
     if( self.view.leftBarV.objects == 1){
-        NSString *objectsTxt = [NSString stringWithFormat:@"%d object", self.view.leftBarV.objects];
-        self.view.leftBarV.lblObjects.text = objectsTxt;
+        objectsTxt = [NSString stringWithFormat:@"%d object", self.view.leftBarV.objects];
     }else {
-        NSString *objectsTxt = [NSString stringWithFormat:@"%d objecten", self.view.leftBarV.objects];
-        self.view.leftBarV.lblObjects.text = objectsTxt;
+        objectsTxt = [NSString stringWithFormat:@"%d objecten", self.view.leftBarV.objects];
     }
+    self.view.leftBarV.lblObjects.text = objectsTxt;
     
     [self.objectsArray addObject:@"object"];
     NSLog(@"%@", self.objectsArray);

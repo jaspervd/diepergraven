@@ -14,33 +14,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.geofences = [[NSMutableArray alloc] init];
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"people" ofType:@"json"];
-        NSError *error = nil;
-        NSDictionary *peopleJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
-        
-        path = [[NSBundle mainBundle] pathForResource:@"images" ofType:@"json"];
-        error = nil;
-        NSDictionary *imagesJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
-        
-        self.locationManager = [[CLLocationManager alloc] init];
-        self.locationManager.delegate = self;
-        self.locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        [self.locationManager startUpdatingLocation];
-        
-        for(NSDictionary *dict in peopleJson) {
-            CLCircularRegion *region = [self dictionaryToRegion:dict andType:@"person"];
-            [self.geofences addObject:region];
-            [self.locationManager startMonitoringForRegion:region];
-        }
-        
-        for(NSDictionary *dict in imagesJson) {
-            CLCircularRegion *region = [self dictionaryToRegion:dict andType:@"image"];
-            [self.geofences addObject:region];
-            [self.locationManager startMonitoringForRegion:region];
-        }
-        
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"archeoloog_bg"]];
         
         self.digField = [[UIImageView alloc] initWithFrame:self.bounds];
@@ -101,28 +74,6 @@
     [self addSubview:self.btnObject];
     
     
-}
-
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    NSLog(@"hey i moved %@", [locations lastObject]);
-}
-
-- (CLCircularRegion*)dictionaryToRegion:(NSDictionary*)dictionary andType:(NSString *)type {
-    int identifier = [[dictionary valueForKey:@"identifier"] floatValue];
-    
-    CLLocationDegrees latitude = [[dictionary valueForKey:@"latitude"] doubleValue];
-    CLLocationDegrees longitude =[[dictionary valueForKey:@"longitude"] doubleValue];
-    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
-    
-    return [[CLCircularRegion alloc] initWithCenter:centerCoordinate radius:5.f identifier:[NSString stringWithFormat:@"%@%i", type, identifier]];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
-    NSLog(@"Entering: %@", region.identifier);
-}
-
-- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
-    NSLog(@"Leaving: %@", region.identifier);
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

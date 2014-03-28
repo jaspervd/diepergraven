@@ -7,19 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 
-@interface ArchaeologistView : UIView <CLLocationManagerDelegate> {
-    BOOL _didStartMonitoringRegion;
-}
+@interface ArchaeologistView : UIView
 
 @property (strong, nonatomic) UILabel *lblInfo;
 @property (nonatomic,strong) UIButton *btnObject;
 @property (nonatomic,strong) UIImageView *digField;
 @property CGPoint userPoint;
-
-@property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) NSMutableArray *geofences;
 
 -(void)addObject;
 

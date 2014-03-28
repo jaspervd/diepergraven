@@ -10,13 +10,16 @@
 #import "Team.h"
 #import "ScreensView.h"
 #import "EndViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface ScreensViewController : UIViewController
+@interface ScreensViewController : UIViewController <CLLocationManagerDelegate>
 
 @property (strong, nonatomic) ScreensView *view;
 @property (nonatomic, strong) Team *team;
 - (id)initWithTeam:(Team *)team;
 
 @property (nonatomic,strong) NSMutableArray *objectsArray;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) NSMutableArray *geofences;
 
 @end
