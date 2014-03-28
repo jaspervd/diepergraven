@@ -14,7 +14,9 @@
 @property (nonatomic,strong) UIButton *btnObject;
 @property (nonatomic,strong) UIImageView *digField;
 @property CGPoint userPoint;
+@property (nonatomic, strong) NSMutableArray *arrObjectsToShow;
 
--(void)addObject:(NSDictionary *)dict;
+-(void)addObject:(NSString *)identifier;
+-(void)removeObject:(UIButton *)button;
 
 @end

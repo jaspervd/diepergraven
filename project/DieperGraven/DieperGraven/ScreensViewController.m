@@ -93,11 +93,14 @@
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
     NSLog(@"Entering: %@", region.identifier);
+    [self.view.archaeologistV addObject:region.identifier];
     
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
     NSLog(@"Leaving: %@", region.identifier);
+    UIButton *thisBtn = [self.view.archaeologistV.arrObjectsToShow ]
+    [self.view.archaeologistV removeObject:region.identifier];
 }
 
 - (void)stopWalk:(id)sender {
