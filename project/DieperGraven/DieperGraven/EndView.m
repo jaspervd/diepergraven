@@ -39,9 +39,16 @@
         NSLog(@"%@",stringFromDate);
         
         
+        self.lblTeam = [[UILabel alloc] initWithFrame:CGRectMake((self.frame.size.height / 2)-200, 140, 400, 60)];
+        self.lblTeam.textAlignment = NSTextAlignmentCenter;
+        self.lblTeam.textColor = [UIColor whiteColor];
+        self.lblTeam.font = [UIFont fontWithName:@"DINCondensed-Bold" size:60];
+        self.lblTeam.text = team.name;
+        [self addSubview:self.lblTeam];
+        
 
         
-        self.lblTime = [[UILabel alloc] initWithFrame:CGRectMake((self.frame.size.height / 2)-200, 220, 400, 50)];
+        self.lblTime = [[UILabel alloc] initWithFrame:CGRectMake((self.frame.size.height / 2)-200, 270, 400, 50)];
         self.lblTime.textAlignment = NSTextAlignmentCenter;
         self.lblTime.textColor = [UIColor whiteColor];
         self.lblTime.font = [UIFont fontWithName:@"DINCondensed-Bold" size:50];
@@ -50,7 +57,7 @@
 
         
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((self.frame.size.height / 2)-200, 180, 400, 30)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((self.frame.size.height / 2)-200, 230, 400, 30)];
         label.text = @"wandel tijd";
         label.textColor = [UIColor whiteColor];
         label.textAlignment = NSTextAlignmentCenter;
@@ -60,14 +67,14 @@
         
         NSString *scoreToString = [NSString stringWithFormat:@"%i",self.score];
         
-        self.lblScore = [[UILabel alloc] initWithFrame:CGRectMake((self.frame.size.height / 2)-200, 320, 400, 50)];
+        self.lblScore = [[UILabel alloc] initWithFrame:CGRectMake((self.frame.size.height / 2)-200, 370, 400, 50)];
         self.lblScore.textAlignment = NSTextAlignmentCenter;
         self.lblScore.textColor = [UIColor whiteColor];
         self.lblScore.font = [UIFont fontWithName:@"DINCondensed-Bold" size:50];
         self.lblScore.text = scoreToString;
         [self addSubview:self.lblScore];
         
-        UILabel *labelS = [[UILabel alloc] initWithFrame:CGRectMake((self.frame.size.height / 2)-200, 280, 400, 30)];
+        UILabel *labelS = [[UILabel alloc] initWithFrame:CGRectMake((self.frame.size.height / 2)-200, 330, 400, 30)];
         labelS.text = @"aantal verzamelde objecten";
         labelS.textColor = [UIColor whiteColor];
         labelS.textAlignment = NSTextAlignmentCenter;
@@ -77,7 +84,7 @@
         self.btnUpload = [UIButton buttonWithType:UIButtonTypeCustom];
         UIImage *btnUploadImage = [UIImage imageNamed:@"upload_btn"];
         [self.btnUpload setBackgroundImage:btnUploadImage forState:UIControlStateNormal];
-        self.btnUpload.frame = CGRectMake((self.frame.size.height / 2) - (btnUploadImage.size.width/2), 540, btnUploadImage.size.width, btnUploadImage.size.height);
+        self.btnUpload.frame = CGRectMake((self.frame.size.height / 2) - (btnUploadImage.size.width/2), 560, btnUploadImage.size.width, btnUploadImage.size.height);
         [self addSubview:self.btnUpload];
         
         self.btnBack = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -16,6 +16,7 @@
 
 @property (nonatomic,strong) UILabel *lblTime;
 @property (nonatomic,strong) UILabel *lblScore;
+@property (nonatomic,strong) UILabel *lblTeam;
 
 @property (nonatomic,strong) UIButton *btnUpload;
 @property (nonatomic,strong) UIButton *btnBack;

@@ -19,6 +19,9 @@
 @property (nonatomic, strong) NSDate *time;
 @property int score;
 
+@property (nonatomic, strong) NSString *uploadScore;
+@property (nonatomic, strong) NSString *uploadTime;
+
 - (id)initWithTeam:(Team *)team time:(NSDate *)time andScore:(int)score;
 
 @end
