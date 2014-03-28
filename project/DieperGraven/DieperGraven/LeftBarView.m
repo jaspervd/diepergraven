@@ -55,7 +55,7 @@
         self.btnHistorian.frame = CGRectMake(0, 279, btnHistorianImage.size.width, btnHistorianImage.size.height);
         [self addSubview:self.btnHistorian];
         
-        self.documentCount = 3;
+        self.documentCount = 0;
         
         self.documentCountTxt = [NSString stringWithFormat:@"%i", self.documentCount];
         self.lblDocumentCount = [[UILabel alloc] initWithFrame:CGRectMake(128, self.btnHistorian.frame.origin.y+2, 30, 30)];

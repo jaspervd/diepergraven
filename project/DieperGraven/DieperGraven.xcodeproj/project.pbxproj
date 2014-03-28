@@ -10,6 +10,7 @@
 		012F1AF018E365E400A7DB57 /* EndView.m in Sources */ = {isa = PBXBuildFile; fileRef = 012F1AED18E365E400A7DB57 /* EndView.m */; };
 		012F1AF118E365E400A7DB57 /* EndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012F1AEF18E365E400A7DB57 /* EndViewController.m */; };
 		012F1AFD18E3A0EC00A7DB57 /* monuments.json in Resources */ = {isa = PBXBuildFile; fileRef = 012F1AFC18E3A0EC00A7DB57 /* monuments.json */; };
+		01C03E0718E59D3400A63F41 /* ObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C03E0618E59D3400A63F41 /* ObjectView.m */; };
 		01E12E0718E4A218008BCB97 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E12E0618E4A218008BCB97 /* CanvasView.m */; };
 		01E12E0A18E4C3F1008BCB97 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E12E0818E4C3F1008BCB97 /* people.json */; };
 		01E12E0B18E4C3F1008BCB97 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E12E0918E4C3F1008BCB97 /* images.json */; };
@@ -56,6 +57,8 @@
 		012F1AEE18E365E400A7DB57 /* EndViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndViewController.h; sourceTree = "<group>"; };
 		012F1AEF18E365E400A7DB57 /* EndViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndViewController.m; sourceTree = "<group>"; };
 		012F1AFC18E3A0EC00A7DB57 /* monuments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = monuments.json; sourceTree = "<group>"; };
+		01C03E0518E59D3400A63F41 /* ObjectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectView.h; sourceTree = "<group>"; };
+		01C03E0618E59D3400A63F41 /* ObjectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectView.m; sourceTree = "<group>"; };
 		01E12E0518E4A218008BCB97 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
 		01E12E0618E4A218008BCB97 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
 		01E12E0818E4C3F1008BCB97 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				A4BCF04518E308960049C5AF /* DraftsmanView.m */,
 				01E12E0518E4A218008BCB97 /* CanvasView.h */,
 				01E12E0618E4A218008BCB97 /* CanvasView.m */,
+				01C03E0518E59D3400A63F41 /* ObjectView.h */,
+				01C03E0618E59D3400A63F41 /* ObjectView.m */,
 			);
 			name = Draftsman;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				A41FE85C18E1EAB700DEEB0F /* StartViewController.m in Sources */,
 				A4DB899818E198EC0096B7E3 /* AppDelegate.m in Sources */,
 				012F1AF118E365E400A7DB57 /* EndViewController.m in Sources */,
+				01C03E0718E59D3400A63F41 /* ObjectView.m in Sources */,
 				A4DB899418E198EC0096B7E3 /* main.m in Sources */,
 				012F1AF018E365E400A7DB57 /* EndView.m in Sources */,
 				A41FE85F18E1EB2E00DEEB0F /* StartView.m in Sources */,
