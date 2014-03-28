@@ -141,8 +141,8 @@
     }
     self.view.leftBarV.lblObjects.text = objectsTxt;
 
-    self.view.leftBarV.documentCount++;
-    [self.view.leftBarV updateDocumentCount:self.view.leftBarV.documentCount];
+   /* self.view.leftBarV.documentCount++;
+    [self.view.leftBarV updateDocumentCount:self.view.leftBarV.documentCount];*/
     
     for(ObjectView *thisObjectV in self.view.archaeologistV.arrObjectsToShow) {
         if(thisObjectV.btnObject == sender) {

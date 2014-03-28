@@ -18,14 +18,14 @@
 
 @property (strong, nonatomic) UILabel *lblTime;
 @property (strong, nonatomic) UILabel *lblObjects;
-@property (strong, nonatomic) UILabel *lblDocumentCount;
-@property (strong, nonatomic) NSString *documentCountTxt;
-@property int documentCount;
+//@property (strong, nonatomic) UILabel *lblDocumentCount;
+//@property (strong, nonatomic) NSString *documentCountTxt;
+//@property int documentCount;
 
 @property (strong, nonatomic) NSDate *startDate;
 
 @property int objects;
 
-- (void)updateDocumentCount:(int)documentCount;
+//- (void)updateDocumentCount:(int)documentCount;
 
 @end
