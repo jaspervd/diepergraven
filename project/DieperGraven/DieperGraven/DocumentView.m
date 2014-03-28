@@ -44,21 +44,27 @@
     [self addSubview:self.lblTitle];
     
     // TODO: make label height size of text
-    CGRect labelFrame = CGRectMake(0, self.lblTitle.frame.origin.y + 35, self.frame.size.width, 20);
+  //  CGRect labelFrame = CGRectMake(0, self.lblTitle.frame.origin.y + 35, self.frame.size.width, 20);
     
-    self.lblStory = [[UILabel alloc] initWithFrame:CGRectMake(0, self.lblTitle.frame.origin.y + 35, self.frame.size.width, 20)];
+    self.lblStory = [[UILabel alloc] initWithFrame:CGRectMake(20, self.lblTitle.frame.origin.y + 40, self.frame.size.width - 40, 20)];
     self.lblStory.text = self.story;
     self.lblStory.textColor = [UIColor blackColor];
     self.lblStory.textAlignment = NSTextAlignmentCenter;
     self.lblStory.font = [UIFont fontWithName:@"Avenir Next" size:16];
+    self.lblStory.numberOfLines = 0;
+    
+    CGRect frame = self.lblStory.frame;
     [self.lblStory sizeToFit];
-    labelFrame.size.width = self.frame.size.width;
-    self.lblStory.frame = labelFrame;
+    frame.size.height = self.lblStory.frame.size.height;
+    self.lblStory.frame = frame;
+    
+    /*labelFrame.size.width = self.frame.size.width;
+    self.lblStory.frame = labelFrame;*/
     [self addSubview:self.lblStory];
     
     if(self.image != nil){
         self.imageFrame = [[UIImageView alloc] initWithImage:self.image];
-        self.imageFrame.frame = CGRectMake(20, self.lblStory.frame.origin.y + self.lblStory.frame.size.height + 20, self.frame.size.width - 30, 400);
+        self.imageFrame.frame = CGRectMake(20, self.lblStory.frame.origin.y + self.lblStory.frame.size.height + 20, self.frame.size.width - 40, 400);
         self.imageFrame.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:self.imageFrame];
     }
