@@ -33,6 +33,11 @@
         self.txtTeamname.placeholder = @"Team naam";
         self.txtTeamname.backgroundColor = txtFieldColor;
         self.txtTeamname.font = [UIFont fontWithName:@"Avenir Next" size:16];
+        
+        UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 12, 44)];
+        self.txtTeamname.leftView = paddingView;
+        self.txtTeamname.leftViewMode = UITextFieldViewModeAlways;
+        
         [self addSubview:self.txtTeamname];
         
         
