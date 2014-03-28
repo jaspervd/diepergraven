@@ -23,15 +23,16 @@
         
         [self createPhotoView];
         
+        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.lblTitle.frame.size.height + self.lblTitle.frame.origin.y + 40 );
+        
     }
     return self;
 }
 
 - (void)createPhotoView {
     
-    
     self.imageFrame = [[UIImageView alloc] initWithImage:self.image];
-    self.imageFrame.frame = CGRectMake(20, self.lblTitle.frame.origin.y + self.lblTitle.frame.size.height + 20, self.frame.size.width - 40, 400);
+    self.imageFrame.frame = CGRectMake(20, self.lblTitle.frame.origin.y + 40, self.frame.size.width - 40, 400);
     self.imageFrame.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:self.imageFrame];
     
@@ -50,8 +51,6 @@
     [self addSubview:self.lblTitle];
 
 }
-
-
 
 /*
 // Only override drawRect: if you perform custom drawing.
