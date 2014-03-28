@@ -55,7 +55,7 @@
         self.btnHistorian.frame = CGRectMake(0, 279, btnHistorianImage.size.width, btnHistorianImage.size.height);
         [self addSubview:self.btnHistorian];
         
-        self.documentCount = 0;
+      /*  self.documentCount = 0;
         
         self.documentCountTxt = [NSString stringWithFormat:@"%i", self.documentCount];
         self.lblDocumentCount = [[UILabel alloc] initWithFrame:CGRectMake(128, self.btnHistorian.frame.origin.y+2, 30, 30)];
@@ -65,7 +65,7 @@
         self.lblDocumentCount.font = [UIFont fontWithName:@"Avenir Next" size:16];
         self.lblDocumentCount.text = self.documentCountTxt;
         self.lblDocumentCount.layer.cornerRadius = 25;
-        [self addSubview:self.lblDocumentCount];
+        [self addSubview:self.lblDocumentCount];*/
         
         
         UIImage *btnGeologistImage = [UIImage imageNamed:@"geoloog_btn"];
@@ -92,14 +92,14 @@
     return self;
 }
 
-- (void)updateDocumentCount:(int)documentCount {
+/*- (void)updateDocumentCount:(int)documentCount {
     
     self.documentCount = documentCount;
 
     NSString *count = [NSString stringWithFormat:@"%i", self.documentCount];
     self.lblDocumentCount.text = count;
     [self.lblDocumentCount setNeedsDisplay];
-}
+}*/
 
 - (void)timerTick:(NSTimer *)timer {
     NSDate *now = [NSDate date];

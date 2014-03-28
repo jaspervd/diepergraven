@@ -74,8 +74,6 @@
     [self.view.draftsmanV.clearBtn addTarget:self action:@selector(clearImage:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.draftsmanV.undoBtn addTarget:self action:@selector(undoAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.leftBarV.btnStop addTarget:self action:@selector(stopWalk:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view.archaeologistV.objectV.btnObject addTarget:self action:@selector(objectTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
@@ -142,8 +140,8 @@
     }
     self.view.leftBarV.lblObjects.text = objectsTxt;
 
-    self.view.leftBarV.documentCount++;
-    [self.view.leftBarV updateDocumentCount:self.view.leftBarV.documentCount];
+   /* self.view.leftBarV.documentCount++;
+    [self.view.leftBarV updateDocumentCount:self.view.leftBarV.documentCount];*/
     
     NSDictionary *dictToRemove;
     

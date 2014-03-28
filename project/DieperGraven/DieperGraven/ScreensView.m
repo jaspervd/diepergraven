@@ -42,7 +42,7 @@
 
 - (void)historianTapped:(id)sender {
     NSLog(@"Hist tapped");
-    [self.leftBarV updateDocumentCount:0];
+   // [self.leftBarV updateDocumentCount:0];
     [self bringSubviewToFront:self.historianV];
 }
 
