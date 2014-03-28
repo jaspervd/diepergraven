@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx>
-    <wpt lat="50.873233" lon="2.897649"></wpt>
-    <wpt lat="50.883995" lon="2.893404"></wpt>
+    <wpt lat="50.873233" lon="2.897649">
+        <name>start</name>
+    </wpt>
+    <wpt lat="50.883995" lon="2.893404">
+        <name>end</name>
+    </wpt>
 </gpx>

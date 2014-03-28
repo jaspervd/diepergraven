@@ -23,12 +23,11 @@
         error = nil;
         NSDictionary *imagesJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
         
+        self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
-        [self.locationManager setDistanceFilter:kCLLocationAccuracyNearestTenMeters];
-        [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-        [self.locationManager startMonitoringSignificantLocationChanges];
+        self.locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         [self.locationManager startUpdatingLocation];
-        [self.locationManager startUpdatingHeading];
         
         for(NSDictionary *dict in peopleJson) {
             CLCircularRegion *region = [self dictionaryToRegion:dict andType:@"person"];
@@ -40,13 +39,6 @@
             CLCircularRegion *region = [self dictionaryToRegion:dict andType:@"image"];
             [self.geofences addObject:region];
             [self.locationManager startMonitoringForRegion:region];
-        }
-        
-        self.locationManager.delegate = self;
-        
-        NSArray *setOfRegions = [[self.locationManager monitoredRegions] allObjects];
-        for (CLCircularRegion *region in setOfRegions) {
-            NSLog (@"region info: %@", region);
         }
         
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"archeoloog_bg"]];
@@ -98,6 +90,10 @@
     return self;
 }
 
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    NSLog(@"hey i moved %@", [locations lastObject]);
+}
+
 - (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error {
     NSLog(@"ERROR: %@ for region: %@", error, region);
 }
@@ -113,22 +109,16 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
-    NSLog(@"enter hell");
     [self showRegionAlert:@"Entering Region" forRegion:region.identifier];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
-    NSLog(@"exit hell");
     [self showRegionAlert:@"Exiting Region" forRegion:region.identifier];
 }
 
 -(void)showRegionAlert:(NSString *)message forRegion:(NSString *)region {
     UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:region message:message delegate:self cancelButtonTitle:@"Oké" otherButtonTitles:nil];
     [alertV show];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    NSLog(@"did update: %@", locations);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
