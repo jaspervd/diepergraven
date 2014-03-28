@@ -104,9 +104,10 @@
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
     NSLog(@"Leaving: %@", region.identifier);
     for(ObjectView *thisObject in self.view.archaeologistV.arrObjectsToShow) {
-        if(thisObject.identifier == region.identifier) {
-            [self.view.archaeologistV removeObject:thisObject];
+        if([thisObject.identifier isEqualToString:region.identifier]) {
+            [thisObject removeFromSuperview];
         }
+        
         
         //EXECUTE DIGFIELD FILL
     }
@@ -144,18 +145,20 @@
     self.view.leftBarV.documentCount++;
     [self.view.leftBarV updateDocumentCount:self.view.leftBarV.documentCount];
     
+    NSDictionary *dictToRemove;
+    
     for(ObjectView *thisObjectV in self.view.archaeologistV.arrObjectsToShow) {
         if(thisObjectV.btnObject == sender) {
             for(NSDictionary *dict in self.arrPossibleObjects) {
-                if([[dict objectForKey:@"identifier"] isEqualToString:thisObjectV.identifier]) {
+                if([[NSString stringWithFormat:@"%@", [dict objectForKey:@"identifier"]] isEqualToString:[NSString stringWithFormat:@"%@", thisObjectV.identifier]]) {
                     [self.objectsArray addObject:dict];
-                    [self.arrPossibleObjects removeObject:dict];
-                    [thisObjectV removeFromSuperview];
-                    NSLog(@"JA OKE LUKT: dict key: %@", [dict objectForKey:@"identifier"]);
+                    dictToRemove = dict;
                 }
             }
+            [thisObjectV removeFromSuperview];
         }
     }
+    [self.arrPossibleObjects removeObject:dictToRemove];
     
     [self.view.archaeologistV setNeedsDisplay];
 }
