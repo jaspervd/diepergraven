@@ -129,12 +129,9 @@
 }
 
 - (void)didPressObject:(id)sender {
-    NSLog(@"Pressed object in VC!!!!");
     // send object to historianV
    // [self.view.archaeologistV.digField removeFromSuperview];
-    /*self.view.leftBarV.objects ++;
-    
-    NSLog(@"%@", sender);
+    self.view.leftBarV.objects ++;
     
     NSString *objectsTxt;
     if( self.view.leftBarV.objects == 1){
@@ -147,12 +144,20 @@
     self.view.leftBarV.documentCount++;
     [self.view.leftBarV updateDocumentCount:self.view.leftBarV.documentCount];
     
-    [self.arrPossibleObjects removeObject:sender];
+    for(ObjectView *thisObjectV in self.view.archaeologistV.arrObjectsToShow) {
+        if(thisObjectV.btnObject == sender) {
+            for(NSDictionary *dict in self.arrPossibleObjects) {
+                if([[dict objectForKey:@"identifier"] isEqualToString:thisObjectV.identifier]) {
+                    [self.objectsArray addObject:dict];
+                    [self.arrPossibleObjects removeObject:dict];
+                    [thisObjectV removeFromSuperview];
+                    NSLog(@"JA OKE LUKT: dict key: %@", [dict objectForKey:@"identifier"]);
+                }
+            }
+        }
+    }
     
-    /*[self.objectsArray addObject:@"object"];
-    NSLog(@"%@", self.objectsArray);*//*
-
-    [self.view.archaeologistV.objectV removeFromSuperview];*/
+    [self.view.archaeologistV setNeedsDisplay];
 }
 
 - (void)saveImage:(id)sender {
