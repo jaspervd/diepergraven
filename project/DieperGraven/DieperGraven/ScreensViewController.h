@@ -17,6 +17,7 @@
 @property (strong, nonatomic) ScreensView *view;
 @property (nonatomic, strong) Team *team;
 - (id)initWithTeam:(Team *)team;
+- (void)objectTapped:(id)sender;
 
 @property (nonatomic,strong) NSMutableArray *objectsArray;
 @property (strong, nonatomic) CLLocationManager *locationManager;

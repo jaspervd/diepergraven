@@ -70,7 +70,6 @@
     [self.view.leftBarV.btnGeologist addTarget:self.view action:@selector(geologistTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.leftBarV.btnDraftsman addTarget:self.view action:@selector(draftsmanTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view.archaeologistV.objectV.btnObject addTarget:self action:@selector(objectTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.draftsmanV.saveBtn addTarget:self action:@selector(saveImage:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.draftsmanV.clearBtn addTarget:self action:@selector(clearImage:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.draftsmanV.undoBtn addTarget:self action:@selector(undoAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -94,7 +93,11 @@
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
     NSLog(@"Entering: %@", region.identifier);
     [self.view.archaeologistV addObject:region.identifier];
+    NSLog(@"%@", [self.view.archaeologistV.arrObjectsToShow lastObject]);
+    //[self.view.archaeologistV.arrObjectsToShow lastObject].delegate = self;
+    //[[self.view.archaeologistV.arrObjectsToShow lastObject] addTarget:self action:@selector(objectTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.archaeologistV bringSubviewToFront:self.view.archaeologistV.digField];
+    [self.view.archaeologistV bringSubviewToFront:self.view.archaeologistV.lblInfo];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
@@ -143,8 +146,10 @@
     self.view.leftBarV.documentCount++;
     [self.view.leftBarV updateDocumentCount:self.view.leftBarV.documentCount];
     
-    [self.objectsArray addObject:@"object"];
-    NSLog(@"%@", self.objectsArray);
+    [self.arrPossibleObjects removeObject:sender];
+    
+    /*[self.objectsArray addObject:@"object"];
+    NSLog(@"%@", self.objectsArray);*/
 
     [self.view.archaeologistV.objectV removeFromSuperview];
 }

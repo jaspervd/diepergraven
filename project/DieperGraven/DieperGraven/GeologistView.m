@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-       // RMMBTilesSource *offlineSource = [[RMMBTilesSource alloc] initWithTileSetResource:@"DieperGraven" ofType:@"mbtiles"];
+        //RMMBTilesSource *offlineSource = [[RMMBTilesSource alloc] initWithTileSetResource:@"DieperGraven" ofType:@"mbtiles"];
         RMMapboxSource *source = [[RMMapboxSource alloc] initWithMapID:@"jaspervd.hk9425ca"];
         
         self.mapView = [[RMMapView alloc] initWithFrame:frame andTilesource:source centerCoordinate:CLLocationCoordinate2DMake(50.881, 2.885) zoomLevel:10 maxZoomLevel:17 minZoomLevel:10 backgroundImage:nil];

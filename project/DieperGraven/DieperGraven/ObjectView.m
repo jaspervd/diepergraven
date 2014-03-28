@@ -15,11 +15,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.identifier = identifier;
+        self.btnObject = [[UIButton alloc] init];
         self.btnObject = [UIButton buttonWithType:UIButtonTypeCustom];
         UIImage *btnObjectImage = [UIImage imageNamed:@"brief_btn"];
         [self.btnObject setBackgroundImage:btnObjectImage forState:UIControlStateNormal];
         self.btnObject.frame = self.frame;
-        
         [self addSubview:self.btnObject];
     }
     return self;
