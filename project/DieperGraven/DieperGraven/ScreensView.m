@@ -36,12 +36,12 @@
 
 - (void)archaeologistTapped:(id)sender {
     NSLog(@"Arch tapped");
-    
     [self bringSubviewToFront:self.archaeologistV];
 }
 
 - (void)historianTapped:(id)sender {
     NSLog(@"Hist tapped");
+    [self.leftBarV updateDocumentCount:0];
     [self bringSubviewToFront:self.historianV];
 }
 

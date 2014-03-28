@@ -133,6 +133,9 @@
         objectsTxt = [NSString stringWithFormat:@"%d objecten", self.view.leftBarV.objects];
     }
     self.view.leftBarV.lblObjects.text = objectsTxt;
+
+    self.view.leftBarV.documentCount++;
+    [self.view.leftBarV updateDocumentCount:self.view.leftBarV.documentCount];
     
     [self.objectsArray addObject:@"object"];
     NSLog(@"%@", self.objectsArray);
