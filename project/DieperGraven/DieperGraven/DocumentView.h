@@ -13,11 +13,13 @@
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSString *story;
 @property (nonatomic,strong) UIImage *image;
+@property (nonatomic,strong) NSString *lifespan;
 
 @property (nonatomic,strong) UILabel *lblTitle;
+@property (nonatomic,strong) UILabel *lblSubTitle;
 @property (nonatomic,strong) UILabel *lblStory;
 @property (nonatomic, strong) UIImageView *imageFrame;
 
-- (id)initWithFrame:(CGRect)frame title:(NSString *)title image:(UIImage *)image andStory:(NSString *)story;
+- (id)initWithFrame:(CGRect)frame title:(NSString *)title image:(UIImage *)image lifespan:(NSString *)lifespan andStory:(NSString *)story;
 
 @end

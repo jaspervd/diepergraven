@@ -10,7 +10,7 @@
 
 @implementation DocumentView
 
-- (id)initWithFrame:(CGRect)frame title:(NSString *)title image:(UIImage *)image andStory:(NSString *)story
+- (id)initWithFrame:(CGRect)frame title:(NSString *)title image:(UIImage *)image lifespan:(NSString *)lifespan andStory:(NSString *)story
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -21,6 +21,7 @@
         self.title = title;
         self.image = image;
         self.story = story;
+        self.lifespan = lifespan;
         
         [self createDocumentView];
         
@@ -43,10 +44,20 @@
     self.lblTitle.font = [UIFont fontWithName:@"Avenir Next" size:24];
     [self addSubview:self.lblTitle];
     
-    // TODO: make label height size of text
-  //  CGRect labelFrame = CGRectMake(0, self.lblTitle.frame.origin.y + 35, self.frame.size.width, 20);
     
-    self.lblStory = [[UILabel alloc] initWithFrame:CGRectMake(20, self.lblTitle.frame.origin.y + 40, self.frame.size.width - 40, 20)];
+    if( self.lifespan != nil){
+        self.lblSubTitle = [[UILabel alloc] initWithFrame:CGRectMake(40, self.lblTitle.frame.origin.y + 40, self.frame.size.width - 80, 20)];
+        self.lblSubTitle.text = self.lifespan;
+        self.lblSubTitle.textColor = [UIColor blackColor];
+        self.lblSubTitle.textAlignment = NSTextAlignmentCenter;
+        self.lblSubTitle.font = [UIFont fontWithName:@"Avenir Next" size:16];
+        [self addSubview:self.lblSubTitle];
+        
+         self.lblStory = [[UILabel alloc] initWithFrame:CGRectMake(40, self.lblSubTitle.frame.origin.y + 60, self.frame.size.width - 80, 20)];
+    }else {
+         self.lblStory = [[UILabel alloc] initWithFrame:CGRectMake(40, self.lblTitle.frame.origin.y + 60, self.frame.size.width - 80, 20)];
+    }
+   
     self.lblStory.text = self.story;
     self.lblStory.textColor = [UIColor blackColor];
     self.lblStory.textAlignment = NSTextAlignmentCenter;

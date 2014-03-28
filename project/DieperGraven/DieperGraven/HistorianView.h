@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "DocumentView.h"
+#import "Document.h"
+#import "DocumentFactory.h"
 
 @interface HistorianView : UIView
 
