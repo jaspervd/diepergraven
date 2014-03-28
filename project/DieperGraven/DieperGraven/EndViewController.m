@@ -54,7 +54,7 @@
 
     
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager POST:@"http://localhost/MAIV/api/scores/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:@"http://student.howest.be/niels.boey/MAIV/api/scores" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         
         UIAlertView *alertSuccess = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Je gegevens zijn correct doorgestuurd." delegate:self cancelButtonTitle:@"Oké" otherButtonTitles:nil];

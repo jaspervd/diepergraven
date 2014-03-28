@@ -60,7 +60,7 @@
         self.documentCountTxt = [NSString stringWithFormat:@"%i", self.documentCount];
         self.lblDocumentCount = [[UILabel alloc] initWithFrame:CGRectMake(128, self.btnHistorian.frame.origin.y+2, 30, 30)];
         self.lblDocumentCount.textAlignment = NSTextAlignmentCenter;
-        self.lblDocumentCount.backgroundColor = [UIColor colorWithRed:255 green:255 blue:255 alpha:.6];
+        self.lblDocumentCount.backgroundColor = [UIColor colorWithRed:255 green:255 blue:255 alpha:.4];
         self.lblDocumentCount.textColor = lblColor;
         self.lblDocumentCount.font = [UIFont fontWithName:@"Avenir Next" size:16];
         self.lblDocumentCount.text = self.documentCountTxt;

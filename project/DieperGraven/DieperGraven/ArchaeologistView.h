@@ -19,5 +19,6 @@
 
 -(void)addObject:(NSString *)identifier;
 -(void)removeObject:(ObjectView *)object;
+- (void)resetDigField:(UIImageView *)digField;
 
 @end
