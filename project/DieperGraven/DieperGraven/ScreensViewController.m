@@ -46,13 +46,9 @@
 - (void)stopWalk:(id)sender {
     
     NSDate *endDate = [NSDate date];
-    
-     /*NSLog(@"%@ start datum ",self.view.leftBarV.startDate);
-     NSLog(@"%@ eind datum ",endDate);*/
 
     NSTimeInterval timeInterval = [endDate timeIntervalSinceDate:self.view.leftBarV.startDate];
     NSDate *time = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-    
     
     EndViewController *endVC = [[EndViewController alloc] initWithTeam:self.team time:(time) andScore:self.view.leftBarV.objects];
     [self presentViewController:endVC animated:NO completion:^{}];
@@ -114,15 +110,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

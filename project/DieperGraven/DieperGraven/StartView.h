@@ -16,10 +16,6 @@
 @property (strong, nonatomic) UILabel *lblDraftsman;
 
 @property (strong, nonatomic) UITextField *txtTeamname;
-/*@property (strong, nonatomic) UITextField *txtArchaeologist;
-@property (strong, nonatomic) UITextField *txtHistorian;
-@property (strong, nonatomic) UITextField *txtGeologist;
-@property (strong, nonatomic) UITextField *txtDraftsman;*/
 @property (strong, nonatomic) UIButton *btnContinue;
 
 @end

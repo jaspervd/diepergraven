@@ -11,10 +11,7 @@
 
 @interface TeamFactory : NSObject
 
-/* + (Team *)createTeamWithName:(NSString *)name Archaeologist:(NSString *)archaeologist Historian:(NSString *)historian Geologist:(NSString *)geologist Draftsman:(NSString *)draftsman Objects:(int)objects andTime:(NSString *)time; */
-
 + (Team *)createTeamName:(NSString *)name Objects:(int)objects andTime:(NSString *)time;
-
 + (Team *)createTeamFromDictionary:(NSDictionary *)dict;
 
 @end

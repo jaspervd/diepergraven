@@ -51,7 +51,6 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"team_name": self.team.name, @"objects": self.uploadScore, @"time": self.uploadTime};
-   // NSDictionary *parameters = @{@"team_name": @"naam", @"objects": @"4", @"time": @"00:53"};
 
     
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -62,13 +61,6 @@
         [alertSuccess show];
         
         [self.view.btnUpload removeFromSuperview];
-        
-       /* CGAffineTransform trans = CGAffineTransformTranslate(self.view.transform, self.view.frame.size.height, self.view.frame.size.width);
-        [UIView animateWithDuration:0.7 delay:0 options:0 animations:^{
-            self.view.btnUpload.transform = trans;
-        } completion:^(BOOL finished) {
-            [self.view.btnUpload removeFromSuperview];
-        }];*/
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -83,16 +75,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

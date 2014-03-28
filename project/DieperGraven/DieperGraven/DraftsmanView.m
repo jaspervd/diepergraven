@@ -35,9 +35,7 @@
         lblSize.textColor = txtColor;
         lblSize.textAlignment = NSTextAlignmentCenter;
         lblSize.font = [UIFont fontWithName:@"Avenir Next" size:12];
-        
-        
-       // self.canvas.path.lineWidth = self.sliderStroke.value;
+    
         
         self.saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         UIImage *saveBtnImage = [UIImage imageNamed:@"save_btn"];

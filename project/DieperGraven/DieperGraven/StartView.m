@@ -53,12 +53,7 @@
         self.lblArchaeologist.textAlignment = NSTextAlignmentCenter;
         self.lblArchaeologist.font = [UIFont fontWithName:@"Avenir Next Medium" size:18];
         [self addSubview:self.lblArchaeologist];
-        
-      /*  self.txtArchaeologist = [[UITextField alloc] initWithFrame:CGRectMake(imgArchaeologist.frame.origin.x, imgArchaeologist.frame.origin.y + imgArchaeologist.frame.size.height + 20 , 135, 30)];
-        self.txtArchaeologist.placeholder = @"Archeoloog";
-        self.txtArchaeologist.backgroundColor = txtColor;
-        self.txtArchaeologist.font = [UIFont fontWithName:@"Avenir Next" size:16];
-        [self addSubview:self.txtArchaeologist];*/
+    
         
         /* Historian item + text */
         
@@ -73,11 +68,6 @@
         self.lblHistorian.font = [UIFont fontWithName:@"Avenir Next Medium" size:18];
         [self addSubview:self.lblHistorian];
         
-       /* self.txtHistorian = [[UITextField alloc] initWithFrame:CGRectMake(imgHistorian.frame.origin.x, self.txtArchaeologist.frame.origin.y , 135, 30)];
-        self.txtHistorian.placeholder = @"Historicus";
-        self.txtHistorian.backgroundColor = txtColor;
-        self.txtHistorian.font = [UIFont fontWithName:@"Avenir Next" size:16];
-        [self addSubview:self.txtHistorian]; */
         
         /* Geologist item + text */
         
@@ -92,11 +82,6 @@
         self.lblGeologist.font = [UIFont fontWithName:@"Avenir Next Medium" size:18];
         [self addSubview:self.lblGeologist];
         
-       /*  self.txtGeologist = [[UITextField alloc] initWithFrame:CGRectMake(imgGeologist.frame.origin.x, self.txtArchaeologist.frame.origin.y , 135, 30)];
-        self.txtGeologist.placeholder = @"Geoloog";
-        self.txtGeologist.backgroundColor = txtColor;
-        self.txtGeologist.font = [UIFont fontWithName:@"Avenir Next" size:16];
-        [self addSubview:self.txtGeologist]; */
         
         /* Draftsman item + text */
         
@@ -111,13 +96,6 @@
         self.lblDraftsman.font = [UIFont fontWithName:@"Avenir Next Medium" size:18];
         [self addSubview:self.lblDraftsman];
 
-        
-        /* self.txtDraftsman = [[UITextField alloc] initWithFrame:CGRectMake(imgDraftsman.frame.origin.x, self.txtArchaeologist.frame.origin.y , 135, 30)];
-        self.txtDraftsman.placeholder = @"Tekenaar";
-        self.txtDraftsman.backgroundColor = txtColor;
-        self.txtDraftsman.font = [UIFont fontWithName:@"Avenir Next" size:16];
-        [self addSubview:self.txtDraftsman]; */
-        
         
         /* Continue button */
         
