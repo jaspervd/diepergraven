@@ -50,7 +50,7 @@
         self.clearBtn.center = CGPointMake( self.frame.size.width - 40, self.saveBtn.frame.size.height + self.saveBtn.frame.origin.y + 30);
         
         self.undoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        UIImage *undoBtnImage = [UIImage imageNamed:@"clear_btn"];
+        UIImage *undoBtnImage = [UIImage imageNamed:@"undo_btn"];
         [self.undoBtn setBackgroundImage:undoBtnImage forState:UIControlStateNormal];
         self.undoBtn.frame = CGRectMake(0, 0, undoBtnImage.size.width, undoBtnImage.size.height);
         self.undoBtn.center = CGPointMake( self.frame.size.width - 40, self.clearBtn.frame.size.height + self.clearBtn.frame.origin.y + 30);
