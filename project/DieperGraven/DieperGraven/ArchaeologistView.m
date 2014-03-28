@@ -107,10 +107,6 @@
     NSLog(@"hey i moved %@", [locations lastObject]);
 }
 
-- (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error {
-    NSLog(@"ERROR: %@ for region: %@", error, region);
-}
-
 - (CLCircularRegion*)dictionaryToRegion:(NSDictionary*)dictionary andType:(NSString *)type {
     int identifier = [[dictionary valueForKey:@"identifier"] floatValue];
     
@@ -118,37 +114,15 @@
     CLLocationDegrees longitude =[[dictionary valueForKey:@"longitude"] doubleValue];
     CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
     
-    return [[CLCircularRegion alloc] initWithCenter:centerCoordinate radius:50.f identifier:[NSString stringWithFormat:@"%@%i", type, identifier]];
+    return [[CLCircularRegion alloc] initWithCenter:centerCoordinate radius:5.f identifier:[NSString stringWithFormat:@"%@%i", type, identifier]];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
-    [self showRegionAlert:@"Entering Region" forRegion:region.identifier];
+    NSLog(@"Entering: %@", region.identifier);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
-    [self showRegionAlert:@"Exiting Region" forRegion:region.identifier];
-}
-
--(void)showRegionAlert:(NSString *)message forRegion:(NSString *)region {
-    UIAlertView *alertV = [[UIAlertView alloc] initWithTitle:region message:message delegate:self cancelButtonTitle:@"Oké" otherButtonTitles:nil];
-    [alertV show];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
-    NSLog(@"Started monitoring %@ region", region.identifier);
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    // Initialize Location Manager
-    self.locationManager = [[CLLocationManager alloc] init];
-    
-    // Configure Location Manager
-    [self.locationManager setDelegate:self];
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
-    
-    self.geofences = [NSMutableArray arrayWithArray:[[self.locationManager monitoredRegions] allObjects]];
+    NSLog(@"Leaving: %@", region.identifier);
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

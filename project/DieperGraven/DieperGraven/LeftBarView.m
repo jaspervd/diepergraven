@@ -83,12 +83,15 @@
 - (void)timerTick:(NSTimer *)timer {
     NSDate *now = [NSDate date];
     
+    NSTimeInterval timeInterval = [now timeIntervalSinceDate:self.startDate];
+    NSDate *time = [NSDate dateWithTimeIntervalSince1970:(timeInterval-3600)];
+    
     static NSDateFormatter *dateFormatter;
     if (!dateFormatter) {
         dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateFormat = @"HH:mm:ss";
     }
-    self.lblTime.text = [dateFormatter stringFromDate:now];
+    self.lblTime.text = [dateFormatter stringFromDate:time];
 }
 
 @end
