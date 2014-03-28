@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DocumentView.h"
 
 @interface HistorianView : UIView
 
@@ -15,5 +16,7 @@
 @property (nonatomic,strong) UILabel *lblName;
 @property (nonatomic, strong) UILabel *lblLife;
 @property (nonatomic,strong) UILabel *lblStory;
+
+@property (nonatomic,strong) DocumentView *view;
 
 @end

@@ -22,7 +22,7 @@
         CGRect screenFrame = CGRectMake(158, 0, (self.frame.size.height - 158), self.frame.size.width);
         self.archaeologistV = [[ArchaeologistView alloc] initWithFrame:screenFrame];
         self.historianV = [[HistorianView alloc] initWithFrame:screenFrame];
-        self.geologistV = [[GeologistView alloc] initWithFrame:CGRectMake(79, 0, (self.frame.size.height - 158), self.frame.size.width)];
+        self.geologistV = [[GeologistView alloc] initWithFrame:screenFrame];
         self.draftsmanV = [[DraftsmanView alloc] initWithFrame:screenFrame];
         [self addSubview:self.archaeologistV];
         [self addSubview:self.historianV];

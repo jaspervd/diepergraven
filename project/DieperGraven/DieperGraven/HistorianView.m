@@ -32,7 +32,7 @@
         [self addSubview:self.lblInfo];
         
         
-        NSArray *imagesDicts = @[ @{@"image_name": @"image 1", @"path": @"01"}, @{@"image_name": @"image 2", @"path": @"02"}, @{@"image_name": @"image 3", @"path": @"03"}, @{@"image_name": @"image 4", @"path": @"04"}, @{@"image_name": @"image 5", @"path": @"05"}];
+        NSArray *imagesDicts = @[ @{@"image_name": @"image 1", @"path": @"01", @"story": @"story about this image"}, @{@"image_name": @"image 2", @"path": @"02", @"story": @"story about this image"}, @{@"image_name": @"image 3", @"path": @"03", @"story": @"story about this image"}, @{@"image_name": @"image 4", @"path": @"04", @"story": @"story about this image"}, @{@"image_name": @"image 5",  @"story": @"story about this image"}];
         
         CGFloat padding = 50.0f;
         CGFloat yPos = 50.0f;
@@ -40,13 +40,20 @@
         for (NSDictionary *dictionary in imagesDicts) {
             
             UIImage *image = [UIImage imageNamed:[dictionary objectForKey:@"path"]];
+            NSString *title = [NSString stringWithFormat:@"%@",[dictionary objectForKey:@"image_name"]];
+            NSString *story = [NSString stringWithFormat:@"%@",[dictionary objectForKey:@"story"]];
             
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.frame.size.width / 2) - ((self.frame.size.width - 200) / 2), yPos, self.frame.size.width - 200, self.frame.size.height - 120)];
-            imageView.image = image;
+            NSLog(@"%@", story);
+            NSLog(@"%@", title);
+            NSLog(@"%@", image);
             
-            [scrollView addSubview:imageView];
+            // TODO: make imageview height same as content height
+            CGRect viewFrame = CGRectMake((self.frame.size.width / 2) - ((self.frame.size.width - 200) / 2), yPos, self.frame.size.width - 200, self.frame.size.height - 120);
+                         
+            self.view = [[DocumentView alloc] initWithFrame:viewFrame title:title image:image andStory:story];
+            [scrollView addSubview:self.view];
             
-            yPos = CGRectGetMaxY(imageView.frame) + padding;
+            yPos = CGRectGetMaxY(self.view.frame) + padding;
         }
         
         scrollView.contentSize = CGSizeMake(scrollView.bounds.size.width, yPos);
