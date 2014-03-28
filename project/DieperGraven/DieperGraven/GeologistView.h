@@ -14,6 +14,7 @@
 #import <RMUserLocation.h>
 #import <CoreLocation/CoreLocation.h>
 #import <RMShape.h>
+#import <RMMBTilesSource.h>
 
 @interface GeologistView : UIView <CLLocationManagerDelegate, RMMapViewDelegate>
 

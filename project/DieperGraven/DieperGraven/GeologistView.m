@@ -14,11 +14,15 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+       // RMMBTilesSource *offlineSource = [[RMMBTilesSource alloc] initWithTileSetResource:@"DieperGraven" ofType:@"mbtiles"];
         RMMapboxSource *source = [[RMMapboxSource alloc] initWithMapID:@"jaspervd.hk9425ca"];
+        
         self.mapView = [[RMMapView alloc] initWithFrame:frame andTilesource:source centerCoordinate:CLLocationCoordinate2DMake(50.881, 2.885) zoomLevel:10 maxZoomLevel:17 minZoomLevel:10 backgroundImage:nil];
         [self addSubview:self.mapView];
  
-        self.mapView.zoom = 17;
+        self.mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        self.mapView.adjustTilesForRetinaDisplay = YES;
+        self.mapView.zoom = 16;
         self.mapView.minZoom = 15;
         self.mapView.maxZoom = 17;
         //[self.mapView removeAllCachedImages];
