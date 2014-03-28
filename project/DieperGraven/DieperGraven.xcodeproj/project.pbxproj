@@ -10,8 +10,14 @@
 		012F1AF018E365E400A7DB57 /* EndView.m in Sources */ = {isa = PBXBuildFile; fileRef = 012F1AED18E365E400A7DB57 /* EndView.m */; };
 		012F1AF118E365E400A7DB57 /* EndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012F1AEF18E365E400A7DB57 /* EndViewController.m */; };
 		012F1AFD18E3A0EC00A7DB57 /* monuments.json in Resources */ = {isa = PBXBuildFile; fileRef = 012F1AFC18E3A0EC00A7DB57 /* monuments.json */; };
+		01A4430218E61BB00090BADF /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A442FD18E61BB00090BADF /* Document.m */; };
+		01A4430318E61BB00090BADF /* DocumentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A442FF18E61BB00090BADF /* DocumentFactory.m */; };
+		01A4430718E61C100090BADF /* ArchaeologyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A4430618E61C100090BADF /* ArchaeologyView.m */; };
+		01A4430A18E61C510090BADF /* DocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A4430818E61C510090BADF /* DocumentView.m */; };
+		01A4430E18E61EEF0090BADF /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A4430D18E61EEF0090BADF /* Photo.m */; };
+		01A4431118E61F280090BADF /* PhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A4431018E61F280090BADF /* PhotoView.m */; };
+		01A4431418E61F360090BADF /* PhotoFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A4431318E61F360090BADF /* PhotoFactory.m */; };
 		01C03E0718E59D3400A63F41 /* ObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C03E0618E59D3400A63F41 /* ObjectView.m */; };
-		01DDB87218E5D07C00A0488A /* DocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DDB87118E5D07C00A0488A /* DocumentView.m */; };
 		01E12E0718E4A218008BCB97 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E12E0618E4A218008BCB97 /* CanvasView.m */; };
 		01E12E0A18E4C3F1008BCB97 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E12E0818E4C3F1008BCB97 /* people.json */; };
 		01E12E0B18E4C3F1008BCB97 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E12E0918E4C3F1008BCB97 /* images.json */; };
@@ -58,10 +64,23 @@
 		012F1AEE18E365E400A7DB57 /* EndViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndViewController.h; sourceTree = "<group>"; };
 		012F1AEF18E365E400A7DB57 /* EndViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndViewController.m; sourceTree = "<group>"; };
 		012F1AFC18E3A0EC00A7DB57 /* monuments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = monuments.json; sourceTree = "<group>"; };
+		01A442FC18E61BB00090BADF /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		01A442FD18E61BB00090BADF /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		01A442FE18E61BB00090BADF /* DocumentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentFactory.h; sourceTree = "<group>"; };
+		01A442FF18E61BB00090BADF /* DocumentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentFactory.m; sourceTree = "<group>"; };
+		01A4430518E61C100090BADF /* ArchaeologyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchaeologyView.h; sourceTree = "<group>"; };
+		01A4430618E61C100090BADF /* ArchaeologyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchaeologyView.m; sourceTree = "<group>"; };
+		01A4430818E61C510090BADF /* DocumentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentView.m; sourceTree = "<group>"; };
+		01A4430918E61C510090BADF /* DocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentView.h; sourceTree = "<group>"; };
+		01A4430B18E61C990090BADF /* ObjectViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectViewProtocol.h; sourceTree = "<group>"; };
+		01A4430C18E61EEF0090BADF /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		01A4430D18E61EEF0090BADF /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		01A4430F18E61F280090BADF /* PhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoView.h; sourceTree = "<group>"; };
+		01A4431018E61F280090BADF /* PhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoView.m; sourceTree = "<group>"; };
+		01A4431218E61F360090BADF /* PhotoFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoFactory.h; sourceTree = "<group>"; };
+		01A4431318E61F360090BADF /* PhotoFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoFactory.m; sourceTree = "<group>"; };
 		01C03E0518E59D3400A63F41 /* ObjectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectView.h; sourceTree = "<group>"; };
 		01C03E0618E59D3400A63F41 /* ObjectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectView.m; sourceTree = "<group>"; };
-		01DDB87018E5D07C00A0488A /* DocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentView.h; sourceTree = "<group>"; };
-		01DDB87118E5D07C00A0488A /* DocumentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentView.m; sourceTree = "<group>"; };
 		01E12E0518E4A218008BCB97 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
 		01E12E0618E4A218008BCB97 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
 		01E12E0818E4C3F1008BCB97 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
@@ -209,10 +228,13 @@
 		01D0E28018E44FA600C1FC50 /* Archaeologist */ = {
 			isa = PBXGroup;
 			children = (
+				01A4430B18E61C990090BADF /* ObjectViewProtocol.h */,
 				01C03E0518E59D3400A63F41 /* ObjectView.h */,
 				01C03E0618E59D3400A63F41 /* ObjectView.m */,
 				A4BCF04118E308130049C5AF /* ArchaeologistView.h */,
 				A4BCF04218E308130049C5AF /* ArchaeologistView.m */,
+				01A4430518E61C100090BADF /* ArchaeologyView.h */,
+				01A4430618E61C100090BADF /* ArchaeologyView.m */,
 			);
 			name = Archaeologist;
 			sourceTree = "<group>";
@@ -220,8 +242,18 @@
 		01DDB86F18E5D07200A0488A /* Historian */ = {
 			isa = PBXGroup;
 			children = (
-				01DDB87018E5D07C00A0488A /* DocumentView.h */,
-				01DDB87118E5D07C00A0488A /* DocumentView.m */,
+				01A4430C18E61EEF0090BADF /* Photo.h */,
+				01A4430D18E61EEF0090BADF /* Photo.m */,
+				01A4430F18E61F280090BADF /* PhotoView.h */,
+				01A4431018E61F280090BADF /* PhotoView.m */,
+				01A4431218E61F360090BADF /* PhotoFactory.h */,
+				01A4431318E61F360090BADF /* PhotoFactory.m */,
+				01A442FC18E61BB00090BADF /* Document.h */,
+				01A442FD18E61BB00090BADF /* Document.m */,
+				01A4430918E61C510090BADF /* DocumentView.h */,
+				01A4430818E61C510090BADF /* DocumentView.m */,
+				01A442FE18E61BB00090BADF /* DocumentFactory.h */,
+				01A442FF18E61BB00090BADF /* DocumentFactory.m */,
 				A4BCF04718E308A70049C5AF /* HistorianView.h */,
 				A4BCF04818E308A70049C5AF /* HistorianView.m */,
 			);
@@ -443,13 +475,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A40131B318E245D800F535A3 /* ScreensView.m in Sources */,
+				01A4431118E61F280090BADF /* PhotoView.m in Sources */,
 				A41FE86218E20DAD00DEEB0F /* Team.m in Sources */,
 				A40131AC18E21BD500F535A3 /* GeologistView.m in Sources */,
 				A4BCF04918E308A70049C5AF /* HistorianView.m in Sources */,
 				A41FE86518E20E6100DEEB0F /* TeamFactory.m in Sources */,
 				A41FE85C18E1EAB700DEEB0F /* StartViewController.m in Sources */,
 				A4DB899818E198EC0096B7E3 /* AppDelegate.m in Sources */,
-				01DDB87218E5D07C00A0488A /* DocumentView.m in Sources */,
+				01A4430A18E61C510090BADF /* DocumentView.m in Sources */,
+				01A4430E18E61EEF0090BADF /* Photo.m in Sources */,
 				012F1AF118E365E400A7DB57 /* EndViewController.m in Sources */,
 				01C03E0718E59D3400A63F41 /* ObjectView.m in Sources */,
 				A4DB899418E198EC0096B7E3 /* main.m in Sources */,
@@ -457,9 +491,13 @@
 				A41FE85F18E1EB2E00DEEB0F /* StartView.m in Sources */,
 				A40131B018E245C700F535A3 /* ScreensViewController.m in Sources */,
 				A4BCF04618E308960049C5AF /* DraftsmanView.m in Sources */,
+				01A4430318E61BB00090BADF /* DocumentFactory.m in Sources */,
 				A4BCF04318E308130049C5AF /* ArchaeologistView.m in Sources */,
+				01A4431418E61F360090BADF /* PhotoFactory.m in Sources */,
 				01E12E0718E4A218008BCB97 /* CanvasView.m in Sources */,
 				A45215FB18E2E5EA00FB7144 /* LeftBarView.m in Sources */,
+				01A4430218E61BB00090BADF /* Document.m in Sources */,
+				01A4430718E61C100090BADF /* ArchaeologyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

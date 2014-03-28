@@ -31,30 +31,51 @@
         self.lblInfo.font = [UIFont fontWithName:@"Avenir Next" size:18];
         [self addSubview:self.lblInfo];
         
-        
-        NSArray *imagesDicts = @[ @{@"image_name": @"image 1", @"path": @"01", @"story": @"story about this image"}, @{@"image_name": @"image 2", @"path": @"02", @"story": @"story about this image"}, @{@"image_name": @"image 3", @"path": @"03", @"story": @"story about this image jkbsjkbvjkdfbvjkdfbvjkdbfkvjdb jkbfjkvb jkbs dkjbjks bkj bkj bkjs dbkjsbdvlsdkjbk jb kj bkj bjk bj qnl smdkv,m nkl n lkn lknsdkln lkn lkn lksn dklnvsdnvln l nlk nkls dnlsndjvsjk ns jlnsdlvn ljs njl nlsdnvlj sndlknd lkvnsdjkvnsl nslkdn jvsndjlcn lskndlsn lnslkdn ldbvlsndlkn sjvendlvsnvlskn  nsivnslvskndvdboslvslkns  inskdj nsldnskl  bjbsd jklvbskjdvblsdbkjsb ozozbovbsldvb o ubzjkdbvsjdbvo bo bozbvosbdio vb obz obvobzoiv zbov bziov"}, @{@"image_name": @"image 4", @"path": @"04", @"story": @"story about this image"}, @{@"image_name": @"image 5",  @"story": @"story about this image jkbsjkbvjkdfbvjkdfbvjkdbfkvjdb jkbfjkvb jkbs dkjbjks bkj bkj bkjs dbkjsbdvlsdkjbk jb kj bkj bjk bj qnl smdkv,m nkl n lkn lknsdkln lkn lkn lksn dklnvsdnvln l nlk nkls dnlsndjvsjk ns jlnsdlvn ljs njl nlsdnvlj sndlknd lkvnsdjkvnsl nslkdn jvsndjlcn lskndlsn lnslkdn ldbvlsndlkn sjvendlvsnvlskn  nsivnslvskndvdboslvslkns  inskdj nsldnskl  bjbsd jklvbskjdvblsdbkjsb ozozbovbsldvb o ubzjkdbvsjdbvo bo bozbvosbdio vb obz obvobzoiv zbov bziov"}];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"people" ofType:@"json"];
+        NSError *error = nil;
+        NSDictionary *peopleJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
         
         CGFloat padding = 50.0f;
         CGFloat yPos = 50.0f;
         
-        for (NSDictionary *dictionary in imagesDicts) {
+        
+        for (NSDictionary *dictionary in peopleJson) {
             
-            UIImage *image = [UIImage imageNamed:[dictionary objectForKey:@"path"]];
-            NSString *title = [NSString stringWithFormat:@"%@",[dictionary objectForKey:@"image_name"]];
-            NSString *story = [NSString stringWithFormat:@"%@",[dictionary objectForKey:@"story"]];
-            
-            NSLog(@"%@", story);
-            NSLog(@"%@", title);
-            NSLog(@"%@", image);
-            
-            // TODO: make imageview height same as content height
+            Document *document = [DocumentFactory createDocumentPersonFromDictionary:dictionary];
+  
+            UIImage *image = [UIImage imageNamed: document.path];
+            NSString *title = [NSString stringWithFormat:@"%@", document.title];
+            NSString *story = [NSString stringWithFormat:@"%@", document.story];
+            NSString *lifespan = [NSString stringWithFormat:@"%@", document.lifespan];
+
+  
             CGRect viewFrame = CGRectMake((self.frame.size.width / 2) - ((self.frame.size.width - 200) / 2), yPos, self.frame.size.width - 200, self.frame.size.height - 120);
             
+            self.documentV = [[DocumentView alloc] initWithFrame:viewFrame title:title image:image lifespan:lifespan andStory:story];
+            [scrollView addSubview:self.documentV];
             
-            self.view = [[DocumentView alloc] initWithFrame:viewFrame title:title image:image andStory:story];
-            [scrollView addSubview:self.view];
+            yPos = CGRectGetMaxY(self.documentV.frame) + padding;
+        }
+        
+        path = [[NSBundle mainBundle] pathForResource:@"images" ofType:@"json"];
+        error = nil;
+        NSDictionary *imagesJson = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+        
+        
+        for (NSDictionary *dictionary in imagesJson){
+            
+            Photo *photo = [PhotoFactory createPhotoFromDictionary:dictionary];
+            
+            UIImage *image = [UIImage imageNamed: photo.path];
+            NSString *description = [NSString  stringWithFormat:@"%@",photo.description];
 
-            yPos = CGRectGetMaxY(self.view.frame) + padding;
+            CGRect viewFrame = CGRectMake((self.frame.size.width / 2) - ((self.frame.size.width - 200) / 2), yPos, self.frame.size.width - 200, self.frame.size.height - 120);
+            
+            self.photoV = [[PhotoView alloc] initWithFrame:viewFrame description:description andImage:image];
+            [scrollView addSubview:self.photoV];
+            
+            yPos = CGRectGetMaxY(self.photoV.frame) + padding;
+
         }
         
         scrollView.contentSize = CGSizeMake(scrollView.bounds.size.width, yPos);

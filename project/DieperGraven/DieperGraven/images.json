@@ -45,7 +45,8 @@
         "description": "Zicht vanuit de loopgraven op de Pilkemse heuvelrug richting Ieper.",
         "latitude": "50.882184",
         "longitude": "2.906651",
-        "identifier": 7 
+        "identifier": 7,
+        "path": "06"
     },
      {
         "description": "Zicht vanuit de loopgraven op de Pilkemse heuvelrug richting Wieltje.",
