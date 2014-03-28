@@ -58,24 +58,22 @@
 }
 
 -(void)addObject:(NSString *)identifier {
-    self.btnObject = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *btnObjectImage = [UIImage imageNamed:@"brief_btn"];
-    [self.btnObject setBackgroundImage:btnObjectImage forState:UIControlStateNormal];
-    self.btnObject.frame = CGRectMake(0, 0, btnObjectImage.size.width, btnObjectImage.size.height);
-    
+    self.objectV = [[ObjectView alloc] initWithFrame:CGRectMake(0, 0, btnObjectImage.size.width, btnObjectImage.size.height) andIdentifier:identifier];
+                    
     // float xPos = (float)rand() / (self.frame.size.width - (self.btnObject.frame.size.width / 2));
     // float yPos = (float)rand() / (self.frame.size.height - (self.btnObject.frame.size.height / 2));
     
     int xPos = 40 + arc4random() %(800+1-40);
     int yPos = 40 + arc4random() %(400+1-40);
     
-    self.btnObject.center = CGPointMake(xPos, yPos);
-    [self addSubview:self.btnObject];
-    [self.arrObjectsToShow addObject:self.btnObject];
+    self.objectV.center = CGPointMake(xPos, yPos);
+    [self addSubview:self.objectV];
+    [self.arrObjectsToShow addObject:self.objectV];
 }
 
--(void)removeObject:(UIButton *)button {
-    [self.arrObjectsToShow removeObject:button];
+-(void)removeObject:(ObjectView *)object {
+    [self.arrObjectsToShow removeObject:object];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

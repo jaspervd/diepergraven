@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ObjectView.h"
 
 @interface ArchaeologistView : UIView
 
 @property (strong, nonatomic) UILabel *lblInfo;
-@property (nonatomic,strong) UIButton *btnObject;
+@property (nonatomic,strong) ObjectView *objectV;
 @property (nonatomic,strong) UIImageView *digField;
 @property CGPoint userPoint;
 @property (nonatomic, strong) NSMutableArray *arrObjectsToShow;
 
 -(void)addObject:(NSString *)identifier;
--(void)removeObject:(UIButton *)button;
+-(void)removeObject:(ObjectView *)object;
 
 @end

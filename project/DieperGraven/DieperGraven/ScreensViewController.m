@@ -70,7 +70,7 @@
     [self.view.leftBarV.btnGeologist addTarget:self.view action:@selector(geologistTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.leftBarV.btnDraftsman addTarget:self.view action:@selector(draftsmanTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view.archaeologistV.btnObject addTarget:self action:@selector(objectTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view.archaeologistV.objectV.btnObject addTarget:self action:@selector(objectTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.draftsmanV.saveBtn addTarget:self action:@selector(saveImage:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.draftsmanV.clearBtn addTarget:self action:@selector(clearImage:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.draftsmanV.undoBtn addTarget:self action:@selector(undoAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -88,18 +88,24 @@
     CLLocationDegrees longitude =[[dictionary valueForKey:@"longitude"] doubleValue];
     CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
     
-    return [[CLCircularRegion alloc] initWithCenter:centerCoordinate radius:5.f identifier:[NSString stringWithFormat:@"%@%i", type, identifier]];
+    return [[CLCircularRegion alloc] initWithCenter:centerCoordinate radius:7.f identifier:[NSString stringWithFormat:@"%@%i", type, identifier]];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
     NSLog(@"Entering: %@", region.identifier);
     [self.view.archaeologistV addObject:region.identifier];
+    [self.view.archaeologistV bringSubviewToFront:self.view.archaeologistV.digField];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
     NSLog(@"Leaving: %@", region.identifier);
-    //UIButton *thisBtn = [self.view.archaeologistV.arrObjectsToShow ]
-    //[self.view.archaeologistV removeObject:region.identifier];
+    for(ObjectView *thisObject in self.view.archaeologistV.arrObjectsToShow) {
+        if(thisObject.identifier == region.identifier) {
+            [self.view.archaeologistV removeObject:thisObject];
+        }
+        
+        //EXECUTE DIGFIELD FILL
+    }
 }
 
 - (void)stopWalk:(id)sender {
@@ -137,7 +143,7 @@
     [self.objectsArray addObject:@"object"];
     NSLog(@"%@", self.objectsArray);
 
-    [self.view.archaeologistV.btnObject removeFromSuperview];
+    [self.view.archaeologistV.objectV removeFromSuperview];
 }
 
 - (void)saveImage:(id)sender {
