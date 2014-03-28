@@ -16,12 +16,14 @@
     if (self) {
         
         self.backgroundColor = [UIColor blackColor];
-        
-       // RMMBTilesSource *offlineSource = [[RMMBTilesSource alloc] initWithTileSetResource:@"DieperGraven" ofType:@"mbtiles"];
         RMMapboxSource *source = [[RMMapboxSource alloc] initWithMapID:@"jaspervd.hk9425ca"];
-        
         CGRect screenFrame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-        self.mapView = [[RMMapView alloc] initWithFrame:screenFrame andTilesource:source centerCoordinate:CLLocationCoordinate2DMake(50.881, 2.885) zoomLevel:10 maxZoomLevel:17 minZoomLevel:10 backgroundImage:nil];
+        if(!source) {
+            RMMBTilesSource *offlineSource = [[RMMBTilesSource alloc] initWithTileSetURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"DieperGraven" ofType:@"mbtiles"]]];
+            self.mapView = [[RMMapView alloc] initWithFrame:screenFrame andTilesource:offlineSource centerCoordinate:CLLocationCoordinate2DMake(50.881, 2.885) zoomLevel:10 maxZoomLevel:17 minZoomLevel:10 backgroundImage:nil];
+        } else {
+            self.mapView = [[RMMapView alloc] initWithFrame:screenFrame andTilesource:source centerCoordinate:CLLocationCoordinate2DMake(50.881, 2.885) zoomLevel:10 maxZoomLevel:17 minZoomLevel:10 backgroundImage:nil];
+        }
         [self addSubview:self.mapView];
  
         self.mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
